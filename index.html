@@ -9,13 +9,14 @@
 
 <style>
 :root{
-/* โทนสี ดำ-ชมพู แนวเข้ม */
---bg:#121212; 
---main:#FF1493; 
---dark:#C71585; 
---white:#1f1f1f; 
---glow:rgba(255, 20, 147, 0.4); 
---text:#ffffff;
+/* ปรับโทนสีเป็น ชมพู แนวน่ารัก */
+--bg:#FFF0F5; /* พื้นหลังเว็บชมพูอ่อนพาสเทล (Lavender Blush) */
+--main:#FF69B4; /* สีชมพูหลักสดใส (Hot Pink) */
+--dark:#FF1493; /* สีชมพูเข้มสำหรับมิติ (Deep Pink) */
+--white:#FFFFFF; /* พื้นหลังการ์ดเปลี่ยนเป็นสีขาว */
+--glow:rgba(255, 105, 180, 0.3); /* แสงเรืองชมพูนุ่มนวล */
+--text:#4A4A4A; /* สีตัวอักษรเทาเข้มเพื่อให้ดูนุ่มนวลกว่าสีดำ */
+--sub-text:#888888; /* สีตัวอักษรรอง */
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Mitr',sans-serif;}
@@ -38,11 +39,14 @@ display: flex;
 /* --- การ์ดใบเดียวหลัก --- */
 .main-card {
     background:var(--white);
-    border-radius:20px;
+    border-radius:25px; /* เพิ่มความโค้งมนให้น่ารักขึ้น */
     width: 100%;
     margin-bottom:20px;
-    border:2px solid var(--main);
-    box-shadow: 0 0 15px var(--main), 0 0 5px var(--glow); 
+    border:2px solid #FFC0CB; /* ขอบสีชมพูอ่อน (Pink) */
+    
+    /* ปรับเอฟเฟกต์ขอบเรืองแสงให้นุ่มนวลขึ้น */
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5); 
+    
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -54,14 +58,15 @@ display: flex;
 
 /* --- กรอบล้อมรอบขั้นตอนการสั่งงาน --- */
 .step-box-container {
-    border: 1px solid rgba(255, 20, 147, 0.5);
-    border-radius: 15px;
+    border: 2px dashed #FFB6C1; /* ขอบเส้นประสีชมพูอ่อน (Light Pink) เพิ่มความน่ารัก */
+    border-radius: 20px;
     padding: 20px 15px;
-    background: rgba(0, 0, 0, 0.2);
+    background: #FFF5F7; /* พื้นหลังชมพูจางๆ */
     margin-top: 10px;
 }
 
-h1,h2,h3{color:var(--main); margin-bottom: 15px;}
+h1{color:var(--main); font-weight: 500;}
+h2,h3{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
 .center{text-align:center;}
 
 /* --- Header --- */
@@ -73,7 +78,7 @@ h1,h2,h3{color:var(--main); margin-bottom: 15px;}
 .banner {
     width: 100%;
     height: 150px;
-    background: #000;
+    background: #FFE4E1; /* พื้นหลังแบนเนอร์สีเนื้ออ่อน (Misty Rose) */
     overflow: hidden;
 }
 
@@ -92,9 +97,9 @@ h1,h2,h3{color:var(--main); margin-bottom: 15px;}
     bottom: -50px; 
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 6px 20px rgba(255,20,147,0.5);
-    border: 3px solid var(--main);
-    background: #000;
+    box-shadow: 0 6px 15px rgba(255, 105, 180, 0.3); /* เงาโลโก้ชมพูนุ่ม */
+    border: 4px solid var(--white); /* ขอบสีขาวหนาขึ้น */
+    background: var(--white);
     z-index: 2;
 }
 
@@ -115,12 +120,12 @@ margin-bottom:20px;
 }
 
 .badge{
-background:#121212;
+background:#FFF0F5; /* พื้นหลัง Badge ชมพูอ่อน */
 padding:8px 16px;
 border-radius:25px;
 font-size:13px;
-color:var(--main);
-border: 1px solid var(--main);
+color:var(--dark); /* ตัวหนังสือชมพูเข้ม */
+border: 1px solid #FFB6C1; /* ขอบชมพูอ่อน */
 }
 
 /* --- Buttons --- */
@@ -128,27 +133,35 @@ border: 1px solid var(--main);
 display:block;
 text-align:center;
 padding:14px;
-border-radius:25px;
+border-radius:30px; /* เพิ่มความโค้งมน */
 text-decoration:none;
 margin-top:15px;
 font-weight:500;
 transition: 0.3s;
+box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
 }
 
 .btn-outline{
-background:transparent;
-border:2px dashed var(--main);
-color:var(--main);
+background:var(--white);
+border:2px solid #FFB6C1; /* ขอบชมพูอ่อน */
+color:var(--dark); /* ตัวหนังสือชมพูเข้ม */
+}
+
+.btn-outline:hover {
+    background: #FFF5F7;
+    border-color: var(--main);
 }
 
 .btn-main{
 background:var(--main);
 color:#fff;
+border: 2px solid var(--main);
 }
 
 .btn-main:hover{
     background:var(--dark);
-    box-shadow: 0 0 10px var(--main);
+    border-color: var(--dark);
+    box-shadow: 0 6px 15px rgba(255, 20, 147, 0.4);
 }
 
 /* --- Steps --- */
@@ -160,15 +173,15 @@ margin-bottom:12px;
 }
 
 .step-num{
-background:#121212;
-color:var(--main);
-width:26px;height:26px;
+background:#FFB6C1; /* พื้นหลังตัวเลขชมพูอ่อน */
+color:#fff; /* ตัวเลขขาว */
+width:28px;height:28px;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:13px;
-border: 1px solid var(--main);
+font-size:14px;
+font-weight: 500;
 flex-shrink: 0;
 }
 
@@ -177,10 +190,10 @@ flex-shrink: 0;
 display:flex;
 justify-content:space-between;
 margin-bottom:10px;
-background:#121212;
+background:#FFF5F7; /* พื้นหลังแถวราคาชมพูจาง */
 padding:10px 15px;
 border-radius:15px;
-border: 1px solid rgba(255, 20, 147, 0.2);
+border: 1px solid #FFEDF0; /* ขอบชมพูบางมากๆ */
 }
 
 /* --- Footer --- */
@@ -188,8 +201,8 @@ border: 1px solid rgba(255, 20, 147, 0.2);
 text-align:center;
 margin-top: auto;
 padding: 30px 20px 25px;
-background: rgba(0,0,0,0.3);
-border-top: 1px solid rgba(255, 20, 147, 0.2);
+background: #FFF5F7; /* พื้นหลังส่วนท้ายชมพูจาง */
+border-top: 1px solid #FFEDF0;
 }
 
 .socials{
@@ -205,14 +218,20 @@ max-width:100px;
 text-align:center;
 padding:8px;
 border-radius:25px;
-background:#121212;
+background:var(--white);
 text-decoration:none;
-color:#fff;
+color:var(--dark); /* ตัวหนังสือชมพูเข้ม */
 font-size:13px;
-border:1px solid rgba(255, 20, 147, 0.4);
+border: 1px solid #FFB6C1;
+transition: 0.3s;
 }
 
-.small{font-size:12px;opacity:.7;margin-top:10px; color:#fff;}
+.socials a:hover {
+    background: var(--bg);
+    border-color: var(--main);
+}
+
+.small{font-size:12px;color:var(--sub-text); margin-top:10px;}
 </style>
 </head>
 
@@ -232,7 +251,7 @@ border:1px solid rgba(255, 20, 147, 0.4);
 
     <div class="header-content">
         <h1>⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆</h1>
-        <p style="color:var(--main);opacity:.9;margin:10px 0 20px;">
+        <p style="color:var(--dark);opacity:.8;margin:10px 0 20px;">
         รับออกแบบป้าย ลายน้ำ Google Sheet เว็บไซต์⭐️
         </p>
 
@@ -243,7 +262,7 @@ border:1px solid rgba(255, 20, 147, 0.4);
         </div>
 
         <a href="https://julie-vwb.github.io/pinkjulie-land/" class="btn btn-outline">
-        ✨ ดูตัวอย่างงานที่นี่
+        ✨ Check Q
         </a>
     </div>
 
@@ -263,7 +282,7 @@ border:1px solid rgba(255, 20, 147, 0.4);
 
     <div class="content-section">
         <h2>📍 กฎและเงื่อนไข</h2>
-        <p style="font-size: 14px; margin-bottom: 15px; opacity: 0.8;">*รองาน 4-8 ชม. (งานเร่งราคา *2)</p>
+        <p style="font-size: 14px; margin-bottom: 15px; color:var(--sub-text);">*รองาน 4-8 ชม. (งานเร่งราคา *2)</p>
 
         <div class="price-row" style="font-size: 13px;"><span>โอนแล้วไม่คืนเงินทุกกรณี</span></div>
         <div class="price-row" style="font-size: 13px;"><span>เริ่มงานแล้วยกเลิก คืน 50%</span></div>
