@@ -9,15 +9,13 @@
 
 <style>
 :root{
-/* ปรับโทนสีเป็น ดำ-ชมพู */
---bg:#000000; /* พื้นหลังสีดำ */
---main:#F6A5C9; /* ชมพูหลัก */
---dark:#E889B5; /* ชมพูเข้มสำหรับข้อความ Badges และเส้นขอบ */
---white:#1A1A1A; /* พื้นหลัง Section สีเทาเข้ม */
---glow:rgba(246,165,201,0.2);
---text-light:#FFFFFF; /* สีข้อความหลักสีขาว */
---status-green: #52ffaf; /* สีไฟสถานะ */
---banner-height: 180px; /* ความสูงของ Banner */
+/* ปรับโทนสีเป็น ดำ-ม่วง ตามบรีฟ */
+--bg:#1a1a1a; 
+--main:#9D50BB;
+--dark:#6E48AA;
+--white:#2d2d2d;
+--glow:rgba(157, 80, 187, 0.4);
+--text:#ffffff;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Mitr',sans-serif;}
@@ -26,127 +24,58 @@ body{
 background:var(--bg);
 display:flex;
 justify-content:center;
-color: var(--text-light);
+color: var(--text);
 }
 
 .container{
 max-width:500px;
 width:100%;
-padding:0 15px 40px; 
-position: relative;
+padding:20px 15px 40px;
 }
 
-/* === HEADER === */
-.header-wrapper {
-margin-top: 20px;
-position: relative;
-border-radius: 20px;
-overflow: hidden;
-box-shadow: 0 10px 30px rgba(246,165,201,0.1);
-margin-bottom: 20px;
-}
-
-.banner {
-height: var(--banner-height);
-width: 100%;
-background-color: #1A1A1A;
-background-image: url('IMG_4768.jpeg'); 
-background-size: cover;
-background-position: center;
-position: relative;
-}
-
-.profile-card {
-background: rgba(26, 26, 26, 0.7);
-backdrop-filter: blur(8px);
-padding: 70px 25px 30px;
-border-radius: 0 0 20px 20px;
-text-align: center;
-border-top: 1px solid rgba(246,165,201,0.3);
-}
-
-.logo{
-width:120px;height:120px; 
-border-radius:50%;
-overflow:hidden;
-position: absolute;
-top: calc(var(--banner-height) - 60px); 
-left: 50%;
-transform: translateX(-50%);
-box-shadow:0 8px 25px rgba(246,165,201,0.2); 
-border: 5px solid var(--white); 
-z-index: 10;
-background-color: var(--white);
-}
-
-.logo img{width:100%;height:100%;object-fit:cover;}
-.profile-card h1 { color: var(--main); font-size: 26px; margin-bottom: 5px; }
-.profile-card .tagline { color: var(--text-light); font-size: 15px; margin-bottom: 20px; }
-
-/* === WORK GALLERY === */
-.work-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 12px;
-margin-top: 15px;
-}
-
-.work-item {
-width: 100%;
-border-radius: 12px;
-overflow: hidden;
-border: 1px solid rgba(246,165,201,0.2);
-transition: transform 0.3s ease;
-aspect-ratio: 1/1; 
-background: #222;
-}
-
-.work-item:hover {
-transform: scale(1.03);
-border-color: var(--main);
-}
-
-.work-item img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-
-/* === SECTION STYLE === */
 .section{
 background:var(--white);
 border-radius:20px;
 padding:25px 20px;
 margin-bottom:20px;
-box-shadow:0 8px 20px rgba(0,0,0,0.2); 
-border: 1px solid rgba(246,165,201,0.1); 
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
+border:2px solid var(--main);
 }
 
-h2 { color: var(--text-light); font-size: 20px; margin-bottom: 15px; }
+h1,h2,h3{color:var(--main);}
+.center{text-align:center;}
+
+.logo{
+width:150px;height:150px;
+border-radius:50%;
+overflow:hidden;
+margin:0 auto 20px;
+box-shadow:0 6px 20px var(--glow);
+border: 3px solid var(--main);
+}
+
+.logo img{width:100%;height:100%;object-fit:cover;}
 
 .badges{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:8px;
+gap:10px;
 margin-bottom:20px;
 }
 
 .badge{
-background:rgba(232, 137, 181, 0.1); 
-padding:7px 14px;
+background:#3d3d3d;
+padding:8px 16px;
 border-radius:25px;
-font-size:12px;
-color:var(--dark); 
-font-weight: 500;
-border: 1px solid rgba(232, 137, 181, 0.3);
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+font-size:13px;
+color:var(--main);
+border: 1px solid var(--main);
 }
 
 .btn{
-display:flex;
-align-items: center;
-justify-content: center;
-gap: 8px;
+display:block;
 text-align:center;
 padding:14px;
 border-radius:25px;
@@ -154,34 +83,17 @@ text-decoration:none;
 margin-top:15px;
 font-weight:500;
 transition: 0.3s;
-font-size: 15px;
 }
 
 .btn-outline{
 background:transparent;
 border:2px dashed var(--main);
-color:var(--main); 
-}
-
-.pulse-dot {
-  width: 9px;
-  height: 9px;
-  background-color: var(--status-green);
-  border-radius: 50%;
-  box-shadow: 0 0 0 0 rgba(82, 255, 175, 0.7);
-  animation: pulse-animation 1.5s infinite;
-}
-
-@keyframes pulse-animation {
-  0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(82, 255, 175, 0.6); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(82, 255, 175, 0); }
-  100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(82, 255, 175, 0); }
+color:var(--main);
 }
 
 .btn-main{
 background:var(--main);
-color:var(--bg); 
-box-shadow: 0 4px 15px rgba(246,165,201,0.3);
+color:#fff;
 }
 
 .step{
@@ -189,21 +101,34 @@ display:flex;
 align-items:center;
 gap:12px;
 margin-bottom:12px;
-font-size: 15px;
-color: var(--text-light); 
 }
 
 .step-num{
-background:rgba(246,165,201,0.1);
-color:var(--main); 
-width:28px;height:28px;
+background:var(--main);
+color:#fff;
+width:26px;height:26px;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:13px;
-font-weight: bold;
-border: 1px solid rgba(246,165,201,0.3);
+}
+
+.price-row{
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+background:#363636;
+padding:10px 15px;
+border-radius:15px;
+}
+
+.price-tag{
+background:var(--main);
+color:#fff;
+padding:3px 12px;
+border-radius:20px;
+font-size:14px;
 }
 
 .footer{
@@ -224,78 +149,77 @@ max-width:100px;
 text-align:center;
 padding:8px;
 border-radius:25px;
-background:var(--white);
+background:#3d3d3d;
 text-decoration:none;
-color:var(--main); 
+color:#fff;
 font-size:13px;
-border:1px solid rgba(246,165,201,0.1);
+border:1px solid var(--main);
 }
 
-.small{font-size:12px;opacity:.7;margin-top:15px; color: var(--text-light);}
+.small{font-size:12px;opacity:.7;margin-top:10px; color:#fff;}
 </style>
 </head>
 
 <body>
 <div class="container">
 
-<div class="header-wrapper">
-    <div class="banner"></div>
-    <div class="logo">
-        <img src="IMG_4740.png" alt="Koyangi Logo">
-    </div>
-    <div class="profile-card">
-        <h1>Koyangi 🐈</h1>
-        <p class="tagline">รับออกแบบป้าย คิวชีต ลายน้ำ เว็บไซต์⭐️</p>
-        <div class="badges">
-            <div class="badge">🎨 ป้าย</div>
-            <div class="badge">💎 โลโก้</div>
-            <div class="badge">💧 ลายน้ำ</div>
-            <div class="badge">🌐 เว็บไซต์</div>
-        </div>
-        <a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-outline">
-            <div class="pulse-dot"></div> เช็คคิวงาน (รอ 4-8 ชม.) ✨
-        </a>
-    </div>
+<div class="section center" style="border:none;box-shadow:none;background:transparent;">
+
+<div class="logo">
+<img src="https://www.facebook.com/profile.php?id=61554192600355" alt="Koyangi Logo"> 
 </div>
 
-<div class="section">
-    <h2>✨ เรทราคา/รายละเอียด</h2>
-    <div class="work-grid">
-        <div class="work-item">
-            <img src="ไม่มีชื่อ 109_20260303215715.png" alt="ผลงาน 1">
-        </div>
-        <div class="work-item">
-            <img src="ไม่มีชื่อ 108_20260228160949.png" alt="ผลงาน 2">
-        </div>
-    </div>
-    </div>
+<h1>⋆. 𐙚˚࿔ 𝐊𝐨𝐲𝐚𝐧𝐠𝐢 𝜗𝜚˚⋆</h1>
+<p style="color:var(--main);opacity:.9;margin:10px 0 20px;">
+รับออกแบบป้าย ลายน้ำ Google Sheet เว็บไซต์⭐️
+</p>
+
+<div class="badges">
+<div class="badge">🎨 ป้าย/ลายน้ำ/โลโก้</div>
+<div class="badge">📊 Google Sheet</div>
+<div class="badge">🌐 Website</div>
+</div>
+
+<a href="https://julie-vwb.github.io/pinkjulie-land/" class="btn btn-outline">
+✨ ดูตัวอย่างงานที่นี่
+</a>
+</div>
 
 <div class="section">
 <h2>📋 ขั้นตอนการสั่ง</h2>
+
 <div class="step"><div class="step-num">1</div><div>กรอกฟอร์ม รายละเอียดร้านค้า</div></div>
-<div class="step"><div class="step-num">2</div><div>ส่งลิงก์ตัวอย่างงาน/โลโก้</div></div>
-<div class="step"><div class="step-num">3</div><div>ส่งงานให้เช็ค/แจ้งยอด</div></div>
-<div class="step"><div class="step-num">4</div><div>ชำระเงิน และรอรับลิงก์ได้เลย</div></div>
+<div class="step"><div class="step-num">2</div><div>ส่งลิงก์ตัวอย่าง/แนบโลโก้</div></div>
+<div class="step"><div class="step-num">3</div><div>ร้านแจ้งยอดและชำระเงิน</div></div>
+<div class="step"><div class="step-num">4</div><div>ตรวจสอบงาน/แก้ไข</div></div>
+<div class="step"><div class="step-num">5</div><div>รอรับลิงก์งานได้เลย</div></div>
+
+<a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">สั่งงานผ่าน LINE</a>
 </div>
 
 <div class="section">
-<h2>📍 กฎของร้าน</h2>
-<p style="font-size: 14px; line-height: 1.6; color: var(--text-light);">
-• โอนเงินแล้วไม่คืนเงินทุกกรณี<br>
-• งานเริ่มไปแล้ว ยกเลิกคืนเงิน 50%<br>
-• ยกเลิกหลังเช็คงาน = ไม่คืนเงินและส่งงานปกติ<br>
-<strong style="color:var(--main)">*งานเร่งคิดราคาเป็น 2 เท่า</strong> 
-</p>
-<a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">สั่งงาน/สอบถามราคา</a>
+<h2>📍 กฎและเงื่อนไข</h2>
+<p style="font-size: 14px; margin-bottom: 15px; opacity: 0.8;">*รองาน 4-8 ชม. (งานเร่งราคา *2)</p>
+
+<div class="price-row" style="font-size: 13px;"><span>โอนแล้วไม่คืนเงินทุกกรณี</span></div>
+<div class="price-row" style="font-size: 13px;"><span>เริ่มงานแล้วยกเลิก คืน 50%</span></div>
+<div class="price-row" style="font-size: 13px;"><span>เช็คงานแล้วยกเลิก ไม่คืนเงิน</span></div>
+
+<a href="https://www.facebook.com/profile.php?id=61554192600355" class="btn btn-main">สอบถามเพิ่มเติม</a>
 </div>
 
 <div class="footer">
-<a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">ติดต่อสอบถามคลิก 🎀</a>
+<a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">จ้างงานคลิกเลย 🎀</a>
+
 <div class="socials">
 <a href="https://www.facebook.com/profile.php?id=61554192600355">Facebook</a>
+<a href="https://www.instagram.com/k0yangi_ii">Instagram</a>
 <a href="https://line.me/ti/p/LfBtdhlrVa">LINE</a>
 </div>
-<p class="small">© 2026 Koyangi Studio</p>
+
+<p class="small">
+© 2026 ⋆. 𐙚˚࿔ 𝐊𝐨𝐲𝐚𝐧𝐠𝐢 𝜗𝜚˚⋆
+</p>
 </div>
 
 </div>
