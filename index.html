@@ -45,16 +45,24 @@ border:2px solid var(--main);
 h1,h2,h3{color:var(--main);}
 .center{text-align:center;}
 
-.logo{
-width:150px;height:150px;
-border-radius:50%;
-overflow:hidden;
-margin:0 auto 20px;
-box-shadow:0 6px 20px var(--glow);
-border: 3px solid var(--main);
+/* ปรับ CSS ส่วนโลโก้ให้กลายเป็น Banner */
+.logo-banner {
+width: 100%; /* เต็มความกว้างการ์ด */
+height: auto; /* ปรับความสูงตามรูปภาพ */
+max-height: 200px; /* จำกัดความสูงสูงสุด */
+border-radius: 15px; /* มุมมนเล็กน้อย */
+overflow: hidden;
+margin: 0 auto 20px;
+box-shadow: 0 6px 20px var(--glow);
+border: 2px solid var(--main); /* ขอบสีม่วง */
 }
 
-.logo img{width:100%;height:100%;object-fit:cover;}
+.logo-banner img {
+width: 100%;
+height: 100%;
+object-fit: cover; /* ให้รูปภาพคลุมพื้นที่ทั้งหมด */
+display: block;
+}
 
 .badges{
 display:flex;
@@ -163,10 +171,8 @@ border:1px solid var(--main);
 <body>
 <div class="container">
 
-<div class="section center" style="border:none;box-shadow:none;background:transparent;">
-
-<div class="logo">
-<img src="https://www.facebook.com/profile.php?id=61554192600355" alt="Koyangi Logo"> 
+<div class="section center"> <div class="logo-banner">
+<img src="https://via.placeholder.com/500x200/2d2d2d/9D50BB?text=Koyangi+Banner" alt="Koyangi Banner"> 
 </div>
 
 <h1>⋆. 𐙚˚࿔ 𝐊𝐨𝐲𝐚𝐧𝐠𝐢 𝜗𝜚˚⋆</h1>
