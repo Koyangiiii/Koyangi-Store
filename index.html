@@ -45,24 +45,44 @@ border:2px solid var(--main);
 h1,h2,h3{color:var(--main);}
 .center{text-align:center;}
 
-/* ปรับ CSS ส่วนโลโก้ให้กลายเป็น Banner */
-.logo-banner {
-width: 100%; /* เต็มความกว้างการ์ด */
-height: auto; /* ปรับความสูงตามรูปภาพ */
-max-height: 200px; /* จำกัดความสูงสูงสุด */
-border-radius: 15px; /* มุมมนเล็กน้อย */
-overflow: hidden;
-margin: 0 auto 20px;
-box-shadow: 0 6px 20px var(--glow);
-border: 2px solid var(--main); /* ขอบสีม่วง */
+/* --- ส่วน Banner และ Logo ที่ปรับปรุงใหม่ --- */
+.header-profile {
+    position: relative;
+    margin-bottom: 60px; /* เว้นที่ให้โลโก้ที่ยื่นออกมา */
 }
 
-.logo-banner img {
-width: 100%;
-height: 100%;
-object-fit: cover; /* ให้รูปภาพคลุมพื้นที่ทั้งหมด */
-display: block;
+.banner {
+    width: 100%;
+    height: 150px;
+    background: #333;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid var(--main);
 }
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo {
+    width: 100px; /* ปรับขนาดเล็กลงเพื่อให้คู่กับ Banner */
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    bottom: -50px; /* ให้โลโก้เกยออกมาครึ่งหนึ่ง */
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    border: 3px solid var(--main);
+    background: var(--white);
+    z-index: 2;
+}
+
+.logo img { width: 100%; height: 100%; object-fit: cover; }
+/* -------------------------------------- */
 
 .badges{
 display:flex;
@@ -171,24 +191,31 @@ border:1px solid var(--main);
 <body>
 <div class="container">
 
-<div class="section center"> <div class="logo-banner">
-<img src="https://via.placeholder.com/500x200/2d2d2d/9D50BB?text=Koyangi+Banner" alt="Koyangi Banner"> 
-</div>
+<div class="section center">
 
-<h1>⋆. 𐙚˚࿔ 𝐊𝐨𝐲𝐚𝐧𝐠𝐢 𝜗𝜚˚⋆</h1>
-<p style="color:var(--main);opacity:.9;margin:10px 0 20px;">
-รับออกแบบป้าย ลายน้ำ Google Sheet เว็บไซต์⭐️
-</p>
+    <div class="header-profile">
+        <div class="banner">
+            <img src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=1000&auto=format&fit=crop" alt="Banner">
+        </div>
+        <div class="logo">
+            <img src="https://www.facebook.com/profile.php?id=61554192600355" alt="Koyangi Logo"> 
+        </div>
+    </div>
 
-<div class="badges">
-<div class="badge">🎨 ป้าย/ลายน้ำ/โลโก้</div>
-<div class="badge">📊 Google Sheet</div>
-<div class="badge">🌐 Website</div>
-</div>
+    <h1>⋆. 𐙚˚࿔ 𝐊𝐨𝐲𝐚𝐧𝐠𝐢 𝜗𝜚˚⋆</h1>
+    <p style="color:var(--main);opacity:.9;margin:10px 0 20px;">
+    รับออกแบบป้าย ลายน้ำ Google Sheet เว็บไซต์⭐️
+    </p>
 
-<a href="https://julie-vwb.github.io/pinkjulie-land/" class="btn btn-outline">
-✨ ดูตัวอย่างงานที่นี่
-</a>
+    <div class="badges">
+    <div class="badge">🎨 ป้าย/ลายน้ำ/โลโก้</div>
+    <div class="badge">📊 Google Sheet</div>
+    <div class="badge">🌐 Website</div>
+    </div>
+
+    <a href="https://julie-vwb.github.io/pinkjulie-land/" class="btn btn-outline">
+    ✨ ดูตัวอย่างงานที่นี่
+    </a>
 </div>
 
 <div class="section">
