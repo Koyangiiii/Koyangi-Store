@@ -96,22 +96,37 @@ border: 1px solid rgba(246,165,201,0.1);
 h2 { color: var(--text-light); font-size: 20px; margin-bottom: 15px; }
 .text-center { text-align: center; }
 
-.badges{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:8px;
-margin-bottom:20px;
+.price-list {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.8;
 }
 
-.badge{
-background:rgba(232, 137, 181, 0.1); 
-padding:7px 14px;
-border-radius:25px;
-font-size:12px;
-color:var(--dark); 
-font-weight: 500;
-border: 1px solid rgba(232, 137, 181, 0.3);
+.price-category {
+    color: var(--main);
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 10px;
+    display: block;
+    border-bottom: 1px solid rgba(246,165,201,0.2);
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+
+.price-notice {
+    background: rgba(246,165,201,0.1);
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    margin-top: 15px;
+    color: #eee;
+    text-align: center;
 }
 
 .btn{
@@ -230,9 +245,27 @@ border:1px solid rgba(246,165,201,0.1);
 
 <div class="section">
     <h2 class="text-center">✨ เรทราคา/รายละเอียด</h2>
-    <p class="text-center" style="font-size: 18px; color: var(--main); font-weight: 500;">
-        งานลายน้ำ เริ่มต้นที่ 29.-
-    </p>
+    
+    <div class="price-list">
+        <span class="price-category">💧 งานลายน้ำ</span>
+        <div class="price-item"><span>• เริ่มต้น</span> <span>29.-</span></div>
+        <div class="price-item"><span>• ใช้บล็อก</span> <span>39.-</span></div>
+        <div class="price-item"><span>• ใช้ตัวตูน</span> <span>39.-</span></div>
+
+        <span class="price-category">🎨 งานป้าย</span>
+        <div class="price-item"><span>• ไม่ใช้บล็อก</span> <span>39.-</span></div>
+        <div class="price-item"><span>• ใช้ตัวตูน</span> <span>39.-</span></div>
+        <div class="price-item"><span>• ใช้บล็อก</span> <span>59.-</span></div>
+
+        <span class="price-category">📊 Google Sheet</span>
+        <div class="price-item"><span>• เฉพาะชีต</span> <span>49.-</span></div>
+        <div class="price-item"><span>• พร้อมปก</span> <span>88.-</span></div>
+    </div>
+
+    <div class="price-notice">
+        สั่งงาน 3 ป้ายขึ้นไปมี <strong>ราคาเหมา</strong><br>
+        สอบถามเพิ่มเติมทักแชทได้เลยค่ะ
+    </div>
 </div>
 
 <div class="section">
@@ -241,16 +274,31 @@ border:1px solid rgba(246,165,201,0.1);
 <div class="step"><div class="step-num">2</div><div>ส่งลิงก์ตัวอย่างงาน/โลโก้</div></div>
 <div class="step"><div class="step-num">3</div><div>ส่งงานให้เช็ค/แจ้งยอด</div></div>
 <div class="step"><div class="step-num">4</div><div>ชำระเงิน และรอรับลิงก์ได้เลย</div></div>
+<div class="price-notice" style="background: transparent; border: 1px dashed var(--main); color: var(--main); text-align: left;">
+    จ่ายเต็มจำนวน / มัดจำ / ผ่อนครบ / จ่าย 50% = เริ่มงาน ลงคิว<br>
+    <strong>ส่งงาน = จ่ายเงินเต็มจำนวนเท่านั้น!!!</strong>
+</div>
 </div>
 
 <div class="section">
 <h2>📍 กฎของร้าน</h2>
 <p style="font-size: 14px; line-height: 1.6; color: var(--text-light);">
 • โอนเงินแล้วไม่คืนเงินทุกกรณี<br>
+• ทางร้านไม่มีการโอนเงินคืน ก่อนจะโอนตัดสินใจให้ดี<br>
 • งานเริ่มไปแล้ว ยกเลิกคืนเงิน 50%<br>
 • ยกเลิกหลังเช็คงาน = ไม่คืนเงินและส่งงานปกติ<br>
-<strong style="color:var(--main)">*งานเร่งคิดราคาเป็น 2 เท่า</strong> 
 </p>
+
+<div style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+    <h3 style="color: var(--main); font-size: 16px; margin-bottom: 8px;">🔥 RUSH WORK PRICE</h3>
+    <p style="font-size: 13px; color: #ccc; line-height: 1.5;">
+        งานเร่ง <strong>x2</strong> ของราคาป้ายที่ต้องการเร่ง<br>
+        (ขึ้นอยู่กับจำนวนงานและคิวที่ต้องการเร่ง)<br>
+        * เร่ง 1 ครั้ง ต่อ 1 งาน ต่อ 1 คิว<br>
+        * หากไม่ได้จ่ายค่าเร่ง <strong>งดเร่ง งดวีน</strong>
+    </p>
+</div>
+
 <a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">สั่งงาน/สอบถามราคา</a>
 </div>
 
