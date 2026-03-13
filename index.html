@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆</title>
+<title>Koyangi - Official Store</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-/* ปรับโทนสีเป็น ชมพูนม นุ่มนวล */
---bg:#FFF5F7; /* พื้นหลังเว็บชมพูนมจางๆ สว่าง (Snow Drift/Lavender Blush) */
---main:#FFB6C1; /* สีชมพูนมหลัก (Light Pink) */
---dark:#FF99AA; /* สีชมพูที่เข้มขึ้นเล็กน้อยสำหรับมิติ (ปรับจาก Hot Pink ให้ซอฟต์ลง) */
---white:#FFFFFF; /* พื้นหลังการ์ดสีขาวสะอาด */
---glow:rgba(255, 182, 193, 0.4); /* แสงเรืองชมพูอ่อนนุ่มนวล */
---text:#5F5F5F; /* สีตัวอักษรเทาเข้ม นุ่มนวลกว่าสีดำ */
---sub-text:#9F9F9F; /* สีตัวอักษรรอง */
+/* ปรับโทนสีเป็น ชมพู แนวน่ารัก */
+--bg:#FFF0F5; /* พื้นหลังเว็บชมพูอ่อนพาสเทล (Lavender Blush) */
+--main:#FF69B4; /* สีชมพูหลักสดใส (Hot Pink) */
+--dark:#FF1493; /* สีชมพูเข้มสำหรับมิติ (Deep Pink) */
+--white:#FFFFFF; /* พื้นหลังการ์ดเปลี่ยนเป็นสีขาว */
+--glow:rgba(255, 105, 180, 0.3); /* แสงเรืองชมพูนุ่มนวล */
+--text:#4A4A4A; /* สีตัวอักษรเทาเข้มเพื่อให้ดูนุ่มนวลกว่าสีดำ */
+--sub-text:#888888; /* สีตัวอักษรรอง */
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Mitr',sans-serif;}
@@ -39,14 +39,11 @@ display: flex;
 /* --- การ์ดใบเดียวหลัก --- */
 .main-card {
     background:var(--white);
-    border-radius:25px; /* ความโค้งมนนุ่มนวล */
+    border-radius:25px; 
     width: 100%;
     margin-bottom:20px;
-    border:2px solid #FFE4E1; /* ขอบสีชมพูเนื้ออ่อนมากๆ (Misty Rose) */
-    
-    /* ปรับเอฟเฟกต์ขอบเรืองแสงให้ซอฟต์แบบขนนก */
-    box-shadow: 0 10px 30px rgba(255, 192, 203, 0.3); 
-    
+    border:2px solid #FFC0CB; 
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5); 
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -56,12 +53,12 @@ display: flex;
     padding: 25px 20px;
 }
 
-/* --- กรอบล้อมรอบขั้นตอนการสั่งงาน --- */
+/* --- กรอบล้อมรอบเรทราคางาน --- */
 .step-box-container {
-    border: 2px dashed #FFD1DC; /* ขอบเส้นประชมพูอ่อน (Baby Pink) */
+    border: 2px dashed #FFB6C1; 
     border-radius: 20px;
     padding: 20px 15px;
-    background: #FFFBFC; /* พื้นหลังชมพูจางเกือบขาว */
+    background: #FFF5F7; 
     margin-top: 10px;
 }
 
@@ -78,7 +75,7 @@ h2,h3{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
 .banner {
     width: 100%;
     height: 150px;
-    background: #FFF0F5; /* พื้นหลังแบนเนอร์ชมพูลาเวนเดอร์อ่อน */
+    background: #FFE4E1; 
     overflow: hidden;
 }
 
@@ -97,8 +94,8 @@ h2,h3{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
     bottom: -50px; 
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 6px 15px rgba(255, 182, 193, 0.3); /* เงาโลโก้นุ่ม */
-    border: 4px solid var(--white); /* ขอบขาวหนา */
+    box-shadow: 0 6px 15px rgba(255, 105, 180, 0.3); 
+    border: 4px solid var(--white); 
     background: var(--white);
     z-index: 2;
 }
@@ -110,7 +107,6 @@ h2,h3{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
     text-align: center;
 }
 
-/* --- Badges --- */
 .badges{
 display:flex;
 flex-wrap:wrap;
@@ -120,15 +116,14 @@ margin-bottom:20px;
 }
 
 .badge{
-background:#FFF5F7; /* พื้นหลัง Badge ชมพูนมจาง */
+background:#FFF0F5; 
 padding:8px 16px;
 border-radius:25px;
 font-size:13px;
-color:var(--dark); /* ตัวหนังสือชมพูซอฟต์ */
-border: 1px solid #FFD1DC; /* ขอบชมพูอ่อน */
+color:var(--dark); 
+border: 1px solid #FFB6C1; 
 }
 
-/* --- Buttons --- */
 .btn{
 display:block;
 text-align:center;
@@ -138,17 +133,17 @@ text-decoration:none;
 margin-top:15px;
 font-weight:500;
 transition: 0.3s;
-box-shadow: 0 4px 10px rgba(255, 182, 193, 0.2);
+box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
 }
 
 .btn-outline{
 background:var(--white);
-border:2px solid #FFD1DC; /* ขอบชมพูอ่อน */
-color:var(--dark); /* ตัวหนังสือชมพูซอฟต์ */
+border:2px solid #FFB6C1; 
+color:var(--dark); 
 }
 
 .btn-outline:hover {
-    background: #FFFBFC;
+    background: #FFF5F7;
     border-color: var(--main);
 }
 
@@ -161,48 +156,52 @@ border: 2px solid var(--main);
 .btn-main:hover{
     background:var(--dark);
     border-color: var(--dark);
-    box-shadow: 0 6px 15px rgba(255, 153, 170, 0.4);
+    box-shadow: 0 6px 15px rgba(255, 20, 147, 0.4);
 }
 
-/* --- Steps --- */
-.step{
+/* --- Price Items --- */
+.price-item{
 display:flex;
+justify-content: space-between;
 align-items:center;
-gap:12px;
 margin-bottom:12px;
+font-size: 15px;
 }
 
-.step-num{
-background:#FFD1DC; /* พื้นหลังตัวเลขชมพูอ่อน */
-color:#fff; /* ตัวเลขขาว */
-width:28px;height:28px;
-border-radius:50%;
+.price-name{
 display:flex;
 align-items:center;
-justify-content:center;
-font-size:14px;
-font-weight: 500;
-flex-shrink: 0;
+gap:8px;
 }
 
-/* --- Rules/Price --- */
+.price-dot{
+background:#FFB6C1; 
+width:8px;height:8px;
+border-radius:50%;
+}
+
+.price-value{
+font-weight: 500;
+color: var(--dark);
+}
+
+/* --- Rules/Price Row --- */
 .price-row{
 display:flex;
 justify-content:space-between;
 margin-bottom:10px;
-background:#FFFBFC; /* พื้นหลังแถวราคาชมพูจางมาก */
+background:#FFF5F7; 
 padding:10px 15px;
 border-radius:15px;
-border: 1px solid #FFF0F5; /* ขอบชมพูบางมากๆ */
+border: 1px solid #FFEDF0; 
 }
 
-/* --- Footer --- */
 .footer{
 text-align:center;
 margin-top: auto;
 padding: 30px 20px 25px;
-background: #FFFBFC; /* พื้นหลังส่วนท้ายชมพูจางมาก */
-border-top: 1px solid #FFF0F5;
+background: #FFF5F7; 
+border-top: 1px solid #FFEDF0;
 }
 
 .socials{
@@ -220,15 +219,10 @@ padding:8px;
 border-radius:25px;
 background:var(--white);
 text-decoration:none;
-color:var(--dark); /* ตัวหนังสือชมพูซอฟต์ */
+color:var(--dark); 
 font-size:13px;
-border: 1px solid #FFD1DC;
+border: 1px solid #FFB6C1;
 transition: 0.3s;
-}
-
-.socials a:hover {
-    background: var(--bg);
-    border-color: var(--main);
 }
 
 .small{font-size:12px;color:var(--sub-text); margin-top:10px;}
@@ -268,15 +262,26 @@ transition: 0.3s;
 
     <div class="content-section">
         <div class="step-box-container">
-            <h2>📋 ขั้นตอนการสั่ง</h2>
+            <h2>🎀 เรทราคางาน</h2>
 
-            <div class="step"><div class="step-num">1</div><div>กรอกฟอร์ม รายละเอียดร้านค้า</div></div>
-            <div class="step"><div class="step-num">2</div><div>ส่งลิงก์ตัวอย่าง/แนบโลโก้</div></div>
-            <div class="step"><div class="step-num">3</div><div>ร้านแจ้งยอดและชำระเงิน</div></div>
-            <div class="step"><div class="step-num">4</div><div>ตรวจสอบงาน/แก้ไข</div></div>
-            <div class="step"><div class="step-num">5</div><div>รอรับลิงก์งานได้เลย</div></div>
+            <div class="price-item">
+                <div class="price-name"><div class="price-dot"></div>ออกแบบป้ายทั่วไป</div>
+                <div class="price-value">เริ่มต้น ฿XX</div>
+            </div>
+            <div class="price-item">
+                <div class="price-name"><div class="price-dot"></div>ลายน้ำ / โลโก้</div>
+                <div class="price-value">เริ่มต้น ฿XX</div>
+            </div>
+            <div class="price-item">
+                <div class="price-name"><div class="price-dot"></div>Google Sheet</div>
+                <div class="price-value">เริ่มต้น ฿XX</div>
+            </div>
+            <div class="price-item">
+                <div class="price-name"><div class="price-dot"></div>ออกแบบเว็บไซต์</div>
+                <div class="price-value">เริ่มต้น ฿XX</div>
+            </div>
 
-            <a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">สั่งงานผ่าน LINE</a>
+            <a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">สอบถามราคา/สั่งงาน</a>
         </div>
     </div>
 
