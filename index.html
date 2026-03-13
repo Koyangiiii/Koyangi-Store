@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Koyangi - Official Store</title>
+<title>⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-/* โทนสี ดำ-ชมพู แนวเข้ม */
---bg:#121212; 
---main:#FF1493; 
---dark:#C71585; 
---white:#1f1f1f; 
---glow:rgba(255, 20, 147, 0.4); 
---text:#ffffff;
+--bg:#FFF0F5; 
+--main:#FF69B4; 
+--dark:#FF85B2; 
+--white:#FFFFFF; 
+--glow:rgba(255, 133, 178, 0.3); 
+--text:#4A4A4A; 
+--sub-text:#888888; 
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Mitr',sans-serif;}
@@ -35,14 +35,13 @@ padding:20px 15px 40px;
 display: flex;
 }
 
-/* --- การ์ดใบเดียวหลัก --- */
 .main-card {
     background:var(--white);
-    border-radius:20px;
+    border-radius:25px; 
     width: 100%;
     margin-bottom:20px;
-    border:2px solid var(--main);
-    box-shadow: 0 0 15px var(--main), 0 0 5px var(--glow); 
+    border:2px solid #FFC0CB; 
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5); 
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -52,17 +51,16 @@ display: flex;
     padding: 25px 20px;
 }
 
-/* --- กรอบล้อมรอบขั้นตอนการสั่งงาน --- */
 .step-box-container {
-    border: 1px solid rgba(255, 20, 147, 0.5);
-    border-radius: 15px;
+    border: 2px dashed #FFB6C1; 
+    border-radius: 20px;
     padding: 20px 15px;
-    background: rgba(0, 0, 0, 0.2);
+    background: #FFF5F7; 
     margin-top: 10px;
 }
 
-h1,h2,h3{color:var(--main); margin-bottom: 15px;}
-.center{text-align:center;}
+h1{color:var(--main); font-weight: 500;}
+h2,h3{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
 
 /* --- Header --- */
 .header-profile {
@@ -73,28 +71,22 @@ h1,h2,h3{color:var(--main); margin-bottom: 15px;}
 .banner {
     width: 100%;
     height: 150px;
-    background: #000;
+    background: #FFE4E1; 
     overflow: hidden;
 }
 
-.banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.banner img { width: 100%; height: 100%; object-fit: cover; }
 
 .logo {
-    width: 100px; 
-    height: 100px;
+    width: 100px; height: 100px;
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
-    bottom: -50px; 
-    left: 50%;
+    bottom: -50px; left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 6px 20px rgba(255,20,147,0.5);
-    border: 3px solid var(--main);
-    background: #000;
+    box-shadow: 0 6px 15px var(--glow); 
+    border: 4px solid var(--white); 
+    background: var(--white);
     z-index: 2;
 }
 
@@ -105,7 +97,6 @@ h1,h2,h3{color:var(--main); margin-bottom: 15px;}
     text-align: center;
 }
 
-/* --- Badges --- */
 .badges{
 display:flex;
 flex-wrap:wrap;
@@ -115,81 +106,89 @@ margin-bottom:20px;
 }
 
 .badge{
-background:#121212;
+background:#FFF0F5; 
 padding:8px 16px;
 border-radius:25px;
 font-size:13px;
-color:var(--main);
-border: 1px solid var(--main);
+color:var(--dark); 
+border: 1px solid #FFB6C1; 
 }
 
-/* --- Buttons --- */
 .btn{
 display:block;
 text-align:center;
 padding:14px;
-border-radius:25px;
+border-radius:30px; 
 text-decoration:none;
 margin-top:15px;
 font-weight:500;
 transition: 0.3s;
+box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
 }
 
 .btn-outline{
-background:transparent;
-border:2px dashed var(--main);
-color:var(--main);
+background:var(--white);
+border:2px solid #FFB6C1; 
+color:var(--dark); 
 }
 
 .btn-main{
 background:var(--main);
 color:#fff;
+border: 2px solid var(--main);
 }
 
-.btn-main:hover{
-    background:var(--dark);
-    box-shadow: 0 0 10px var(--main);
-}
-
-/* --- Steps --- */
-.step{
+/* --- Price Items --- */
+.price-item{
 display:flex;
+justify-content: space-between;
 align-items:center;
-gap:12px;
 margin-bottom:12px;
+font-size: 15px;
 }
 
-.step-num{
-background:#121212;
-color:var(--main);
-width:26px;height:26px;
-border-radius:50%;
+.price-sub-item{
+display:flex;
+justify-content: space-between;
+padding-left: 20px; 
+margin-bottom: 8px;
+font-size: 14px;
+color: var(--sub-text);
+}
+
+.price-name{
 display:flex;
 align-items:center;
-justify-content:center;
-font-size:13px;
-border: 1px solid var(--main);
-flex-shrink: 0;
+gap:8px;
 }
 
-/* --- Rules/Price --- */
+.price-dot{
+background:#FFB6C1; 
+width:8px;height:8px;
+border-radius:50%;
+}
+
+.price-value{
+font-weight: 500;
+color: var(--dark);
+}
+
 .price-row{
 display:flex;
 justify-content:space-between;
 margin-bottom:10px;
-background:#121212;
+background:#FFF5F7; 
 padding:10px 15px;
 border-radius:15px;
-border: 1px solid rgba(255, 20, 147, 0.2);
+border: 1px solid #FFEDF0; 
 }
 
-/* --- Footer --- */
 .footer{
 text-align:center;
 margin-top: auto;
 padding: 30px 20px 25px;
-background: rgba(0,0,0,0.3);
-border-top: 1px solid rgba(255, 20, 147, 0.2);
+background: #FFF5F7; 
+border-top: 1px solid #FFEDF0;
 }
 
 .socials{
@@ -205,14 +204,14 @@ max-width:100px;
 text-align:center;
 padding:8px;
 border-radius:25px;
-background:#121212;
+background:var(--white);
 text-decoration:none;
-color:#fff;
+color:var(--dark); 
 font-size:13px;
-border:1px solid rgba(255, 20, 147, 0.4);
+border: 1px solid #FFB6C1;
 }
 
-.small{font-size:12px;opacity:.7;margin-top:10px; color:#fff;}
+.small{font-size:12px;color:var(--sub-text); margin-top:10px;}
 </style>
 </head>
 
@@ -232,7 +231,7 @@ border:1px solid rgba(255, 20, 147, 0.4);
 
     <div class="header-content">
         <h1>⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆</h1>
-        <p style="color:var(--main);opacity:.9;margin:10px 0 20px;">
+        <p style="color:var(--dark);opacity:.8;margin:10px 0 20px;">
         รับออกแบบป้าย ลายน้ำ Google Sheet เว็บไซต์⭐️
         </p>
 
@@ -242,28 +241,53 @@ border:1px solid rgba(255, 20, 147, 0.4);
             <div class="badge">🌐 Website</div>
         </div>
 
-        <a href="https://julie-vwb.github.io/pinkjulie-land/" class="btn btn-outline">
+        <a href="https://docs.google.com/spreadsheets/d/16wCpceIXo7ZxNgGABYBRbL682miaicVntDUmrrhlns8/edit?usp=drivesdk" class="btn btn-outline">
         ✨ Check Q
         </a>
     </div>
 
     <div class="content-section">
         <div class="step-box-container">
-            <h2>📋 ขั้นตอนการสั่ง</h2>
+            <h2>🎀 เรทราคางาน</h2>
 
-            <div class="step"><div class="step-num">1</div><div>กรอกฟอร์ม รายละเอียดร้านค้า</div></div>
-            <div class="step"><div class="step-num">2</div><div>ส่งลิงก์ตัวอย่าง/แนบโลโก้</div></div>
-            <div class="step"><div class="step-num">3</div><div>ร้านแจ้งยอดและชำระเงิน</div></div>
-            <div class="step"><div class="step-num">4</div><div>ตรวจสอบงาน/แก้ไข</div></div>
-            <div class="step"><div class="step-num">5</div><div>รอรับลิงก์งานได้เลย</div></div>
+            <div class="price-item">
+                <div class="price-name"><div class="price-dot"></div>ลายน้ำ / โลโก้</div>
+                <div class="price-value">เริ่มต้น ฿XX</div>
+            </div>
 
-            <a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">สั่งงานผ่าน LINE</a>
+            <div class="price-item" style="margin-bottom: 8px;">
+                <div class="price-name"><div class="price-dot"></div>ออกแบบป้าย</div>
+            </div>
+            
+            <div class="price-sub-item">
+                <span>- ไม่ใช้บล็อก</span>
+                <span class="price-value">เริ่มต้น 39 Baht.</span>
+            </div>
+            <div class="price-sub-item">
+                <span>- ใช้ตัวตูน</span>
+                <span class="price-value">เริ่มต้น 39 Baht.</span>
+            </div>
+            <div class="price-sub-item" style="margin-bottom: 15px;">
+                <span>- ใช้บล็อก</span>
+                <span class="price-value">เริ่มต้น 59 Baht.</span>
+            </div>
+
+            <div class="price-item">
+                <div class="price-name"><div class="price-dot"></div>Google Sheet</div>
+                <div class="price-value">เริ่มต้น ฿XX</div>
+            </div>
+            <div class="price-item">
+                <div class="price-name"><div class="price-dot"></div>ออกแบบเว็บไซต์</div>
+                <div class="price-value">เริ่มต้น ฿XX</div>
+            </div>
+
+            <a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">สอบถามราคา/สั่งงาน</a>
         </div>
     </div>
 
     <div class="content-section">
         <h2>📍 กฎและเงื่อนไข</h2>
-        <p style="font-size: 14px; margin-bottom: 15px; opacity: 0.8;">*รองาน 4-8 ชม. (งานเร่งราคา *2)</p>
+        <p style="font-size: 14px; margin-bottom: 15px; color:var(--sub-text);">*รองาน 4-8 ชม. (งานเร่งราคา *2)</p>
 
         <div class="price-row" style="font-size: 13px;"><span>โอนแล้วไม่คืนเงินทุกกรณี</span></div>
         <div class="price-row" style="font-size: 13px;"><span>เริ่มงานแล้วยกเลิก คืน 50%</span></div>
