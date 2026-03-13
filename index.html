@@ -9,12 +9,12 @@
 
 <style>
 :root{
-/* ปรับโทนสีเป็น ดำ-ม่วง ตามบรีฟ */
---bg:#1a1a1a; 
---main:#9D50BB;
---dark:#6E48AA;
---white:#2d2d2d;
---glow:rgba(157, 80, 187, 0.6); /* ปรับความเข้มแสงเรือง */
+/* ปรับโทนสีเป็น ดำ-ชมพู แนวเข้ม */
+--bg:#121212; /* พื้นหลังเว็บดำสนิทขึ้น */
+--main:#FF1493; /* สีชมพูเข้ม (Deep Pink) แบบนีออน */
+--dark:#C71585; /* สีชมพูที่เข้มขึ้นสำหรับมิติ (Medium Violet Red) */
+--white:#1f1f1f; /* พื้นหลังการ์ดเปลี่ยนเป็นเทาเข้มมาก */
+--glow:rgba(255, 20, 147, 0.4); /* แสงเรืองชมพู */
 --text:#ffffff;
 }
 
@@ -43,7 +43,7 @@ display: flex;
     margin-bottom:20px;
     border:2px solid var(--main);
     
-    /* เพิ่มเอฟเฟกต์ขอบเรืองแสง */
+    /* เพิ่มเอฟเฟกต์ขอบเรืองแสงสีชมพู */
     box-shadow: 0 0 15px var(--main), 0 0 5px var(--glow); 
     
     display: flex;
@@ -68,7 +68,7 @@ h1,h2,h3{color:var(--main);}
 .banner {
     width: 100%;
     height: 150px;
-    background: #333;
+    background: #000; /* พื้นหลังแบนเนอร์ดำ */
     overflow: hidden;
 }
 
@@ -87,9 +87,9 @@ h1,h2,h3{color:var(--main);}
     bottom: -50px; 
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    box-shadow: 0 6px 20px rgba(255,20,147,0.5); /* เงาโลโก้ชมพู */
     border: 3px solid var(--main);
-    background: var(--white);
+    background: #000; /* พื้นหลังโลโก้ดำ */
     z-index: 2;
 }
 
@@ -111,13 +111,13 @@ margin-bottom:20px;
 }
 
 .badge{
-background:#3d3d3d;
+background:#121212; /* พื้นหลัง Badge ดำ */
 padding:8px 16px;
 border-radius:25px;
-box-shadow:0 4px 10px rgba(0,0,0,0.2);
+box-shadow:0 4px 10px rgba(255,20,147,0.2); /* เงา Badge ชมพูจาง */
 font-size:13px;
-color:var(--main);
-border: 1px solid var(--main);
+color:var(--main); /* ตัวหนังสือชมพู */
+border: 1px solid var(--main); /* ขอบชมพู */
 }
 
 .btn{
@@ -142,6 +142,10 @@ background:var(--main);
 color:#fff;
 }
 
+.btn-main:hover{
+    background:var(--dark); /* สีเข้มขึ้นเมื่อ Hover */
+}
+
 .step{
 display:flex;
 align-items:center;
@@ -150,23 +154,25 @@ margin-bottom:12px;
 }
 
 .step-num{
-background:var(--main);
-color:#fff;
+background:#121212; /* พื้นหลังตัวเลขดำ */
+color:var(--main); /* ตัวเลขชมพู */
 width:26px;height:26px;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:13px;
+border: 1px solid var(--main); /* ขอบชมพู */
 }
 
 .price-row{
 display:flex;
 justify-content:space-between;
 margin-bottom:10px;
-background:#363636;
+background:#121212; /* พื้นหลังแถวราคาดำ */
 padding:10px 15px;
 border-radius:15px;
+border: 1px solid rgba(255, 20, 147, 0.2); /* ขอบชมพูบางๆ */
 }
 
 /* ส่วนท้ายให้อยู่ด้านล่างสุดของการ์ด */
@@ -174,8 +180,8 @@ border-radius:15px;
 text-align:center;
 margin-top: auto; /* ดัน Footer ลงด้านล่างสุดของการ์ด */
 padding: 30px 20px 25px;
-background: rgba(0,0,0,0.1); /* เพิ่มพื้นหลังเล็กน้อยให้ส่วนท้าย */
-border-top: 1px solid rgba(157, 80, 187, 0.2);
+background: rgba(0,0,0,0.3); /* เพิ่มพื้นหลังเล็กน้อยให้ส่วนท้าย */
+border-top: 1px solid rgba(255, 20, 147, 0.2);
 }
 
 .socials{
@@ -191,11 +197,17 @@ max-width:100px;
 text-align:center;
 padding:8px;
 border-radius:25px;
-background:#3d3d3d;
+background:#121212; /* พื้นหลังโซเชียลดำ */
 text-decoration:none;
 color:#fff;
 font-size:13px;
-border:1px solid var(--main);
+border:1px solid rgba(255, 20, 147, 0.4); /* ขอบชมพูจาง */
+transition: 0.3s;
+}
+
+.socials a:hover{
+    border-color: var(--main);
+    background: rgba(255, 20, 147, 0.1);
 }
 
 .small{font-size:12px;opacity:.7;margin-top:10px; color:#fff;}
