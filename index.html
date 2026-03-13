@@ -14,7 +14,7 @@
 --main:#9D50BB;
 --dark:#6E48AA;
 --white:#2d2d2d;
---glow:rgba(157, 80, 187, 0.4);
+--glow:rgba(157, 80, 187, 0.6); /* ปรับความเข้มแสงเรือง */
 --text:#ffffff;
 }
 
@@ -25,32 +25,41 @@ background:var(--bg);
 display:flex;
 justify-content:center;
 color: var(--text);
+min-height: 100vh; /* ให้ body สูงเต็มจอ */
 }
 
 .container{
 max-width:500px;
 width:100%;
 padding:20px 15px 40px;
+display: flex;
 }
 
-.section{
-background:var(--white);
-border-radius:20px;
-padding:25px 20px;
-margin-bottom:20px;
-box-shadow:0 8px 20px rgba(0,0,0,0.3);
-border:2px solid var(--main);
-}
-
-/* --- ส่วนหัวที่ปรับปรุงให้ Banner ติดกับการ์ด --- */
-.header-section {
-    padding: 0; /* เอา padding ด้านในออกเพื่อให้ Banner ชิดขอบ */
+/* --- การ์ดใบเดียวที่ยาวลงมาถึงด้านล่างและเรืองแสง --- */
+.main-card {
+    background:var(--white);
+    border-radius:20px;
+    width: 100%;
+    margin-bottom:20px;
+    border:2px solid var(--main);
+    
+    /* เพิ่มเอฟเฟกต์ขอบเรืองแสง */
+    box-shadow: 0 0 15px var(--main), 0 0 5px var(--glow); 
+    
+    display: flex;
+    flex-direction: column; /* จัดองค์ประกอบด้านในแบบแนวตั้ง */
     overflow: hidden; /* เพื่อให้มุมมนของ Banner ตัดตามการ์ด */
+}
+
+/* ปรับ Padding ของ Section เดิมให้อยู่ในเนื้อหาเดียวกัน */
+.content-section {
+    padding: 25px 20px;
 }
 
 h1,h2,h3{color:var(--main);}
 .center{text-align:center;}
 
+/* --- ส่วนหัวที่ปรับปรุงให้ Banner ติดกับการ์ด --- */
 .header-profile {
     position: relative;
     margin-bottom: 60px; /* เว้นที่ให้โลโก้ที่ยื่นออกมา */
@@ -60,7 +69,6 @@ h1,h2,h3{color:var(--main);}
     width: 100%;
     height: 150px;
     background: #333;
-    /* เอา border-radius และ border ของ Banner ออก เพราะจะใช้ของการ์ดแทน */
     overflow: hidden;
 }
 
@@ -89,7 +97,7 @@ h1,h2,h3{color:var(--main);}
 
 /* ส่วนเนื้อหาด้านล่าง Banner ในการ์ดหัวข้อ */
 .header-content {
-    padding: 0 20px 25px 20px; /* เพิ่ม padding กลับมาเฉพาะส่วนเนื้อหา */
+    padding: 0 20px 25px 20px;
     text-align: center;
 }
 /* -------------------------------------- */
@@ -161,17 +169,13 @@ padding:10px 15px;
 border-radius:15px;
 }
 
-.price-tag{
-background:var(--main);
-color:#fff;
-padding:3px 12px;
-border-radius:20px;
-font-size:14px;
-}
-
+/* ส่วนท้ายให้อยู่ด้านล่างสุดของการ์ด */
 .footer{
 text-align:center;
-margin-top:30px;
+margin-top: auto; /* ดัน Footer ลงด้านล่างสุดของการ์ด */
+padding: 30px 20px 25px;
+background: rgba(0,0,0,0.1); /* เพิ่มพื้นหลังเล็กน้อยให้ส่วนท้าย */
+border-top: 1px solid rgba(157, 80, 187, 0.2);
 }
 
 .socials{
@@ -201,7 +205,9 @@ border:1px solid var(--main);
 <body>
 <div class="container">
 
-<div class="section header-section"> <div class="header-profile">
+<div class="main-card">
+
+    <div class="header-profile">
         <div class="banner">
             <img src="IMG_4768.jpeg" alt="Banner">
         </div>
@@ -226,45 +232,44 @@ border:1px solid var(--main);
         ✨ ดูตัวอย่างงานที่นี่
         </a>
     </div>
-</div>
 
-<div class="section">
-<h2>📋 ขั้นตอนการสั่ง</h2>
+    <div class="content-section">
+        <h2>📋 ขั้นตอนการสั่ง</h2>
 
-<div class="step"><div class="step-num">1</div><div>กรอกฟอร์ม รายละเอียดร้านค้า</div></div>
-<div class="step"><div class="step-num">2</div><div>ส่งลิงก์ตัวอย่าง/แนบโลโก้</div></div>
-<div class="step"><div class="step-num">3</div><div>ร้านแจ้งยอดและชำระเงิน</div></div>
-<div class="step"><div class="step-num">4</div><div>ตรวจสอบงาน/แก้ไข</div></div>
-<div class="step"><div class="step-num">5</div><div>รอรับลิงก์งานได้เลย</div></div>
+        <div class="step"><div class="step-num">1</div><div>กรอกฟอร์ม รายละเอียดร้านค้า</div></div>
+        <div class="step"><div class="step-num">2</div><div>ส่งลิงก์ตัวอย่าง/แนบโลโก้</div></div>
+        <div class="step"><div class="step-num">3</div><div>ร้านแจ้งยอดและชำระเงิน</div></div>
+        <div class="step"><div class="step-num">4</div><div>ตรวจสอบงาน/แก้ไข</div></div>
+        <div class="step"><div class="step-num">5</div><div>รอรับลิงก์งานได้เลย</div></div>
 
-<a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">สั่งงานผ่าน LINE</a>
-</div>
+        <a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">สั่งงานผ่าน LINE</a>
+    </div>
 
-<div class="section">
-<h2>📍 กฎและเงื่อนไข</h2>
-<p style="font-size: 14px; margin-bottom: 15px; opacity: 0.8;">*รองาน 4-8 ชม. (งานเร่งราคา *2)</p>
+    <div class="content-section">
+        <h2>📍 กฎและเงื่อนไข</h2>
+        <p style="font-size: 14px; margin-bottom: 15px; opacity: 0.8;">*รองาน 4-8 ชม. (งานเร่งราคา *2)</p>
 
-<div class="price-row" style="font-size: 13px;"><span>โอนแล้วไม่คืนเงินทุกกรณี</span></div>
-<div class="price-row" style="font-size: 13px;"><span>เริ่มงานแล้วยกเลิก คืน 50%</span></div>
-<div class="price-row" style="font-size: 13px;"><span>เช็คงานแล้วยกเลิก ไม่คืนเงิน</span></div>
+        <div class="price-row" style="font-size: 13px;"><span>โอนแล้วไม่คืนเงินทุกกรณี</span></div>
+        <div class="price-row" style="font-size: 13px;"><span>เริ่มงานแล้วยกเลิก คืน 50%</span></div>
+        <div class="price-row" style="font-size: 13px;"><span>เช็คงานแล้วยกเลิก ไม่คืนเงิน</span></div>
 
-<a href="https://www.facebook.com/profile.php?id=61554192600355" class="btn btn-main">สอบถามเพิ่มเติม</a>
-</div>
+        <a href="https://www.facebook.com/profile.php?id=61554192600355" class="btn btn-main">สอบถามเพิ่มเติม</a>
+    </div>
 
-<div class="footer">
-<a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">จ้างงานคลิกเลย 🎀</a>
+    <div class="footer">
+        <a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">จ้างงานคลิกเลย 🎀</a>
 
-<div class="socials">
-<a href="https://www.facebook.com/profile.php?id=61554192600355">Facebook</a>
-<a href="https://www.instagram.com/k0yangi_ii">Instagram</a>
-<a href="https://line.me/ti/p/LfBtdhlrVa">LINE</a>
-</div>
+        <div class="socials">
+        <a href="https://www.facebook.com/profile.php?id=61554192600355">Facebook</a>
+        <a href="https://www.instagram.com/k0yangi_ii">Instagram</a>
+        <a href="https://line.me/ti/p/LfBtdhlrVa">LINE</a>
+        </div>
 
-<p class="small">
-© 2026 ⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆
-</p>
-</div>
+        <p class="small">
+        © 2026 ⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆
+        </p>
+    </div>
 
-</div>
+</div> </div>
 </body>
 </html>
