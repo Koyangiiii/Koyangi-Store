@@ -9,12 +9,12 @@
 
 <style>
 :root{
-/* ปรับโทนสีเป็น ดำ-ชมพู แนวเข้ม */
---bg:#121212; /* พื้นหลังเว็บดำสนิทขึ้น */
---main:#FF1493; /* สีชมพูเข้ม (Deep Pink) แบบนีออน */
---dark:#C71585; /* สีชมพูที่เข้มขึ้นสำหรับมิติ (Medium Violet Red) */
---white:#1f1f1f; /* พื้นหลังการ์ดเปลี่ยนเป็นเทาเข้มมาก */
---glow:rgba(255, 20, 147, 0.4); /* แสงเรืองชมพู */
+/* โทนสี ดำ-ชมพู แนวเข้ม */
+--bg:#121212; 
+--main:#FF1493; 
+--dark:#C71585; 
+--white:#1f1f1f; 
+--glow:rgba(255, 20, 147, 0.4); 
 --text:#ffffff;
 }
 
@@ -25,7 +25,7 @@ background:var(--bg);
 display:flex;
 justify-content:center;
 color: var(--text);
-min-height: 100vh; /* ให้ body สูงเต็มจอ */
+min-height: 100vh;
 }
 
 .container{
@@ -35,40 +35,45 @@ padding:20px 15px 40px;
 display: flex;
 }
 
-/* --- การ์ดใบเดียวที่ยาวลงมาถึงด้านล่างและเรืองแสง --- */
+/* --- การ์ดใบเดียวหลัก --- */
 .main-card {
     background:var(--white);
     border-radius:20px;
     width: 100%;
     margin-bottom:20px;
     border:2px solid var(--main);
-    
-    /* เพิ่มเอฟเฟกต์ขอบเรืองแสงสีชมพู */
     box-shadow: 0 0 15px var(--main), 0 0 5px var(--glow); 
-    
     display: flex;
-    flex-direction: column; /* จัดองค์ประกอบด้านในแบบแนวตั้ง */
-    overflow: hidden; /* เพื่อให้มุมมนของ Banner ตัดตามการ์ด */
+    flex-direction: column;
+    overflow: hidden;
 }
 
-/* ปรับ Padding ของ Section เดิมให้อยู่ในเนื้อหาเดียวกัน */
 .content-section {
     padding: 25px 20px;
 }
 
-h1,h2,h3{color:var(--main);}
+/* --- กรอบล้อมรอบขั้นตอนการสั่งงาน --- */
+.step-box-container {
+    border: 1px solid rgba(255, 20, 147, 0.5);
+    border-radius: 15px;
+    padding: 20px 15px;
+    background: rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+
+h1,h2,h3{color:var(--main); margin-bottom: 15px;}
 .center{text-align:center;}
 
-/* --- ส่วนหัวที่ปรับปรุงให้ Banner ติดกับการ์ด --- */
+/* --- Header --- */
 .header-profile {
     position: relative;
-    margin-bottom: 60px; /* เว้นที่ให้โลโก้ที่ยื่นออกมา */
+    margin-bottom: 60px;
 }
 
 .banner {
     width: 100%;
     height: 150px;
-    background: #000; /* พื้นหลังแบนเนอร์ดำ */
+    background: #000;
     overflow: hidden;
 }
 
@@ -87,21 +92,20 @@ h1,h2,h3{color:var(--main);}
     bottom: -50px; 
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 6px 20px rgba(255,20,147,0.5); /* เงาโลโก้ชมพู */
+    box-shadow: 0 6px 20px rgba(255,20,147,0.5);
     border: 3px solid var(--main);
-    background: #000; /* พื้นหลังโลโก้ดำ */
+    background: #000;
     z-index: 2;
 }
 
 .logo img { width: 100%; height: 100%; object-fit: cover; }
 
-/* ส่วนเนื้อหาด้านล่าง Banner ในการ์ดหัวข้อ */
 .header-content {
     padding: 0 20px 25px 20px;
     text-align: center;
 }
-/* -------------------------------------- */
 
+/* --- Badges --- */
 .badges{
 display:flex;
 flex-wrap:wrap;
@@ -111,15 +115,15 @@ margin-bottom:20px;
 }
 
 .badge{
-background:#121212; /* พื้นหลัง Badge ดำ */
+background:#121212;
 padding:8px 16px;
 border-radius:25px;
-box-shadow:0 4px 10px rgba(255,20,147,0.2); /* เงา Badge ชมพูจาง */
 font-size:13px;
-color:var(--main); /* ตัวหนังสือชมพู */
-border: 1px solid var(--main); /* ขอบชมพู */
+color:var(--main);
+border: 1px solid var(--main);
 }
 
+/* --- Buttons --- */
 .btn{
 display:block;
 text-align:center;
@@ -143,9 +147,11 @@ color:#fff;
 }
 
 .btn-main:hover{
-    background:var(--dark); /* สีเข้มขึ้นเมื่อ Hover */
+    background:var(--dark);
+    box-shadow: 0 0 10px var(--main);
 }
 
+/* --- Steps --- */
 .step{
 display:flex;
 align-items:center;
@@ -154,33 +160,35 @@ margin-bottom:12px;
 }
 
 .step-num{
-background:#121212; /* พื้นหลังตัวเลขดำ */
-color:var(--main); /* ตัวเลขชมพู */
+background:#121212;
+color:var(--main);
 width:26px;height:26px;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:13px;
-border: 1px solid var(--main); /* ขอบชมพู */
+border: 1px solid var(--main);
+flex-shrink: 0;
 }
 
+/* --- Rules/Price --- */
 .price-row{
 display:flex;
 justify-content:space-between;
 margin-bottom:10px;
-background:#121212; /* พื้นหลังแถวราคาดำ */
+background:#121212;
 padding:10px 15px;
 border-radius:15px;
-border: 1px solid rgba(255, 20, 147, 0.2); /* ขอบชมพูบางๆ */
+border: 1px solid rgba(255, 20, 147, 0.2);
 }
 
-/* ส่วนท้ายให้อยู่ด้านล่างสุดของการ์ด */
+/* --- Footer --- */
 .footer{
 text-align:center;
-margin-top: auto; /* ดัน Footer ลงด้านล่างสุดของการ์ด */
+margin-top: auto;
 padding: 30px 20px 25px;
-background: rgba(0,0,0,0.3); /* เพิ่มพื้นหลังเล็กน้อยให้ส่วนท้าย */
+background: rgba(0,0,0,0.3);
 border-top: 1px solid rgba(255, 20, 147, 0.2);
 }
 
@@ -197,17 +205,11 @@ max-width:100px;
 text-align:center;
 padding:8px;
 border-radius:25px;
-background:#121212; /* พื้นหลังโซเชียลดำ */
+background:#121212;
 text-decoration:none;
 color:#fff;
 font-size:13px;
-border:1px solid rgba(255, 20, 147, 0.4); /* ขอบชมพูจาง */
-transition: 0.3s;
-}
-
-.socials a:hover{
-    border-color: var(--main);
-    background: rgba(255, 20, 147, 0.1);
+border:1px solid rgba(255, 20, 147, 0.4);
 }
 
 .small{font-size:12px;opacity:.7;margin-top:10px; color:#fff;}
@@ -235,9 +237,9 @@ transition: 0.3s;
         </p>
 
         <div class="badges">
-        <div class="badge">🎨 ป้าย/ลายน้ำ/โลโก้</div>
-        <div class="badge">📊 Google Sheet</div>
-        <div class="badge">🌐 Website</div>
+            <div class="badge">🎨 ป้าย/ลายน้ำ/โลโก้</div>
+            <div class="badge">📊 Google Sheet</div>
+            <div class="badge">🌐 Website</div>
         </div>
 
         <a href="https://julie-vwb.github.io/pinkjulie-land/" class="btn btn-outline">
@@ -246,15 +248,17 @@ transition: 0.3s;
     </div>
 
     <div class="content-section">
-        <h2>📋 ขั้นตอนการสั่ง</h2>
+        <div class="step-box-container">
+            <h2>📋 ขั้นตอนการสั่ง</h2>
 
-        <div class="step"><div class="step-num">1</div><div>กรอกฟอร์ม รายละเอียดร้านค้า</div></div>
-        <div class="step"><div class="step-num">2</div><div>ส่งลิงก์ตัวอย่าง/แนบโลโก้</div></div>
-        <div class="step"><div class="step-num">3</div><div>ร้านแจ้งยอดและชำระเงิน</div></div>
-        <div class="step"><div class="step-num">4</div><div>ตรวจสอบงาน/แก้ไข</div></div>
-        <div class="step"><div class="step-num">5</div><div>รอรับลิงก์งานได้เลย</div></div>
+            <div class="step"><div class="step-num">1</div><div>กรอกฟอร์ม รายละเอียดร้านค้า</div></div>
+            <div class="step"><div class="step-num">2</div><div>ส่งลิงก์ตัวอย่าง/แนบโลโก้</div></div>
+            <div class="step"><div class="step-num">3</div><div>ร้านแจ้งยอดและชำระเงิน</div></div>
+            <div class="step"><div class="step-num">4</div><div>ตรวจสอบงาน/แก้ไข</div></div>
+            <div class="step"><div class="step-num">5</div><div>รอรับลิงก์งานได้เลย</div></div>
 
-        <a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">สั่งงานผ่าน LINE</a>
+            <a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">สั่งงานผ่าน LINE</a>
+        </div>
     </div>
 
     <div class="content-section">
