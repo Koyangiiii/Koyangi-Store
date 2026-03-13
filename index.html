@@ -32,49 +32,45 @@ color: var(--text-light);
 .container{
 max-width:500px;
 width:100%;
-padding:0 15px 40px; /* ลด Padding บน */
+padding:0 15px 40px; 
 position: relative;
 }
 
-/* === HEADER NEW STYLE === */
+/* === HEADER === */
 .header-wrapper {
 margin-top: 20px;
 position: relative;
 border-radius: 20px;
 overflow: hidden;
-box-shadow: 0 10px 30px rgba(246,165,201,0.1); /* ปรับสี Shadow ให้เข้ากับชมพู */
+box-shadow: 0 10px 30px rgba(246,165,201,0.1);
 margin-bottom: 20px;
 }
 
-/* 1. ส่วน Banner */
 .banner {
 height: var(--banner-height);
 width: 100%;
-background-color: #1A1A1A; /* สีพื้นหลังสำรอง */
-/* อัปเดตชื่อไฟล์เป็น IMG_4768.jpeg ตามที่ระบุ */
+background-color: #1A1A1A;
 background-image: url('IMG_4768.jpeg'); 
 background-size: cover;
 background-position: center;
 position: relative;
 }
 
-/* 2. ส่วน Card เนื้อหา (Frosted Glass Style) */
 .profile-card {
-background: rgba(26, 26, 26, 0.7); /* พื้นหลังเทาเข้มใสขึ้น */
-backdrop-filter: blur(8px); /* เอฟเฟกต์เบลอกระจกฝ้า */
-padding: 70px 25px 30px; /* Padding บนเว้นที่ให้ Logo */
+background: rgba(26, 26, 26, 0.7);
+backdrop-filter: blur(8px);
+padding: 70px 25px 30px;
 border-radius: 0 0 20px 20px;
 text-align: center;
-border-top: 1px solid rgba(246,165,201,0.3); /* เส้นขอบบนสีชมพูใส */
+border-top: 1px solid rgba(246,165,201,0.3);
 }
 
-/* 3. Logo วงกลมลอย */
 .logo{
 width:120px;height:120px; 
 border-radius:50%;
 overflow:hidden;
 position: absolute;
-top: calc(var(--banner-height) - 60px); /* ลอยซ้อนทับ Banner */
+top: calc(var(--banner-height) - 60px); 
 left: 50%;
 transform: translateX(-50%);
 box-shadow:0 8px 25px rgba(246,165,201,0.2); 
@@ -84,12 +80,39 @@ background-color: var(--white);
 }
 
 .logo img{width:100%;height:100%;object-fit:cover;}
-
 .profile-card h1 { color: var(--main); font-size: 26px; margin-bottom: 5px; }
 .profile-card .tagline { color: var(--text-light); font-size: 15px; margin-bottom: 20px; }
 
-/* === END HEADER === */
+/* === NEW: WORK GALLERY === */
+.work-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 12px;
+margin-top: 15px;
+}
 
+.work-item {
+width: 100%;
+border-radius: 12px;
+overflow: hidden;
+border: 1px solid rgba(246,165,201,0.2);
+transition: transform 0.3s ease;
+aspect-ratio: 1/1; /* ทำให้เป็นสี่เหลี่ยมจัตุรัส */
+background: #222;
+}
+
+.work-item:hover {
+transform: scale(1.03);
+border-color: var(--main);
+}
+
+.work-item img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+/* === SECTION STYLE === */
 .section{
 background:var(--white);
 border-radius:20px;
@@ -99,9 +122,7 @@ box-shadow:0 8px 20px rgba(0,0,0,0.2);
 border: 1px solid rgba(246,165,201,0.1); 
 }
 
-h1,h2,h3{color:var(--main); margin-bottom: 15px;}
-h2 { color: var(--text-light); font-size: 20px; } 
-.center{text-align:center;}
+h2 { color: var(--text-light); font-size: 20px; margin-bottom: 15px; }
 
 .badges{
 display:flex;
@@ -122,7 +143,10 @@ border: 1px solid rgba(232, 137, 181, 0.3);
 }
 
 .btn{
-display:block;
+display:flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
 text-align:center;
 padding:14px;
 border-radius:25px;
@@ -130,11 +154,6 @@ text-decoration:none;
 margin-top:15px;
 font-weight:500;
 transition: 0.3s;
-position: relative;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 8px;
 font-size: 15px;
 }
 
@@ -221,28 +240,35 @@ border:1px solid rgba(246,165,201,0.1);
 
 <div class="header-wrapper">
     <div class="banner"></div>
-
     <div class="logo">
         <img src="IMG_4740.png" alt="Koyangi Logo">
     </div>
-
     <div class="profile-card">
         <h1>Koyangi 🐈</h1>
-        <p class="tagline">
-            รับออกแบบป้าย คิวชีต ลายน้ำ เว็บไซต์⭐️
-        </p>
-
+        <p class="tagline">รับออกแบบป้าย คิวชีต ลายน้ำ เว็บไซต์⭐️</p>
         <div class="badges">
             <div class="badge">🎨 ป้าย</div>
             <div class="badge">💎 โลโก้</div>
             <div class="badge">💧 ลายน้ำ</div>
             <div class="badge">🌐 เว็บไซต์</div>
         </div>
-
         <a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-outline">
             <div class="pulse-dot"></div> เช็คคิวงาน (รอ 4-8 ชม.) ✨
         </a>
     </div>
+</div>
+
+<div class="section">
+    <h2>✨ เรทราคา/รายละเอียด</h2>
+    <div class="work-grid">
+        <div class="work-item">
+            <img src="WORK_01.jpg" alt="ผลงาน 1">
+        </div>
+        <div class="work-item">
+            <img src="WORK_02.jpg" alt="ผลงาน 2">
+        </div>
+    </div>
+    <a href="https://julie-vwb.github.io/pinkjulie-land/" class="btn btn-main" style="margin-top: 20px;">ดูผลงานทั้งหมด</a>
 </div>
 
 <div class="section">
@@ -251,8 +277,6 @@ border:1px solid rgba(246,165,201,0.1);
 <div class="step"><div class="step-num">2</div><div>ส่งลิงก์ตัวอย่างงาน/โลโก้</div></div>
 <div class="step"><div class="step-num">3</div><div>ส่งงานให้เช็ค/แจ้งยอด</div></div>
 <div class="step"><div class="step-num">4</div><div>ชำระเงิน และรอรับลิงก์ได้เลย</div></div>
-
-<a href="https://julie-vwb.github.io/pinkjulie-land/" class="btn btn-main">ดูตัวอย่างงานทั้งหมด</a>
 </div>
 
 <div class="section">
@@ -263,21 +287,16 @@ border:1px solid rgba(246,165,201,0.1);
 • ยกเลิกหลังเช็คงาน = ไม่คืนเงินและส่งงานปกติ<br>
 <strong style="color:var(--main)">*งานเร่งคิดราคาเป็น 2 เท่า</strong> 
 </p>
-
 <a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">สั่งงาน/สอบถามราคา</a>
 </div>
 
 <div class="footer">
 <a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">ติดต่อสอบถามคลิก 🎀</a>
-
 <div class="socials">
 <a href="https://www.facebook.com/profile.php?id=61554192600355">Facebook</a>
 <a href="https://line.me/ti/p/LfBtdhlrVa">LINE</a>
 </div>
-
-<p class="small">
-© 2026 Koyangi Studio
-</p>
+<p class="small">© 2026 Koyangi Studio</p>
 </div>
 
 </div>
