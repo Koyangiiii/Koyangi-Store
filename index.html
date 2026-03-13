@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Koyangi - Official Store</title>
+<title>⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-/* ปรับโทนสีเป็น ชมพู แนวน่ารัก */
---bg:#FFF0F5; /* พื้นหลังเว็บชมพูอ่อนพาสเทล (Lavender Blush) */
---main:#FF69B4; /* สีชมพูหลักสดใส (Hot Pink) */
---dark:#FF1493; /* สีชมพูเข้มสำหรับมิติ (Deep Pink) */
---white:#FFFFFF; /* พื้นหลังการ์ดเปลี่ยนเป็นสีขาว */
---glow:rgba(255, 105, 180, 0.3); /* แสงเรืองชมพูนุ่มนวล */
---text:#4A4A4A; /* สีตัวอักษรเทาเข้มเพื่อให้ดูนุ่มนวลกว่าสีดำ */
---sub-text:#888888; /* สีตัวอักษรรอง */
+/* ปรับโทนสีเป็น ชมพูนม นุ่มนวล */
+--bg:#FFF5F7; /* พื้นหลังเว็บชมพูนมจางๆ สว่าง (Snow Drift/Lavender Blush) */
+--main:#FFB6C1; /* สีชมพูนมหลัก (Light Pink) */
+--dark:#FF99AA; /* สีชมพูที่เข้มขึ้นเล็กน้อยสำหรับมิติ (ปรับจาก Hot Pink ให้ซอฟต์ลง) */
+--white:#FFFFFF; /* พื้นหลังการ์ดสีขาวสะอาด */
+--glow:rgba(255, 182, 193, 0.4); /* แสงเรืองชมพูอ่อนนุ่มนวล */
+--text:#5F5F5F; /* สีตัวอักษรเทาเข้ม นุ่มนวลกว่าสีดำ */
+--sub-text:#9F9F9F; /* สีตัวอักษรรอง */
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Mitr',sans-serif;}
@@ -39,13 +39,13 @@ display: flex;
 /* --- การ์ดใบเดียวหลัก --- */
 .main-card {
     background:var(--white);
-    border-radius:25px; /* เพิ่มความโค้งมนให้น่ารักขึ้น */
+    border-radius:25px; /* ความโค้งมนนุ่มนวล */
     width: 100%;
     margin-bottom:20px;
-    border:2px solid #FFC0CB; /* ขอบสีชมพูอ่อน (Pink) */
+    border:2px solid #FFE4E1; /* ขอบสีชมพูเนื้ออ่อนมากๆ (Misty Rose) */
     
-    /* ปรับเอฟเฟกต์ขอบเรืองแสงให้นุ่มนวลขึ้น */
-    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5); 
+    /* ปรับเอฟเฟกต์ขอบเรืองแสงให้ซอฟต์แบบขนนก */
+    box-shadow: 0 10px 30px rgba(255, 192, 203, 0.3); 
     
     display: flex;
     flex-direction: column;
@@ -58,10 +58,10 @@ display: flex;
 
 /* --- กรอบล้อมรอบขั้นตอนการสั่งงาน --- */
 .step-box-container {
-    border: 2px dashed #FFB6C1; /* ขอบเส้นประสีชมพูอ่อน (Light Pink) เพิ่มความน่ารัก */
+    border: 2px dashed #FFD1DC; /* ขอบเส้นประชมพูอ่อน (Baby Pink) */
     border-radius: 20px;
     padding: 20px 15px;
-    background: #FFF5F7; /* พื้นหลังชมพูจางๆ */
+    background: #FFFBFC; /* พื้นหลังชมพูจางเกือบขาว */
     margin-top: 10px;
 }
 
@@ -78,7 +78,7 @@ h2,h3{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
 .banner {
     width: 100%;
     height: 150px;
-    background: #FFE4E1; /* พื้นหลังแบนเนอร์สีเนื้ออ่อน (Misty Rose) */
+    background: #FFF0F5; /* พื้นหลังแบนเนอร์ชมพูลาเวนเดอร์อ่อน */
     overflow: hidden;
 }
 
@@ -97,8 +97,8 @@ h2,h3{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
     bottom: -50px; 
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 6px 15px rgba(255, 105, 180, 0.3); /* เงาโลโก้ชมพูนุ่ม */
-    border: 4px solid var(--white); /* ขอบสีขาวหนาขึ้น */
+    box-shadow: 0 6px 15px rgba(255, 182, 193, 0.3); /* เงาโลโก้นุ่ม */
+    border: 4px solid var(--white); /* ขอบขาวหนา */
     background: var(--white);
     z-index: 2;
 }
@@ -120,12 +120,12 @@ margin-bottom:20px;
 }
 
 .badge{
-background:#FFF0F5; /* พื้นหลัง Badge ชมพูอ่อน */
+background:#FFF5F7; /* พื้นหลัง Badge ชมพูนมจาง */
 padding:8px 16px;
 border-radius:25px;
 font-size:13px;
-color:var(--dark); /* ตัวหนังสือชมพูเข้ม */
-border: 1px solid #FFB6C1; /* ขอบชมพูอ่อน */
+color:var(--dark); /* ตัวหนังสือชมพูซอฟต์ */
+border: 1px solid #FFD1DC; /* ขอบชมพูอ่อน */
 }
 
 /* --- Buttons --- */
@@ -133,22 +133,22 @@ border: 1px solid #FFB6C1; /* ขอบชมพูอ่อน */
 display:block;
 text-align:center;
 padding:14px;
-border-radius:30px; /* เพิ่มความโค้งมน */
+border-radius:30px; 
 text-decoration:none;
 margin-top:15px;
 font-weight:500;
 transition: 0.3s;
-box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
+box-shadow: 0 4px 10px rgba(255, 182, 193, 0.2);
 }
 
 .btn-outline{
 background:var(--white);
-border:2px solid #FFB6C1; /* ขอบชมพูอ่อน */
-color:var(--dark); /* ตัวหนังสือชมพูเข้ม */
+border:2px solid #FFD1DC; /* ขอบชมพูอ่อน */
+color:var(--dark); /* ตัวหนังสือชมพูซอฟต์ */
 }
 
 .btn-outline:hover {
-    background: #FFF5F7;
+    background: #FFFBFC;
     border-color: var(--main);
 }
 
@@ -161,7 +161,7 @@ border: 2px solid var(--main);
 .btn-main:hover{
     background:var(--dark);
     border-color: var(--dark);
-    box-shadow: 0 6px 15px rgba(255, 20, 147, 0.4);
+    box-shadow: 0 6px 15px rgba(255, 153, 170, 0.4);
 }
 
 /* --- Steps --- */
@@ -173,7 +173,7 @@ margin-bottom:12px;
 }
 
 .step-num{
-background:#FFB6C1; /* พื้นหลังตัวเลขชมพูอ่อน */
+background:#FFD1DC; /* พื้นหลังตัวเลขชมพูอ่อน */
 color:#fff; /* ตัวเลขขาว */
 width:28px;height:28px;
 border-radius:50%;
@@ -190,10 +190,10 @@ flex-shrink: 0;
 display:flex;
 justify-content:space-between;
 margin-bottom:10px;
-background:#FFF5F7; /* พื้นหลังแถวราคาชมพูจาง */
+background:#FFFBFC; /* พื้นหลังแถวราคาชมพูจางมาก */
 padding:10px 15px;
 border-radius:15px;
-border: 1px solid #FFEDF0; /* ขอบชมพูบางมากๆ */
+border: 1px solid #FFF0F5; /* ขอบชมพูบางมากๆ */
 }
 
 /* --- Footer --- */
@@ -201,8 +201,8 @@ border: 1px solid #FFEDF0; /* ขอบชมพูบางมากๆ */
 text-align:center;
 margin-top: auto;
 padding: 30px 20px 25px;
-background: #FFF5F7; /* พื้นหลังส่วนท้ายชมพูจาง */
-border-top: 1px solid #FFEDF0;
+background: #FFFBFC; /* พื้นหลังส่วนท้ายชมพูจางมาก */
+border-top: 1px solid #FFF0F5;
 }
 
 .socials{
@@ -220,9 +220,9 @@ padding:8px;
 border-radius:25px;
 background:var(--white);
 text-decoration:none;
-color:var(--dark); /* ตัวหนังสือชมพูเข้ม */
+color:var(--dark); /* ตัวหนังสือชมพูซอฟต์ */
 font-size:13px;
-border: 1px solid #FFB6C1;
+border: 1px solid #FFD1DC;
 transition: 0.3s;
 }
 
