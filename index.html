@@ -9,13 +9,13 @@
 
 <style>
 :root{
-/* ปรับโทนสีให้ละมุนขึ้นตามรูปตัวอย่าง */
---bg:#FFF0F6; /* พื้นหลังสีชมพูอ่อนมากๆ */
+/* ปรับโทนสีเป็น ดำ-ชมพู */
+--bg:#000000; /* พื้นหลังสีดำ */
 --main:#F6A5C9; /* ชมพูหลัก */
---dark:#957dad; /* ม่วงตุ่นๆ สำหรับข้อความ */
---white:#FFFFFF; 
+--dark:#E889B5; /* ชมพูเข้มสำหรับข้อความ Badges และเส้นขอบ */
+--white:#1A1A1A; /* พื้นหลัง Section สีเทาเข้ม */
 --glow:rgba(246,165,201,0.2);
---text-light:#666666; /* สีข้อความรอง */
+--text-light:#FFFFFF; /* สีข้อความหลักสีขาว */
 --status-green: #52ffaf; /* สีไฟสถานะ */
 --banner-height: 180px; /* ความสูงของ Banner */
 }
@@ -42,7 +42,7 @@ margin-top: 20px;
 position: relative;
 border-radius: 20px;
 overflow: hidden;
-box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+box-shadow: 0 10px 30px rgba(246,165,201,0.1); /* ปรับสี Shadow ให้เข้ากับชมพู */
 margin-bottom: 20px;
 }
 
@@ -50,9 +50,9 @@ margin-bottom: 20px;
 .banner {
 height: var(--banner-height);
 width: 100%;
-background-color: #fdf2f8; /* สีพื้นหลังสำรอง */
+background-color: #1A1A1A; /* สีพื้นหลังสำรอง */
 /* แสดงผลรูปภาพดอกไม้แบบซ้ำและจัดกึ่งกลาง */
-background-image: url('https://via.placeholder.com/500x180/fdf2f8/eec4d5?text=%E2%9C%BF+%E2%9C%BF+%E2%9C%BF'); 
+background-image: url('https://via.placeholder.com/500x180/1A1A1A/F6A5C9?text=%E2%9C%BF+%E2%9C%BF+%E2%9C%BF'); 
 background-size: cover;
 background-position: center;
 position: relative;
@@ -60,12 +60,12 @@ position: relative;
 
 /* 2. ส่วน Card เนื้อหา (Frosted Glass Style) */
 .profile-card {
-background: rgba(255, 255, 255, 0.8);
-backdrop-filter: blur(10px); /* เอฟเฟกต์เบลอ */
+background: rgba(26, 26, 26, 0.7); /* พื้นหลังเทาเข้มใสขึ้น */
+backdrop-filter: blur(8px); /* ลดเอฟเฟกต์เบลอลงเล็กน้อยเพื่อให้ดูคมชัดขึ้น */
 padding: 70px 25px 30px; /* Padding บนเพิ่มเพื่อเว้นที่ให้ Logo */
 border-radius: 0 0 20px 20px;
 text-align: center;
-border-top: 1px solid rgba(255,255,255,0.5);
+border-top: 1px solid rgba(246,165,201,0.3); /* เส้นขอบบนสีชมพูใส */
 }
 
 /* 3. ปรับ Logo เป็นวงกลมลอย */
@@ -77,8 +77,8 @@ position: absolute;
 top: calc(var(--banner-height) - 60px); /* ลอยซ้อนทับ 50% */
 left: 50%;
 transform: translateX(-50%);
-box-shadow:0 8px 25px rgba(0,0,0,0.1);
-border: 5px solid var(--white); /* ขอบขาวหนา */
+box-shadow:0 8px 25px rgba(246,165,201,0.2); /* ปรับสี Shadow ให้เข้ากับชมพู */
+border: 5px solid var(--white); /* คงขอบขาวหนา */
 z-index: 10;
 background-color: var(--white);
 }
@@ -86,7 +86,7 @@ background-color: var(--white);
 .logo img{width:100%;height:100%;object-fit:cover;}
 
 /* ปรับสไตล์ตัวหนังสือใน Card */
-.profile-card h1 { color: var(--dark); font-size: 26px; margin-bottom: 5px; }
+.profile-card h1 { color: var(--main); font-size: 26px; margin-bottom: 5px; }
 .profile-card .tagline { color: var(--text-light); font-size: 15px; margin-bottom: 20px; }
 
 /* === END HEADER NEW STYLE === */
@@ -96,12 +96,12 @@ background:var(--white);
 border-radius:20px;
 padding:25px 20px;
 margin-bottom:20px;
-box-shadow:0 8px 20px rgba(0,0,0,0.05);
-border: 1px solid rgba(246,165,201,0.2); /* ลดความเข้มของเส้นขอบ */
+box-shadow:0 8px 20px rgba(0,0,0,0.2); /* ปรับ Shadow ให้ดูมีมิติบนพื้นดำ */
+border: 1px solid rgba(246,165,201,0.1); /* เส้นขอบชมพูใสมากๆ */
 }
 
 h1,h2,h3{color:var(--main); margin-bottom: 15px;}
-h2 { color: var(--dark); font-size: 20px; }
+h2 { color: var(--text-light); font-size: 20px; } /* ปรับสี h2 เป็นสีขาว */
 .center{text-align:center;}
 
 /* คงส่วน Badges ไว้ครบถ้วน */
@@ -114,13 +114,13 @@ margin-bottom:20px;
 }
 
 .badge{
-background:rgba(246,165,201,0.1); /* สีพื้น Badges ละมุนขึ้น */
+background:rgba(232, 137, 181, 0.1); /* สีพื้น Badges ชมพูใส */
 padding:7px 14px;
 border-radius:25px;
 font-size:12px;
-color:var(--dark); 
+color:var(--dark); /* ปรับสีข้อความเป็นชมพูเข้ม */
 font-weight: 500;
-border: 1px solid rgba(246,165,201,0.3);
+border: 1px solid rgba(232, 137, 181, 0.3);
 }
 
 .btn{
@@ -144,7 +144,7 @@ font-size: 15px;
 .btn-outline{
 background:transparent;
 border:2px dashed var(--main);
-color:var(--dark);
+color:var(--main); /* ปรับสีข้อความเป็นชมพูหลัก */
 }
 
 /* สไตล์สำหรับไฟกระพริบ */
@@ -165,7 +165,7 @@ color:var(--dark);
 
 .btn-main{
 background:var(--main);
-color:var(--white);
+color:var(--bg); /* ปรับสีข้อความเป็นสีดำเพื่อให้เด่น */
 box-shadow: 0 4px 15px rgba(246,165,201,0.3);
 }
 
@@ -175,11 +175,12 @@ align-items:center;
 gap:12px;
 margin-bottom:12px;
 font-size: 15px;
+color: var(--text-light); /* คงสีข้อความเป็นสีขาว */
 }
 
 .step-num{
-background:rgba(246,165,201,0.15);
-color:var(--dark);
+background:rgba(246,165,201,0.1);
+color:var(--main); /* ปรับสีตัวเลขเป็นชมพูหลัก */
 width:28px;height:28px;
 border-radius:50%;
 display:flex;
@@ -187,7 +188,7 @@ align-items:center;
 justify-content:center;
 font-size:13px;
 font-weight: bold;
-border: 1px solid rgba(246,165,201,0.4);
+border: 1px solid rgba(246,165,201,0.3);
 }
 
 .footer{
@@ -210,9 +211,9 @@ padding:8px;
 border-radius:25px;
 background:var(--white);
 text-decoration:none;
-color:var(--dark);
+color:var(--main); /* ปรับสีข้อความเป็นชมพูหลัก */
 font-size:13px;
-border:1px solid rgba(246,165,201,0.2);
+border:1px solid rgba(246,165,201,0.1);
 }
 
 .small{font-size:12px;opacity:.7;margin-top:15px; color: var(--text-light);}
@@ -264,7 +265,7 @@ border:1px solid rgba(246,165,201,0.2);
 • โอนเงินแล้วไม่คืนเงินทุกกรณี<br>
 • งานเริ่มไปแล้ว ยกเลิกคืนเงิน 50%<br>
 • ยกเลิกหลังเช็คงาน = ไม่คืนเงินและส่งงานปกติ<br>
-<strong style="color:var(--dark)">*งานเร่งคิดราคาเป็น 2 เท่า</strong>
+<strong style="color:var(--main)">*งานเร่งคิดราคาเป็น 2 เท่า</strong> /* ปรับสีตัวเน้นเป็นชมพูหลัก */
 </p>
 
 <a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">สั่งงาน/สอบถามราคา</a>
