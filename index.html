@@ -9,14 +9,13 @@
 
 <style>
 :root{
-/* ปรับโทนสีเป็น ชมพู แนวน่ารัก นุ่มนวลขึ้น */
---bg:#FFF0F5; /* พื้นหลังเว็บชมพูอ่อนพาสเทล (Lavender Blush) */
---main:#FF69B4; /* สีชมพูหลักสดใส (Hot Pink) */
---dark:#FF85B2; /* ชมพูน่ารักนุ่มนวล (Soft Cute Pink) */
---white:#FFFFFF; /* พื้นหลังการ์ดสีขาว */
---glow:rgba(255, 133, 178, 0.3); /* ปรับแสงเรืองให้เข้ากับสีชมพูน่ารัก */
---text:#4A4A4A; /* สีตัวอักษรเทาเข้มเพื่อให้ดูนุ่มนวลกว่าสีดำ */
---sub-text:#888888; /* สีตัวอักษรรอง */
+--bg:#FFF0F5; 
+--main:#FF69B4; 
+--dark:#FF85B2; 
+--white:#FFFFFF; 
+--glow:rgba(255, 133, 178, 0.3); 
+--text:#4A4A4A; 
+--sub-text:#888888; 
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Mitr',sans-serif;}
@@ -36,7 +35,6 @@ padding:20px 15px 40px;
 display: flex;
 }
 
-/* --- การ์ดใบเดียวหลัก --- */
 .main-card {
     background:var(--white);
     border-radius:25px; 
@@ -53,7 +51,6 @@ display: flex;
     padding: 25px 20px;
 }
 
-/* --- กรอบล้อมรอบเรทราคางาน --- */
 .step-box-container {
     border: 2px dashed #FFB6C1; 
     border-radius: 20px;
@@ -64,7 +61,6 @@ display: flex;
 
 h1{color:var(--main); font-weight: 500;}
 h2,h3{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
-.center{text-align:center;}
 
 /* --- Header --- */
 .header-profile {
@@ -79,20 +75,14 @@ h2,h3{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
     overflow: hidden;
 }
 
-.banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.banner img { width: 100%; height: 100%; object-fit: cover; }
 
 .logo {
-    width: 100px; 
-    height: 100px;
+    width: 100px; height: 100px;
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
-    bottom: -50px; 
-    left: 50%;
+    bottom: -50px; left: 50%;
     transform: translateX(-50%);
     box-shadow: 0 6px 15px var(--glow); 
     border: 4px solid var(--white); 
@@ -142,21 +132,10 @@ border:2px solid #FFB6C1;
 color:var(--dark); 
 }
 
-.btn-outline:hover {
-    background: #FFF5F7;
-    border-color: var(--main);
-}
-
 .btn-main{
 background:var(--main);
 color:#fff;
 border: 2px solid var(--main);
-}
-
-.btn-main:hover{
-    background:var(--dark); 
-    border-color: var(--dark);
-    box-shadow: 0 6px 15px var(--glow);
 }
 
 /* --- Price Items --- */
@@ -166,6 +145,15 @@ justify-content: space-between;
 align-items:center;
 margin-bottom:12px;
 font-size: 15px;
+}
+
+.price-sub-item{
+display:flex;
+justify-content: space-between;
+padding-left: 20px; /* ขยับเข้าไปให้ดูเป็นรายการย่อย */
+margin-bottom: 8px;
+font-size: 14px;
+color: var(--sub-text);
 }
 
 .price-name{
@@ -221,7 +209,6 @@ text-decoration:none;
 color:var(--dark); 
 font-size:13px;
 border: 1px solid #FFB6C1;
-transition: 0.3s;
 }
 
 .small{font-size:12px;color:var(--sub-text); margin-top:10px;}
@@ -263,10 +250,23 @@ transition: 0.3s;
         <div class="step-box-container">
             <h2>🎀 เรทราคางาน</h2>
 
-            <div class="price-item">
+            <div class="price-item" style="margin-bottom: 8px;">
                 <div class="price-name"><div class="price-dot"></div>ออกแบบป้าย</div>
-                <div class="price-value">เริ่มต้น ฿XX</div>
             </div>
+            
+            <div class="price-sub-item">
+                <span>- ไม่ใช้บล็อก</span>
+                <span class="price-value">เริ่มต้น 39 Baht.</span>
+            </div>
+            <div class="price-sub-item">
+                <span>- ใช้ตัวตูน</span>
+                <span class="price-value">เริ่มต้น 39 Baht.</span>
+            </div>
+            <div class="price-sub-item" style="margin-bottom: 15px;">
+                <span>- ใช้บล็อก</span>
+                <span class="price-value">เริ่มต้น 59 Baht.</span>
+            </div>
+
             <div class="price-item">
                 <div class="price-name"><div class="price-dot"></div>ลายน้ำ / โลโก้</div>
                 <div class="price-value">เริ่มต้น ฿XX</div>
