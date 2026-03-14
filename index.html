@@ -26,29 +26,28 @@ display:flex;
 justify-content:center;
 color: var(--text);
 min-height: 100vh;
-position: relative; /* สำคัญสำหรับการวางอิโมจิพื้นหลัง */
-overflow-x: hidden; /* ป้องกันสกิลบาร์แนวนอน */
+position: relative;
+overflow-x: hidden;
 }
 
-/* --- สไตล์สำหรับอิโมจิพื้นหลังขยับได้ --- */
+/* --- Background Emojis --- */
 .background-emojis {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* วางไว้หลังเนื้อหาหลัก */
-    pointer-events: none; /* ไม่ให้รบกวนการคลิกเนื้อหา */
+    z-index: -1;
+    pointer-events: none;
 }
 
 .emoji {
     position: absolute;
     font-size: 24px;
-    opacity: 0.3; /* ให้จางๆ ไม่กวนสายตา */
+    opacity: 0.3;
     animation: floatEmojis 10s infinite ease-in-out;
 }
 
-/* กำหนดตำแหน่งและอนิเมชั่นที่แตกต่างกันสำหรับแต่ละตัว */
 .emoji:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
 .emoji:nth-child(2) { top: 30%; left: 80%; animation-delay: 2s; font-size: 20px; }
 .emoji:nth-child(3) { top: 60%; left: 15%; animation-delay: 4s; }
@@ -58,23 +57,17 @@ overflow-x: hidden; /* ป้องกันสกิลบาร์แนวน
 .emoji:nth-child(7) { top: 75%; left: 60%; animation-delay: 0.5s; font-size: 22px; }
 .emoji:nth-child(8) { top: 90%; left: 30%; animation-delay: 2.5s; }
 
-/* คีย์เฟรมสำหรับอนิเมชั่นลอยและหมุน */
 @keyframes floatEmojis {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-20px) rotate(10deg); /* ขยับขึ้นและหมุนเล็กน้อย */
-    }
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
 }
-/* -------------------------------------------------- */
 
 .container{
 max-width:500px;
 width:100%;
 padding:20px 15px 40px;
 display: flex;
-z-index: 1; /* วางเนื้อหาหลักให้อยู่เหนือพื้นหลัง */
+z-index: 1;
 position: relative;
 }
 
@@ -226,7 +219,44 @@ border-radius:15px;
 border: 1px solid #FFEDF0; 
 }
 
-/* --- Rush Work Box --- */
+/* --- Custom Info Boxes --- */
+.info-box {
+    margin-top: 15px;
+    padding: 15px;
+    background: #FFFFFF;
+    border: 1px solid #FFEDF0;
+    border-radius: 15px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.info-box h3 {
+    font-size: 15px;
+    color: var(--main);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.info-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info-box ul li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.info-box ul li::before {
+    content: "•";
+    color: var(--main);
+    position: absolute;
+    left: 0;
+}
+
 .rush-work-box {
     margin-top: 20px;
     padding: 15px;
@@ -240,12 +270,7 @@ border: 1px solid #FFEDF0;
     margin-bottom: 8px;
     font-size: 16px;
     color: var(--main);
-}
-
-.rush-work-box p {
-    font-size: 13px;
-    color: var(--text);
-    line-height: 1.6;
+    justify-content: center;
 }
 
 .footer{
@@ -286,11 +311,13 @@ border: 1px solid #FFB6C1;
         <div class="emoji">💖</div>
         <div class="emoji">💗</div>
         <div class="emoji">💖</div>
-        <div class="emoji">🌸</div> <div class="emoji">💗</div>
+        <div class="emoji">🌸</div> 
+        <div class="emoji">💗</div>
         <div class="emoji">💖</div>
-        <div class="emoji">✨</div> </div>
-    <div class="container">
+        <div class="emoji">✨</div> 
+    </div>
 
+<div class="container">
 <div class="main-card">
 
     <div class="header-profile">
@@ -307,13 +334,11 @@ border: 1px solid #FFB6C1;
         <p style="color:var(--dark);opacity:.8;margin:10px 0 20px;">
         รับออกแบบป้าย ลายน้ำ Google Sheet เว็บไซต์⭐️
         </p>
-
         <div class="badges">
             <div class="badge">🎨 ป้าย/ลายน้ำ/โลโก้</div>
             <div class="badge">📊 Google Sheet</div>
             <div class="badge">🌐 Website</div>
         </div>
-
         <a href="https://docs.google.com/spreadsheets/d/16wCpceIXo7ZxNgGABYBRbL682miaicVntDUmrrhlns8/edit?usp=drivesdk" class="btn btn-outline">
         ✨ Check Q
         </a>
@@ -326,45 +351,47 @@ border: 1px solid #FFB6C1;
             <div class="price-item" style="margin-bottom: 8px;">
                 <div class="price-name"><div class="price-dot"></div>ลายน้ำ เริ่มต้นที่ 29 Baht.</div>
             </div>
-            <div class="price-sub-item">
-                <span>- ใช้บล็อก</span>
-                <span class="price-value">เริ่มต้น 39 Baht.</span>
-            </div>
-            <div class="price-sub-item" style="margin-bottom: 15px;">
-                <span>- ใช้ตัวตูน</span>
-                <span class="price-value">เริ่มต้น 39 Baht.</span>
-            </div>
+            <div class="price-sub-item"><span>- ใช้บล็อก</span><span class="price-value">เริ่มต้น 39 Baht.</span></div>
+            <div class="price-sub-item" style="margin-bottom: 15px;"><span>- ใช้ตัวตูน</span><span class="price-value">เริ่มต้น 39 Baht.</span></div>
 
             <div class="price-item" style="margin-bottom: 8px;">
                 <div class="price-name"><div class="price-dot"></div>ออกแบบป้าย</div>
             </div>
-            <div class="price-sub-item">
-                <span>- ไม่ใช้บล็อก</span>
-                <span class="price-value">เริ่มต้น 39 Baht.</span>
-            </div>
-            <div class="price-sub-item">
-                <span>- ใช้ตัวตูน</span>
-                <span class="price-value">เริ่มต้น 39 Baht.</span>
-            </div>
-            <div class="price-sub-item" style="margin-bottom: 15px;">
-                <span>- ใช้บล็อก</span>
-                <span class="price-value">เริ่มต้น 59 Baht.</span>
-            </div>
+            <div class="price-sub-item"><span>- ไม่ใช้บล็อก</span><span class="price-value">เริ่มต้น 39 Baht.</span></div>
+            <div class="price-sub-item"><span>- ใช้ตัวตูน</span><span class="price-value">เริ่มต้น 39 Baht.</span></div>
+            <div class="price-sub-item" style="margin-bottom: 15px;"><span>- ใช้บล็อก</span><span class="price-value">เริ่มต้น 59 Baht.</span></div>
 
             <div class="price-item" style="margin-bottom: 8px;">
                 <div class="price-name"><div class="price-dot"></div>Google Sheet</div>
             </div>
-            <div class="price-sub-item">
-                <span>- เฉพาะชีต</span>
-                <span class="price-value">เริ่มต้น 49 Baht.</span>
-            </div>
-            <div class="price-sub-item" style="margin-bottom: 15px;">
-                <span>- พร้อมปก</span>
-                <span class="price-value">เริ่มต้น 88 Baht.</span>
-            </div>
+            <div class="price-sub-item"><span>- เฉพาะชีต</span><span class="price-value">เริ่มต้น 49 Baht.</span></div>
+            <div class="price-sub-item" style="margin-bottom: 15px;"><span>- พร้อมปก</span><span class="price-value">เริ่มต้น 88 Baht.</span></div>
 
             <div class="price-item">
                 <div class="price-name"><div class="price-dot"></div>ออกแบบเว็บไซต์</div>
+            </div>
+
+            <hr style="border: none; border-top: 1px solid #FFB6C1; margin: 20px 0;">
+
+            <div class="info-box">
+                <h3>🛍️ How To สั่งงาน</h3>
+                <ul>
+                    <li>แจ้งงานที่ต้องการจะทำส่งให้กับทางร้าน</li>
+                    <li>เลือก ตัวตูน ของตกแต่ง บล็อก ที่อยากได้ส่งให้กับทางร้าน หากเลือกที่จะไม่ใส่ ให้แจ้งทางร้านด้วยนะคะ (หากรวมยอดแล้วไม่สามารถเปลี่ยน ตัวตูน ของตกแต่ง บล็อก ได้)</li>
+                    <li>เลือกของตกแต่งได้แค่เป็นเซ็ท ไม่สามารถเอาของตกแต่งเซ็ทอื่นมารวมได้ นอกจากจะเพิ่มเงิน</li>
+                    <li>อยากได้ป้ายโทนไหนส่งเฉดสีให้กับทางร้านด้วยนะคะ (ถ้าแจ้งแค่ สีชมพู สีฟ้า สีแดง = แก้สีไม่ได้)</li>
+                    <li><b>รายละเอียด “พิมพ์” ส่งให้เท่านั้น</b> รบกวนลูกค้าเช็คให้ละเอียดก่อนส่งนะคะ</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>🎨 การแก้งาน</h3>
+                <p>สามารถแก้งานได้จนกว่าจะพอใจ แต่ต้องอยู่ในขอบเขตการบรีฟงานครั้งแรก <b>หากส่งงานแล้วจะไม่สามารถแก้งานย้อนหลังได้</b></p>
+                <ul style="margin-top: 10px;">
+                    <li>การแก้งาน = ไม่สามารถเปลี่ยนบรีฟ ของตกแต่ง ตัวตูน บล็อกที่เลือกไว้ตั้งแต่แรก</li>
+                    <li>รบกวนเช็คงานให้ละเอียดก่อนแจ้งให้ทางร้านส่งงานจริง</li>
+                    <li><b>หากต้องการแก้งานหลังจากส่งงานแล้ว คิดค่าแก้จุดละ 10฿</b></li>
+                </ul>
             </div>
 
             <div class="rush-work-box">
@@ -389,18 +416,15 @@ border: 1px solid #FFB6C1;
 
     <div class="footer">
         <a href="https://line.me/ti/p/LfBtdhlrVa" class="btn btn-main">จ้างงานคลิกเลย 🎀</a>
-
         <div class="socials">
-        <a href="https://www.facebook.com/profile.php?id=61554192600355">Facebook</a>
-        <a href="https://www.instagram.com/k0yangi_ii">Instagram</a>
-        <a href="https://line.me/ti/p/LfBtdhlrVa">LINE</a>
+            <a href="https://www.facebook.com/profile.php?id=61554192600355">Facebook</a>
+            <a href="https://www.instagram.com/k0yangi_ii">Instagram</a>
+            <a href="https://line.me/ti/p/LfBtdhlrVa">LINE</a>
         </div>
-
-        <p class="small">
-        © 2026 ⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚น𝐠ิ 𝜗𝜚˚⋆
-        </p>
+        <p class="small">© 2026 ⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆</p>
     </div>
 
-</div> </div>
+</div> 
+</div>
 </body>
 </html>
