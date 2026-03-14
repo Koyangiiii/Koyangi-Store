@@ -87,11 +87,20 @@ position: relative;
     padding: 25px 20px;
 }
 
+/* --- Boxes --- */
 .step-box-container {
     border: 2px dashed #FFB6C1; 
     border-radius: 20px;
     padding: 20px 15px;
     background: #FFF5F7; 
+    margin-top: 10px;
+}
+
+.info-box-outer {
+    border: 2px solid #FFC0CB;
+    border-radius: 20px;
+    padding: 20px 15px;
+    background: #FFFFFF;
     margin-top: 10px;
 }
 
@@ -219,18 +228,17 @@ border-radius:15px;
 border: 1px solid #FFEDF0; 
 }
 
-/* --- Custom Info Boxes --- */
-.info-box {
-    margin-top: 15px;
+/* --- Inner Info Boxes --- */
+.info-box-inner {
+    margin-bottom: 15px;
     padding: 15px;
-    background: #FFFFFF;
-    border: 1px solid #FFEDF0;
+    background: #FFF5F7;
     border-radius: 15px;
     font-size: 13px;
     line-height: 1.6;
 }
 
-.info-box h3 {
+.info-box-inner h3 {
     font-size: 15px;
     color: var(--main);
     display: flex;
@@ -239,18 +247,18 @@ border: 1px solid #FFEDF0;
     margin-bottom: 10px;
 }
 
-.info-box ul {
+.info-box-inner ul {
     list-style: none;
     padding-left: 0;
 }
 
-.info-box ul li {
+.info-box-inner ul li {
     margin-bottom: 8px;
     position: relative;
     padding-left: 15px;
 }
 
-.info-box ul li::before {
+.info-box-inner ul li::before {
     content: "•";
     color: var(--main);
     position: absolute;
@@ -345,6 +353,31 @@ border: 1px solid #FFB6C1;
     </div>
 
     <div class="content-section">
+        <div class="info-box-outer">
+            <div class="info-box-inner">
+                <h3>🛍️ How To สั่งงาน</h3>
+                <ul>
+                    <li>แจ้งงานที่ต้องการจะทำส่งให้กับทางร้าน</li>
+                    <li>เลือก ตัวตูน ของตกแต่ง บล็อก ที่อยากได้ส่งให้กับทางร้าน หากเลือกที่จะไม่ใส่ ให้แจ้งทางร้านด้วยนะคะ (หากรวมยอดแล้วไม่สามารถเปลี่ยน ตัวตูน ของตกแต่ง บล็อก ได้)</li>
+                    <li>เลือกของตกแต่งได้แค่เป็นเซ็ท ไม่สามารถเอาของตกแต่งเซ็ทอื่นมารวมได้ นอกจากจะเพิ่มเงิน</li>
+                    <li>อยากได้ป้ายโทนไหนส่งเฉดสีให้กับทางร้านด้วยนะคะ (ถ้าแจ้งแค่ สีชมพู สีฟ้า สีแดง = แก้สีไม่ได้)</li>
+                    <li><b>รายละเอียด “พิมพ์” ส่งให้เท่านั้น</b> รบกวนลูกค้าเช็คให้ละเอียดก่อนส่งนะคะ</li>
+                </ul>
+            </div>
+
+            <div class="info-box-inner" style="margin-bottom: 0;">
+                <h3>🎨 การแก้งาน</h3>
+                <p>สามารถแก้งานได้จนกว่าจะพอใจ แต่ต้องอยู่ในขอบเขตการบรีฟงานครั้งแรก <b>หากส่งงานแล้วจะไม่สามารถแก้งานย้อนหลังได้</b></p>
+                <ul style="margin-top: 10px;">
+                    <li>การแก้งาน = ไม่สามารถเปลี่ยนบรีฟ ของตกแต่ง ตัวตูน บล็อกที่เลือกไว้ตั้งแต่แรก</li>
+                    <li>รบกวนเช็คงานให้ละเอียดก่อนแจ้งให้ทางร้านส่งงานจริง</li>
+                    <li><b>หากต้องการแก้งานหลังจากส่งงานแล้ว คิดค่าแก้จุดละ 10฿</b></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section" style="padding-top: 0;">
         <div class="step-box-container">
             <h2>🎀 เรทราคางาน</h2>
 
@@ -369,29 +402,6 @@ border: 1px solid #FFB6C1;
 
             <div class="price-item">
                 <div class="price-name"><div class="price-dot"></div>ออกแบบเว็บไซต์</div>
-            </div>
-
-            <hr style="border: none; border-top: 1px solid #FFB6C1; margin: 20px 0;">
-
-            <div class="info-box">
-                <h3>🛍️ How To สั่งงาน</h3>
-                <ul>
-                    <li>แจ้งงานที่ต้องการจะทำส่งให้กับทางร้าน</li>
-                    <li>เลือก ตัวตูน ของตกแต่ง บล็อก ที่อยากได้ส่งให้กับทางร้าน หากเลือกที่จะไม่ใส่ ให้แจ้งทางร้านด้วยนะคะ (หากรวมยอดแล้วไม่สามารถเปลี่ยน ตัวตูน ของตกแต่ง บล็อก ได้)</li>
-                    <li>เลือกของตกแต่งได้แค่เป็นเซ็ท ไม่สามารถเอาของตกแต่งเซ็ทอื่นมารวมได้ นอกจากจะเพิ่มเงิน</li>
-                    <li>อยากได้ป้ายโทนไหนส่งเฉดสีให้กับทางร้านด้วยนะคะ (ถ้าแจ้งแค่ สีชมพู สีฟ้า สีแดง = แก้สีไม่ได้)</li>
-                    <li><b>รายละเอียด “พิมพ์” ส่งให้เท่านั้น</b> รบกวนลูกค้าเช็คให้ละเอียดก่อนส่งนะคะ</li>
-                </ul>
-            </div>
-
-            <div class="info-box">
-                <h3>🎨 การแก้งาน</h3>
-                <p>สามารถแก้งานได้จนกว่าจะพอใจ แต่ต้องอยู่ในขอบเขตการบรีฟงานครั้งแรก <b>หากส่งงานแล้วจะไม่สามารถแก้งานย้อนหลังได้</b></p>
-                <ul style="margin-top: 10px;">
-                    <li>การแก้งาน = ไม่สามารถเปลี่ยนบรีฟ ของตกแต่ง ตัวตูน บล็อกที่เลือกไว้ตั้งแต่แรก</li>
-                    <li>รบกวนเช็คงานให้ละเอียดก่อนแจ้งให้ทางร้านส่งงานจริง</li>
-                    <li><b>หากต้องการแก้งานหลังจากส่งงานแล้ว คิดค่าแก้จุดละ 10฿</b></li>
-                </ul>
             </div>
 
             <div class="rush-work-box">
