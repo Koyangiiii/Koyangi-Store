@@ -26,13 +26,56 @@ display:flex;
 justify-content:center;
 color: var(--text);
 min-height: 100vh;
+position: relative; /* สำคัญสำหรับการวางอิโมจิพื้นหลัง */
+overflow-x: hidden; /* ป้องกันสกิลบาร์แนวนอน */
 }
+
+/* --- สไตล์สำหรับอิโมจิพื้นหลังขยับได้ --- */
+.background-emojis {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* วางไว้หลังเนื้อหาหลัก */
+    pointer-events: none; /* ไม่ให้รบกวนการคลิกเนื้อหา */
+}
+
+.emoji {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.3; /* ให้จางๆ ไม่กวนสายตา */
+    animation: floatEmojis 10s infinite ease-in-out;
+}
+
+/* กำหนดตำแหน่งและอนิเมชั่นที่แตกต่างกันสำหรับแต่ละตัว */
+.emoji:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+.emoji:nth-child(2) { top: 30%; left: 80%; animation-delay: 2s; font-size: 20px; }
+.emoji:nth-child(3) { top: 60%; left: 15%; animation-delay: 4s; }
+.emoji:nth-child(4) { top: 80%; left: 85%; animation-delay: 1s; font-size: 18px; }
+.emoji:nth-child(5) { top: 50%; left: 50%; animation-delay: 3s; opacity: 0.2; }
+.emoji:nth-child(6) { top: 20%; left: 40%; animation-delay: 5s; }
+.emoji:nth-child(7) { top: 75%; left: 60%; animation-delay: 0.5s; font-size: 22px; }
+.emoji:nth-child(8) { top: 90%; left: 30%; animation-delay: 2.5s; }
+
+/* คีย์เฟรมสำหรับอนิเมชั่นลอยและหมุน */
+@keyframes floatEmojis {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg); /* ขยับขึ้นและหมุนเล็กน้อย */
+    }
+}
+/* -------------------------------------------------- */
 
 .container{
 max-width:500px;
 width:100%;
 padding:20px 15px 40px;
 display: flex;
+z-index: 1; /* วางเนื้อหาหลักให้อยู่เหนือพื้นหลัง */
+position: relative;
 }
 
 .main-card {
@@ -238,7 +281,15 @@ border: 1px solid #FFB6C1;
 </head>
 
 <body>
-<div class="container">
+    <div class="background-emojis">
+        <div class="emoji">💗</div>
+        <div class="emoji">💖</div>
+        <div class="emoji">💗</div>
+        <div class="emoji">💖</div>
+        <div class="emoji">🌸</div> <div class="emoji">💗</div>
+        <div class="emoji">💖</div>
+        <div class="emoji">✨</div> </div>
+    <div class="container">
 
 <div class="main-card">
 
@@ -346,7 +397,7 @@ border: 1px solid #FFB6C1;
         </div>
 
         <p class="small">
-        © 2026 ⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆
+        © 2026 ⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚น𝐠ิ 𝜗𝜚˚⋆
         </p>
     </div>
 
