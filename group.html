@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prices - Koyangi 𝜗𝜚</title>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ใช้ Root และ Style เดิมเพื่อให้ธีมเหมือนกัน */
+:root{ --bg:#FFF0F5; --main:#FF69B4; --dark:#FF85B2; --white:#FFFFFF; --text:#4A4A4A; }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Mitr',sans-serif;}
+body{ background:var(--bg); display:flex; justify-content:center; color: var(--text); min-height: 100vh; }
+
+.container{ max-width:500px; width:100%; padding:20px 15px 40px; }
+.main-card { background:var(--white); border-radius:25px; border:2px solid #FFC0CB; box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5); overflow: hidden; }
+
+.header-simple { background: var(--main); padding: 30px 20px; text-align: center; color: white; }
+.content-section { padding: 25px 20px; }
+
+/* Price Table Style */
+.price-list { list-style: none; }
+.price-row { 
+    display: flex; justify-content: space-between; align-items: center; 
+    padding: 15px; background: #FFF5F7; border-radius: 15px; margin-bottom: 10px;
+    border: 1px solid #FFEDF0;
+}
+.price-label { font-weight: 500; color: var(--text); }
+.price-amount { color: var(--main); font-weight: bold; }
+
+.btn-back {
+    display: block; text-align: center; padding: 12px; border-radius: 30px;
+    text-decoration: none; margin-top: 20px; background: var(--white);
+    border: 2px solid var(--main); color: var(--main); font-weight: 500;
+}
+
+.footer { text-align: center; padding: 20px; font-size: 12px; color: #888; }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="main-card">
+        <div class="header-simple">
+            <h2>🎀 รายละเอียดราคา</h2>
+            <p style="font-size: 13px; opacity: 0.9;">Koyangi Official Store</p>
+        </div>
+
+        <div class="content-section">
+            <h3 style="color: var(--dark); margin-bottom: 15px;">🎨 งานกราฟิก</h3>
+            <div class="price-list">
+                <div class="price-row">
+                    <span class="price-label">ลายน้ำ (เริ่มต้น)</span>
+                    <span class="price-amount">29.-</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-label">ป้ายบัญชี / ป้ายที่อยู่</span>
+                    <span class="price-amount">39.-</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-label">โลโก้ร้าน</span>
+                    <span class="price-amount">59.-</span>
+                </div>
+            </div>
+
+            <h3 style="color: var(--dark); margin: 25px 0 15px;">📊 Digital Templates</h3>
+            <div class="price-list">
+                <div class="price-row">
+                    <span class="price-label">Google Sheet (รายรับ-จ่าย)</span>
+                    <span class="price-amount">49.-</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-label">หน้าปก Planner</span>
+                    <span class="price-amount">39.-</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="btn-back">⬅️ กลับหน้าหลัก</a>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 ⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
