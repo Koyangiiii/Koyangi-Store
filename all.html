@@ -96,46 +96,6 @@ overflow-x: hidden;
 #menu-toggle:checked ~ .hamburger-icon span:nth-child(2) { opacity: 0; }
 #menu-toggle:checked ~ .hamburger-icon span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-/* --- Dropdown Logic --- */
-.dropdown-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    display: flex;
-    flex-direction: column;
-    background: #FFF9FA; 
-}
-
-#group-dropdown-toggle {
-    display: none;
-}
-
-#group-dropdown-toggle:checked ~ .dropdown-content {
-    max-height: 250px; 
-    margin-bottom: 5px;
-}
-
-.dropdown-label {
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    font-size: 14px;
-    color: var(--dark);
-    font-weight: 500;
-}
-
-.dropdown-label::after {
-    content: '▼';
-    font-size: 10px;
-    transition: 0.3s;
-}
-
-#group-dropdown-toggle:checked ~ .dropdown-label::after {
-    transform: rotate(180deg);
-}
-
 /* --- Background Emojis --- */
 .background-emojis {
     position: fixed;
@@ -153,15 +113,6 @@ overflow-x: hidden;
     opacity: 0.3;
     animation: floatEmojis 10s infinite ease-in-out;
 }
-
-.emoji:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-.emoji:nth-child(2) { top: 30%; left: 80%; animation-delay: 2s; font-size: 20px; }
-.emoji:nth-child(3) { top: 60%; left: 15%; animation-delay: 4s; }
-.emoji:nth-child(4) { top: 80%; left: 85%; animation-delay: 1s; font-size: 18px; }
-.emoji:nth-child(5) { top: 50%; left: 50%; animation-delay: 3s; opacity: 0.2; }
-.emoji:nth-child(6) { top: 20%; left: 40%; animation-delay: 5s; }
-.emoji:nth-child(7) { top: 75%; left: 60%; animation-delay: 0.5s; font-size: 22px; }
-.emoji:nth-child(8) { top: 90%; left: 30%; animation-delay: 2.5s; }
 
 @keyframes floatEmojis {
     0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -233,12 +184,18 @@ color:#fff;
 border: 2px solid var(--main);
 }
 
-/* --- Portfolio Grid --- */
+/* --- Portfolio Grid (Modified) --- */
 .portfolio-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 15px;
     margin-top: 15px;
+}
+
+.grid-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .grid-item {
@@ -255,44 +212,22 @@ border: 2px solid var(--main);
     object-fit: cover;
 }
 
-/* --- Added Sub-info Styles --- */
-.sub-info-section {
-    margin-top: 20px;
-    padding: 10px 5px;
+.grid-info {
+    text-align: center;
+    padding: 0 5px;
 }
 
-.sub-info-section h3 {
-    color: var(--main);
-    font-size: 16px;
-    margin-bottom: 5px;
-    font-weight: 500;
-}
-
-.sub-info-section p {
-    font-size: 13px;
-    color: var(--sub-text);
-    margin-bottom: 12px;
-}
-
-.info-links {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.info-links a {
-    text-decoration: none;
-    color: var(--dark);
+.item-name {
     font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    transition: 0.2s;
+    color: var(--text);
+    font-weight: 500;
+    display: block;
 }
 
-.info-links a:hover {
+.item-price {
+    font-size: 13px;
     color: var(--main);
-    padding-left: 5px;
+    font-weight: 500;
 }
 
 .footer{
@@ -339,34 +274,16 @@ border: 1px solid #FFB6C1;
         <div class="nav-menu">
             <a href="index.html">🏠 หน้าแรก</a>
             <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
-            <div class="dropdown-wrapper">
-                <input type="checkbox" id="group-dropdown-toggle">
-                <label for="group-dropdown-toggle" class="dropdown-label">🏘️ เข้ากลุ่มงาน</label>
-                <div class="dropdown-content">
-                    <a href="all.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มรวมทุกอย่าง</a>
-                    <a href="cartoon.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มตูน</a>
-                    <a href="ass.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มของตกแต่ง</a>
-                    <a href="blocks.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มบล็อก</a>
-                    <a href="font.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มฟอนต์</a>
-                    <a href="bg.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มBG</a>
-                    <a href="tutorial.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มสอน</a>
-                </div>
-            </div>
-            <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
             <a href="review.html">⭐️ รีวิวลูกค้า</a>
             <a href="https://lin.ee/30skzTf">💬 ติดต่อสอบถาม</a>
         </div>
     </div>
 
     <div class="background-emojis">
-        <div class="emoji">💗</div>
-        <div class="emoji">💖</div>
-        <div class="emoji">💗</div>
-        <div class="emoji">💖</div>
-        <div class="emoji">🌸</div> 
-        <div class="emoji">💗</div>
-        <div class="emoji">💖</div>
-        <div class="emoji">✨</div> 
+        <div class="emoji" style="top:10%; left:10%;">💗</div>
+        <div class="emoji" style="top:30%; left:80%;">💖</div>
+        <div class="emoji" style="top:60%; left:15%;">🌸</div>
+        <div class="emoji" style="top:80%; left:85%;">✨</div>
     </div>
 
 <div class="container">
@@ -379,23 +296,50 @@ border: 1px solid #FFB6C1;
     </div>
 
     <div class="content-section">
-        <h2 style="display: flex; align-items: center; gap: 8px;">🎀 กลุ่มรวมทุกอย่าง</h2>
+        <h2 style="display: flex; align-items: center; gap: 8px;">🎀 สินค้าแนะนำ</h2>
         <div class="portfolio-grid">
-            <div class="grid-item"><img src="ไม่มีชื่อ 570_20260204230037.png" alt="Group 1"></div>
-            <div class="grid-item"><img src="ไม่มีชื่อ 570_20260205091922.png" alt="Group 2"></div>
-            <div class="grid-item"><img src="ipv.block.review5_20260308145728.png" alt="Group 3"></div>
-            <div class="grid-item"><img src="ipv.block.review5_20260303220319.png" alt="Group 4"></div>
-        </div>
-
-        <div class="sub-info-section">
-            <h3>⭐ รายละเอียดกลุ่มสมาชิก</h3>
-            <p>อัปเดตงานใหม่ทุกสัปดาห์ ใช้งานได้ยาวๆ ไม่มีหมดอายุ</p>
-            <div class="info-links">
-                <a href="all.html">🔗 รายละเอียดการสมัครเข้ากลุ่ม</a>
-                <a href="review.html">🔗 ดูรีวิวจากสมาชิกในกลุ่ม</a>
+            
+            <div class="grid-card">
+                <div class="grid-item">
+                    <img src="ไม่มีชื่อ 570_20260204230037.png" alt="Group 1">
+                </div>
+                <div class="grid-info">
+                    <span class="item-name">กลุ่มรวมทุกอย่าง</span>
+                    <span class="item-price">ราคา 1xx.-</span>
+                </div>
             </div>
-        </div>
 
+            <div class="grid-card">
+                <div class="grid-item">
+                    <img src="ไม่มีชื่อ 570_20260205091922.png" alt="Group 2">
+                </div>
+                <div class="grid-info">
+                    <span class="item-name">กลุ่มตูน</span>
+                    <span class="item-price">ราคา xx.-</span>
+                </div>
+            </div>
+
+            <div class="grid-card">
+                <div class="grid-item">
+                    <img src="ipv.block.review5_20260308145728.png" alt="Group 3">
+                </div>
+                <div class="grid-info">
+                    <span class="item-name">กลุ่มของตกแต่ง</span>
+                    <span class="item-price">ราคา xx.-</span>
+                </div>
+            </div>
+
+            <div class="grid-card">
+                <div class="grid-item">
+                    <img src="ipv.block.review5_20260303220319.png" alt="Group 4">
+                </div>
+                <div class="grid-info">
+                    <span class="item-name">กลุ่มบล็อก</span>
+                    <span class="item-price">ราคา xx.-</span>
+                </div>
+            </div>
+
+        </div>
         <a href="all.html" class="btn btn-outline" style="border-style: dashed;">✨ ดูรายละเอียดกลุ่มทั้งหมด</a>
     </div>
 
