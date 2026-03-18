@@ -189,8 +189,8 @@ border: 2px solid var(--main);
 .grid-card {
     display: flex;
     flex-direction: column;
-    background: #FFF9FA; /* พื้นหลังกรอบอ่อนๆ */
-    border: 1px solid #FFD1DC; /* เส้นกรอบ */
+    background: #FFF9FA; 
+    border: 1px solid #FFD1DC; 
     border-radius: 18px;
     padding: 10px;
     transition: 0.3s;
@@ -219,7 +219,7 @@ border: 2px solid var(--main);
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
 }
 
 .item-name {
@@ -234,12 +234,16 @@ border: 2px solid var(--main);
     font-weight: 600;
 }
 
+/* ปรับแต่งกรอบข้อความดูตัวอย่างกลุ่ม */
 .item-example {
-    font-size: 11px;
-    color: var(--dark);
-    text-decoration: underline;
-    margin-top: 4px;
+    font-size: 13px; /* ใหญ่ขึ้น */
+    color: var(--white);
+    background: var(--dark); /* ใส่กรอบสีชมพูเข้ม */
+    padding: 5px 10px;
+    border-radius: 12px;
+    margin-top: 6px;
     font-weight: 400;
+    display: inline-block;
 }
 
 .footer{
@@ -308,7 +312,7 @@ border: 1px solid #FFB6C1;
     </div>
 
     <div class="content-section">
-        <h2 style="display: flex; align-items: center; gap: 8px;">🎀 สินค้าแนะนำ</h2>
+        <h2 style="display: flex; align-items: center; gap: 8px;">🎀 กลุ่มที่มีทุกอย่าง</h2>
         <div class="portfolio-grid">
             
             <a href="all.html" style="text-decoration: none;" class="grid-card">
@@ -318,7 +322,7 @@ border: 1px solid #FFB6C1;
                 <div class="grid-info">
                     <span class="item-name">กลุ่มรวมทุกอย่าง</span>
                     <span class="item-price">ราคา 1xx.-</span>
-                    <span class="item-example">🔗 ดูตัวอย่างกลุ่ม</span>
+                    <div><span class="item-example">ดูตัวอย่างกลุ่ม</span></div>
                 </div>
             </a>
 
@@ -329,7 +333,7 @@ border: 1px solid #FFB6C1;
                 <div class="grid-info">
                     <span class="item-name">กลุ่มตูน</span>
                     <span class="item-price">ราคา xx.-</span>
-                    <span class="item-example">🔗 ดูตัวอย่างกลุ่ม</span>
+                    <div><span class="item-example">ดูตัวอย่างกลุ่ม</span></div>
                 </div>
             </a>
 
@@ -340,7 +344,7 @@ border: 1px solid #FFB6C1;
                 <div class="grid-info">
                     <span class="item-name">กลุ่มของตกแต่ง</span>
                     <span class="item-price">ราคา xx.-</span>
-                    <span class="item-example">🔗 ดูตัวอย่างกลุ่ม</span>
+                    <div><span class="item-example">ดูตัวอย่างกลุ่ม</span></div>
                 </div>
             </a>
 
@@ -351,7 +355,7 @@ border: 1px solid #FFB6C1;
                 <div class="grid-info">
                     <span class="item-name">กลุ่มบล็อก</span>
                     <span class="item-price">ราคา xx.-</span>
-                    <span class="item-example">🔗 ดูตัวอย่างกลุ่ม</span>
+                    <div><span class="item-example">ดูตัวอย่างกลุ่ม</span></div>
                 </div>
             </a>
 
