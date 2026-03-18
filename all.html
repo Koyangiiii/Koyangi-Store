@@ -172,19 +172,13 @@ transition: 0.3s;
 box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
 }
 
-.btn-outline{
-background:var(--white);
-border:2px solid #FFB6C1; 
-color:var(--dark); 
-}
-
 .btn-main{
 background:var(--main);
 color:#fff;
 border: 2px solid var(--main);
 }
 
-/* --- Portfolio Grid (Modified) --- */
+/* --- Portfolio Grid & Card Style --- */
 .portfolio-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -195,15 +189,24 @@ border: 2px solid var(--main);
 .grid-card {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    background: #FFF9FA; /* พื้นหลังกรอบอ่อนๆ */
+    border: 1px solid #FFD1DC; /* เส้นกรอบ */
+    border-radius: 18px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.grid-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
 }
 
 .grid-item {
     aspect-ratio: 1 / 1;
-    border-radius: 15px;
+    border-radius: 12px;
     overflow: hidden;
-    border: 2px solid #FFEDF0;
-    box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3);
+    border: 1.5px solid #FFEDF0;
+    margin-bottom: 8px;
 }
 
 .grid-item img {
@@ -214,20 +217,29 @@ border: 2px solid var(--main);
 
 .grid-info {
     text-align: center;
-    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 .item-name {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text);
     font-weight: 500;
-    display: block;
 }
 
 .item-price {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--main);
-    font-weight: 500;
+    font-weight: 600;
+}
+
+.item-example {
+    font-size: 11px;
+    color: var(--dark);
+    text-decoration: underline;
+    margin-top: 4px;
+    font-weight: 400;
 }
 
 .footer{
@@ -299,48 +311,51 @@ border: 1px solid #FFB6C1;
         <h2 style="display: flex; align-items: center; gap: 8px;">🎀 สินค้าแนะนำ</h2>
         <div class="portfolio-grid">
             
-            <div class="grid-card">
+            <a href="all.html" style="text-decoration: none;" class="grid-card">
                 <div class="grid-item">
                     <img src="ไม่มีชื่อ 570_20260204230037.png" alt="Group 1">
                 </div>
                 <div class="grid-info">
                     <span class="item-name">กลุ่มรวมทุกอย่าง</span>
                     <span class="item-price">ราคา 1xx.-</span>
+                    <span class="item-example">🔗 ดูตัวอย่างกลุ่ม</span>
                 </div>
-            </div>
+            </a>
 
-            <div class="grid-card">
+            <a href="cartoon.html" style="text-decoration: none;" class="grid-card">
                 <div class="grid-item">
                     <img src="ไม่มีชื่อ 570_20260205091922.png" alt="Group 2">
                 </div>
                 <div class="grid-info">
                     <span class="item-name">กลุ่มตูน</span>
                     <span class="item-price">ราคา xx.-</span>
+                    <span class="item-example">🔗 ดูตัวอย่างกลุ่ม</span>
                 </div>
-            </div>
+            </a>
 
-            <div class="grid-card">
+            <a href="ass.html" style="text-decoration: none;" class="grid-card">
                 <div class="grid-item">
                     <img src="ipv.block.review5_20260308145728.png" alt="Group 3">
                 </div>
                 <div class="grid-info">
                     <span class="item-name">กลุ่มของตกแต่ง</span>
                     <span class="item-price">ราคา xx.-</span>
+                    <span class="item-example">🔗 ดูตัวอย่างกลุ่ม</span>
                 </div>
-            </div>
+            </a>
 
-            <div class="grid-card">
+            <a href="blocks.html" style="text-decoration: none;" class="grid-card">
                 <div class="grid-item">
                     <img src="ipv.block.review5_20260303220319.png" alt="Group 4">
                 </div>
                 <div class="grid-info">
                     <span class="item-name">กลุ่มบล็อก</span>
                     <span class="item-price">ราคา xx.-</span>
+                    <span class="item-example">🔗 ดูตัวอย่างกลุ่ม</span>
                 </div>
-            </div>
+            </a>
 
         </div>
-        <a href="all.html" class="btn btn-outline" style="border-style: dashed;">✨ ดูรายละเอียดกลุ่มทั้งหมด</a>
     </div>
 
     <div class="content-section" style="padding-top: 0;">
