@@ -84,7 +84,6 @@ overflow-x: hidden;
     font-weight: 400;
 }
 
-/* เน้นสีเมนูที่ active */
 .nav-menu a.active, 
 .dropdown-label.active {
     font-weight: 600;
@@ -169,8 +168,20 @@ max-width:500px;
 width:100%;
 padding:20px 15px 40px;
 display: flex;
+flex-direction: column; /* ปรับเป็น column เพื่อให้หัวข้ออยู่ด้านบน */
 z-index: 1;
 position: relative;
+}
+
+/* --- Shop Title Style --- */
+.shop-title {
+    text-align: center;
+    color: var(--main);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.3);
 }
 
 .main-card {
@@ -333,9 +344,7 @@ border: 1px solid #FFB6C1;
         
         <div class="nav-menu">
             <a href="index.html">🏠 หน้าแรก</a> 
-            
             <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
-            
             <div class="dropdown-wrapper">
                 <input type="checkbox" id="group-dropdown-toggle" checked>
                 <label for="group-dropdown-toggle" class="dropdown-label active">
@@ -351,7 +360,6 @@ border: 1px solid #FFB6C1;
                     <a href="tutorial.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มสอน</a>
                 </div>
             </div>
-
             <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
             <a href="review.html">⭐️ รีวิวลูกค้า</a>
             <a href="https://lin.ee/30skzTf">💬 ติดต่อสอบถาม</a>
@@ -366,79 +374,79 @@ border: 1px solid #FFB6C1;
     </div>
 
 <div class="container">
-<div class="main-card">
+    <h1 class="shop-title">⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆</h1>
 
-    <div class="header-profile">
-        <div class="banner">
-            <img src="IMG_4768.jpeg" alt="Banner">
+    <div class="main-card">
+        <div class="header-profile">
+            <div class="banner">
+                <img src="IMG_4768.jpeg" alt="Banner">
+            </div>
         </div>
-    </div>
 
-    <div class="content-section">
-        <h2 style="display: flex; align-items: center; gap: 8px;">🎀 กลุ่มที่มีทุกอย่าง</h2>
-        <div class="portfolio-grid">
-            
-            <a href="all.html" style="text-decoration: none;" class="grid-card">
-                <div class="grid-item">
-                    <img src="ไม่มีชื่อ 570_20260204230037.png" alt="Group 1">
-                </div>
-                <div class="grid-info">
-                    <span class="item-name">กลุ่มรวมทุกอย่าง</span>
-                    <span class="item-price">ราคา 1xx.-</span>
-                    <div><span class="item-example">ดูตัวอย่างกลุ่ม</span></div>
-                </div>
-            </a>
+        <div class="content-section">
+            <h2 style="display: flex; align-items: center; gap: 8px;">🎀 กลุ่มที่มีทุกอย่าง</h2>
+            <div class="portfolio-grid">
+                
+                <a href="all.html" style="text-decoration: none;" class="grid-card">
+                    <div class="grid-item">
+                        <img src="ไม่มีชื่อ 570_20260204230037.png" alt="Group 1">
+                    </div>
+                    <div class="grid-info">
+                        <span class="item-name">กลุ่มรวมทุกอย่าง</span>
+                        <span class="item-price">ราคา 1xx.-</span>
+                        <div><span class="item-example">ดูตัวอย่างกลุ่ม</span></div>
+                    </div>
+                </a>
 
-            <a href="cartoon.html" style="text-decoration: none;" class="grid-card">
-                <div class="grid-item">
-                    <img src="ไม่มีชื่อ 570_20260205091922.png" alt="Group 2">
-                </div>
-                <div class="grid-info">
-                    <span class="item-name">กลุ่มตูน</span>
-                    <span class="item-price">ราคา xx.-</span>
-                    <div><span class="item-example">ดูตัวอย่างกลุ่ม</span></div>
-                </div>
-            </a>
+                <a href="cartoon.html" style="text-decoration: none;" class="grid-card">
+                    <div class="grid-item">
+                        <img src="ไม่มีชื่อ 570_20260205091922.png" alt="Group 2">
+                    </div>
+                    <div class="grid-info">
+                        <span class="item-name">กลุ่มตูน</span>
+                        <span class="item-price">ราคา xx.-</span>
+                        <div><span class="item-example">ดูตัวอย่างกลุ่ม</span></div>
+                    </div>
+                </a>
 
-            <a href="ass.html" style="text-decoration: none;" class="grid-card">
-                <div class="grid-item">
-                    <img src="ipv.block.review5_20260308145728.png" alt="Group 3">
-                </div>
-                <div class="grid-info">
-                    <span class="item-name">กลุ่มของตกแต่ง</span>
-                    <span class="item-price">ราคา xx.-</span>
-                    <div><span class="item-example">ดูตัวอย่างกลุ่ม</span></div>
-                </div>
-            </a>
+                <a href="ass.html" style="text-decoration: none;" class="grid-card">
+                    <div class="grid-item">
+                        <img src="ipv.block.review5_20260308145728.png" alt="Group 3">
+                    </div>
+                    <div class="grid-info">
+                        <span class="item-name">กลุ่มของตกแต่ง</span>
+                        <span class="item-price">ราคา xx.-</span>
+                        <div><span class="item-example">ดูตัวอย่างกลุ่ม</span></div>
+                    </div>
+                </a>
 
-            <a href="blocks.html" style="text-decoration: none;" class="grid-card">
-                <div class="grid-item">
-                    <img src="ipv.block.review5_20260303220319.png" alt="Group 4">
-                </div>
-                <div class="grid-info">
-                    <span class="item-name">กลุ่มบล็อก</span>
-                    <span class="item-price">ราคา xx.-</span>
-                    <div><span class="item-example">ดูตัวอย่างกลุ่ม</span></div>
-                </div>
-            </a>
+                <a href="blocks.html" style="text-decoration: none;" class="grid-card">
+                    <div class="grid-item">
+                        <img src="ipv.block.review5_20260303220319.png" alt="Group 4">
+                    </div>
+                    <div class="grid-info">
+                        <span class="item-name">กลุ่มบล็อก</span>
+                        <span class="item-price">ราคา xx.-</span>
+                        <div><span class="item-example">ดูตัวอย่างกลุ่ม</span></div>
+                    </div>
+                </a>
 
+            </div>
         </div>
-    </div>
 
-    <div class="content-section" style="padding-top: 0;">
-        <a href="https://www.facebook.com/profile.php?id=61554192600355" class="btn btn-main">สอบถามเพิ่มเติม</a>
-    </div>
-
-    <div class="footer">
-        <div class="socials">
-            <a href="https://www.facebook.com/profile.php?id=61554192600355">Facebook</a>
-            <a href="https://www.instagram.com/k0yangi_ii">Instagram</a>
-            <a href="https://lin.ee/30skzTf">LINE</a>
+        <div class="content-section" style="padding-top: 0;">
+            <a href="https://www.facebook.com/profile.php?id=61554192600355" class="btn btn-main">สอบถามเพิ่มเติม</a>
         </div>
-        <p class="small">© 2026 ⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆</p>
-    </div>
 
-</div> 
+        <div class="footer">
+            <div class="socials">
+                <a href="https://www.facebook.com/profile.php?id=61554192600355">Facebook</a>
+                <a href="https://www.instagram.com/k0yangi_ii">Instagram</a>
+                <a href="https://lin.ee/30skzTf">LINE</a>
+            </div>
+            <p class="small">© 2026 ⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆</p>
+        </div>
+    </div> 
 </div>
 </body>
 </html>
