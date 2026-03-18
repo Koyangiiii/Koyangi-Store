@@ -59,7 +59,6 @@ overflow-x: hidden;
     transition: 0.3s;
 }
 
-/* เมนูที่ซ่อนอยู่ */
 .nav-menu {
     position: absolute;
     top: 40px;
@@ -70,7 +69,7 @@ overflow-x: hidden;
     width: 180px;
     padding: 10px;
     box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
-    display: none; /* ซ่อนไว้ */
+    display: none; 
     flex-direction: column;
     gap: 5px;
 }
@@ -89,12 +88,10 @@ overflow-x: hidden;
     color: var(--main);
 }
 
-/* เมื่อติ๊กถูกที่ Checkbox ให้แสดงเมนู */
 #menu-toggle:checked ~ .nav-menu {
     display: flex;
 }
 
-/* หมุนไอคอนเป็นรูปกากบาทเมื่อเปิด */
 #menu-toggle:checked ~ .hamburger-icon span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 #menu-toggle:checked ~ .hamburger-icon span:nth-child(2) { opacity: 0; }
 #menu-toggle:checked ~ .hamburger-icon span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
@@ -106,16 +103,15 @@ overflow-x: hidden;
     transition: max-height 0.3s ease-out;
     display: flex;
     flex-direction: column;
-    background: #FFF9FA; /* สีพื้นหลังเมนูย่อยให้ดูต่างนิดนึง */
+    background: #FFF9FA; 
 }
 
 #group-dropdown-toggle {
     display: none;
 }
 
-/* เมื่อติ๊กที่หัวข้อกลุ่มงาน ให้กางเมนูย่อยออก */
 #group-dropdown-toggle:checked ~ .dropdown-content {
-    max-height: 250px; /* ความสูงสูงสุดที่ยอมให้กาง */
+    max-height: 250px; 
     margin-bottom: 5px;
 }
 
@@ -220,7 +216,7 @@ h2,h3{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
 /* --- Header --- */
 .header-profile {
     position: relative;
-    margin-bottom: 20px; /* ปรับลดลงเมื่อเอาโลโก้ออก */
+    margin-bottom: 20px; 
 }
 
 .banner {
@@ -231,8 +227,6 @@ h2,h3{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
 }
 
 .banner img { width: 100%; height: 100%; object-fit: cover; }
-
-/* นำส่วนสไตล์ .logo ออก */
 
 .header-content {
     padding: 0 20px 25px 20px;
@@ -280,6 +274,28 @@ color:#fff;
 border: 2px solid var(--main);
 }
 
+/* --- Portfolio Grid (แถวละ 2 รูป) --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.grid-item {
+    aspect-ratio: 1 / 1;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid #FFEDF0;
+    box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* --- Price Items --- */
 .price-item{
 display:flex;
@@ -313,16 +329,6 @@ border-radius:50%;
 .price-value{
 font-weight: 500;
 color: var(--dark);
-}
-
-.price-row{
-display:flex;
-justify-content:space-between;
-margin-bottom:10px;
-background:#FFF5F7; 
-padding:10px 15px;
-border-radius:15px;
-border: 1px solid #FFEDF0; 
 }
 
 /* --- Inner Info Boxes --- */
@@ -378,7 +384,7 @@ border: 1px solid #FFEDF0;
     justify-content: center;
 }
 
-/* --- Portfolio Gallery --- */
+/* --- Portfolio Gallery Scroll --- */
 .portfolio-scroll {
     display: flex;
     overflow-x: auto;
@@ -450,12 +456,9 @@ border: 1px solid #FFB6C1;
         <div class="nav-menu">
             <a href="index.html">🏠 หน้าแรก</a>
             <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
-            
             <div class="dropdown-wrapper">
                 <input type="checkbox" id="group-dropdown-toggle">
-                <label for="group-dropdown-toggle" class="dropdown-label">
-                    🏘️ เข้ากลุ่มงาน
-                </label>
+                <label for="group-dropdown-toggle" class="dropdown-label">🏘️ เข้ากลุ่มงาน</label>
                 <div class="dropdown-content">
                     <a href="all.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มรวมทุกอย่าง</a>
                     <a href="cartoon.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มตูน</a>
@@ -466,7 +469,6 @@ border: 1px solid #FFB6C1;
                     <a href="tutorial.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มสอน</a>
                 </div>
             </div>
-
             <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
             <a href="review.html">⭐️ รีวิวลูกค้า</a>
             <a href="https://lin.ee/30skzTf">💬 ติดต่อสอบถาม</a>
@@ -491,7 +493,7 @@ border: 1px solid #FFB6C1;
         <div class="banner">
             <img src="IMG_4768.jpeg" alt="Banner">
         </div>
-        </div>
+    </div>
 
     <div class="header-content">
         <h1>⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆</h1>
@@ -514,30 +516,17 @@ border: 1px solid #FFB6C1;
                 <h3>🛍️ How To สั่งงาน</h3>
                 <ul>
                     <li>แจ้งงานที่ต้องการจะทำส่งให้กับทางร้าน</li>
-                    <li>เลือก ตัวตูน ของตกแต่ง บล็อก ที่อยากได้ส่งให้กับทางร้าน หากเลือกที่จะไม่ใส่ ให้แจ้งทางร้านด้วยนะคะ</li>
+                    <li>เลือก ตัวตูน ของตกแต่ง บล็อก ที่อยากได้ส่งให้กับทางร้าน</li>
                     <li>เลือกของตกแต่งได้แค่เป็นเซ็ท ไม่สามารถรวมเซ็ทอื่นได้</li>
-                    <li>อยากได้โทนไหนส่งเฉดสีด้วยนะคะ (หากแจ้งแค่ชื่อสี = แก้สีไม่ได้)</li>
                     <li><b>รายละเอียด “พิมพ์” ส่งให้เท่านั้น</b></li>
                 </ul>
             </div>
-
-            <div class="info-box-inner">
-                <h3>🎨 การแก้งาน</h3>
-                <p>แก้งานได้จนกว่าจะพอใจในขอบเขตบรีฟครั้งแรก <b>หากส่งงานแล้วไม่สามารถแก้ภายหลังได้</b></p>
-                <ul style="margin-top: 10px;">
-                    <li>เช็คงานให้ละเอียดก่อนแจ้งรับงานจริง</li>
-                    <li><b>หากแก้หลังจากส่งงานแล้ว คิดค่าแก้จุดละ 10฿</b></li>
-                </ul>
-            </div>
-
             <div class="info-box-inner" style="margin-bottom: 0;">
                 <h3>📍 กฎและเงื่อนไข</h3>
                 <ul style="font-size: 13px;">
                     <li>เริ่มงานหลังจากที่ได้รับบรีฟจากลูกค้าแล้วเท่านั้น</li>
-                    <li>จ่ายเต็มจำนวน มัดจำ 50% ผ่อนครบ = เริ่มงาน</li>
                     <li><b>ส่งงาน = จ่ายเงินเต็มจำนวน เท่านั้น!!!</b></li>
                     <li>ยกเลิกงาน = ไม่มีการโอนคืน</li>
-                    <li>ทางร้านไม่มีการโอนเงินคืน ก่อนจะโอนตัดสินใจให้ดี</li>
                 </ul>
             </div>
         </div>
@@ -546,35 +535,13 @@ border: 1px solid #FFB6C1;
     <div class="content-section" style="padding-top: 0;">
         <div class="step-box-container">
             <h2>🎀 เรทราคางาน</h2>
-
-            <div class="price-item" style="margin-bottom: 8px;">
-                <div class="price-name"><div class="price-dot"></div>ลายน้ำ เริ่มต้นที่ 29 Baht.</div>
-            </div>
-            <div class="price-sub-item"><span>- ใช้บล็อก</span><span class="price-value">เริ่มต้น 39 Baht.</span></div>
-            <div class="price-sub-item" style="margin-bottom: 15px;"><span>- ใช้ตัวตูน</span><span class="price-value">เริ่มต้น 39 Baht.</span></div>
-
-            <div class="price-item" style="margin-bottom: 8px;">
-                <div class="price-name"><div class="price-dot"></div>ออกแบบป้าย</div>
-            </div>
-            <div class="price-sub-item"><span>- ไม่ใช้บล็อก</span><span class="price-value">เริ่มต้น 39 Baht.</span></div>
-            <div class="price-sub-item"><span>- ใช้ตัวตูน</span><span class="price-value">เริ่มต้น 39 Baht.</span></div>
-            <div class="price-sub-item" style="margin-bottom: 15px;"><span>- ใช้บล็อก</span><span class="price-value">เริ่มต้น 59 Baht.</span></div>
-
-            <div class="price-item" style="margin-bottom: 8px;">
-                <div class="price-name"><div class="price-dot"></div>Google Sheet</div>
-            </div>
-            <div class="price-sub-item"><span>- เฉพาะชีต</span><span class="price-value">เริ่มต้น 49 Baht.</span></div>
-            <div class="price-sub-item" style="margin-bottom: 15px;"><span>- พร้อมปก</span><span class="price-value">เริ่มต้น 88 Baht.</span></div>
-
-            <div class="price-item">
-                <div class="price-name"><div class="price-dot"></div>ออกแบบเว็บไซต์</div>
-            </div>
-
+            <div class="price-item"><div class="price-name"><div class="price-dot"></div>ลายน้ำ เริ่มต้น 29.-</div></div>
+            <div class="price-item"><div class="price-name"><div class="price-dot"></div>ออกแบบป้าย เริ่มต้น 39.-</div></div>
+            <div class="price-item"><div class="price-name"><div class="price-dot"></div>Google Sheet เริ่มต้น 49.-</div></div>
             <div class="rush-work-box">
                 <h3>⚡️ Rush Work Price</h3>
-                <p>งานเร่ง x2 ของราคาป้ายที่ต้องการเร่ง <br><b>(เร่ง 1 ครั้ง ต่อ 1 ป้าย 1 คิว)</b></p>
+                <p>งานเร่ง x2 ของราคาป้าย</p>
             </div>
-
             <a href="https://lin.ee/30skzTf" class="btn btn-main">สอบถามราคา/สั่งงาน</a>
         </div>
     </div>
@@ -586,11 +553,18 @@ border: 1px solid #FFB6C1;
             <div class="portfolio-item"><img src="ไม่มีชื่อ 570_20260205091922.png" alt="Work 2"></div>
             <div class="portfolio-item"><img src="ipv.block.review5_20260308145728.png" alt="Work 3"></div>
             <div class="portfolio-item"><img src="ipv.block.review5_20260303220319.png" alt="Work 4"></div>
-            <div class="portfolio-item"><img src="ipv.block.review5_20260302213512.png" alt="Work 5"></div>
         </div>
-        <a href="https://drive.google.com/drive/folders/1-ZCQx_5hfZQ908UkYFCtNLYQX6HGaqlq" class="btn btn-outline" style="border-style: dashed;">
-        ✨ ดูผลงานเพิ่มเติมที่นี่
-        </a>
+    </div>
+
+    <div class="content-section" style="padding-top: 0;">
+        <h2 style="display: flex; align-items: center; gap: 8px;">🎀 กลุ่มรวมทุกอย่าง</h2>
+        <div class="portfolio-grid">
+            <div class="grid-item"><img src="ไม่มีชื่อ 570_20260204230037.png" alt="Group 1"></div>
+            <div class="grid-item"><img src="ไม่มีชื่อ 570_20260205091922.png" alt="Group 2"></div>
+            <div class="grid-item"><img src="ipv.block.review5_20260308145728.png" alt="Group 3"></div>
+            <div class="grid-item"><img src="ipv.block.review5_20260303220319.png" alt="Group 4"></div>
+        </div>
+        <a href="all.html" class="btn btn-outline" style="border-style: dashed;">✨ ดูรายละเอียดกลุ่มทั้งหมด</a>
     </div>
 
     <div class="content-section" style="padding-top: 0;">
