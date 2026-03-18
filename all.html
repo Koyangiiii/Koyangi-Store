@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -29,6 +28,116 @@ color: var(--text);
 min-height: 100vh;
 position: relative;
 overflow-x: hidden;
+}
+
+/* --- Hamburger Menu Style --- */
+.hamburger-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    width: 100%;
+    height: 4px;
+    background-color: var(--main);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* เมนูที่ซ่อนอยู่ */
+.nav-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: var(--white);
+    border: 2px solid #FFC0CB;
+    border-radius: 15px;
+    width: 180px;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
+    display: none; /* ซ่อนไว้ */
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--dark);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.nav-menu a:hover {
+    background: #FFF5F7;
+    color: var(--main);
+}
+
+/* เมื่อติ๊กถูกที่ Checkbox ให้แสดงเมนู */
+#menu-toggle:checked ~ .nav-menu {
+    display: flex;
+}
+
+/* หมุนไอคอนเป็นรูปกากบาทเมื่อเปิด */
+#menu-toggle:checked ~ .hamburger-icon span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+#menu-toggle:checked ~ .hamburger-icon span:nth-child(2) { opacity: 0; }
+#menu-toggle:checked ~ .hamburger-icon span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+/* --- Dropdown Logic --- */
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    background: #FFF9FA; /* สีพื้นหลังเมนูย่อยให้ดูต่างนิดนึง */
+}
+
+#group-dropdown-toggle {
+    display: none;
+}
+
+/* เมื่อติ๊กที่หัวข้อกลุ่มงาน ให้กางเมนูย่อยออก */
+#group-dropdown-toggle:checked ~ .dropdown-content {
+    max-height: 250px; /* ความสูงสูงสุดที่ยอมให้กาง */
+    margin-bottom: 5px;
+}
+
+.dropdown-label {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 14px;
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.dropdown-label::after {
+    content: '▼';
+    font-size: 10px;
+    transition: 0.3s;
+}
+
+#group-dropdown-toggle:checked ~ .dropdown-label::after {
+    transform: rotate(180deg);
 }
 
 /* --- Background Emojis --- */
@@ -111,7 +220,7 @@ h2,h3{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
 /* --- Header --- */
 .header-profile {
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 20px; /* ปรับลดลงเมื่อเอาโลโก้ออก */
 }
 
 .banner {
@@ -123,20 +232,7 @@ h2,h3{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
 
 .banner img { width: 100%; height: 100%; object-fit: cover; }
 
-.logo {
-    width: 100px; height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: absolute;
-    bottom: -50px; left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0 6px 15px var(--glow); 
-    border: 4px solid var(--white); 
-    background: var(--white);
-    z-index: 2;
-}
-
-.logo img { width: 100%; height: 100%; object-fit: cover; }
+/* นำส่วนสไตล์ .logo ออก */
 
 .header-content {
     padding: 0 20px 25px 20px;
@@ -343,6 +439,40 @@ border: 1px solid #FFB6C1;
 </head>
 
 <body>
+    <div class="hamburger-container">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        
+        <div class="nav-menu">
+            <a href="index.html">🏠 หน้าแรก</a>
+            <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
+            
+            <div class="dropdown-wrapper">
+                <input type="checkbox" id="group-dropdown-toggle">
+                <label for="group-dropdown-toggle" class="dropdown-label">
+                    🏘️ เข้ากลุ่มงาน
+                </label>
+                <div class="dropdown-content">
+                    <a href="all.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มรวมทุกอย่าง</a>
+                    <a href="cartoon.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มตูน</a>
+                    <a href="ass.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มของตกแต่ง</a>
+                    <a href="blocks.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มบล็อก</a>
+                    <a href="font.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มฟอนต์</a>
+                    <a href="bg.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มBG</a>
+                    <a href="tutorial.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มสอน</a>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
+            <a href="review.html">⭐️ รีวิวลูกค้า</a>
+            <a href="https://lin.ee/30skzTf">💬 ติดต่อสอบถาม</a>
+        </div>
+    </div>
+
     <div class="background-emojis">
         <div class="emoji">💗</div>
         <div class="emoji">💖</div>
@@ -361,10 +491,7 @@ border: 1px solid #FFB6C1;
         <div class="banner">
             <img src="IMG_4768.jpeg" alt="Banner">
         </div>
-        <div class="logo">
-            <img src="IMG_4740.png" alt="Koyangi Logo"> 
         </div>
-    </div>
 
     <div class="header-content">
         <h1>⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆</h1>
