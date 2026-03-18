@@ -59,6 +59,7 @@ overflow-x: hidden;
     transition: 0.3s;
 }
 
+/* เมนูที่ซ่อนอยู่ */
 .nav-menu {
     position: absolute;
     top: 40px;
@@ -81,11 +82,56 @@ overflow-x: hidden;
     border-radius: 10px;
     font-size: 14px;
     transition: 0.2s;
+    font-weight: 400;
 }
 
-.nav-menu a:hover {
-    background: #FFF5F7;
+/* สไตล์สำหรับเมนูหน้าปัจจุบัน */
+.nav-menu a.active, 
+.dropdown-label.active { /* เพิ่มให้รองรับ label ของกลุ่มงานด้วย */
+    font-weight: 600;
     color: var(--main);
+    background: #FFF5F7;
+}
+
+/* --- Dropdown Style --- */
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    background: #FFF9FA;
+}
+
+#group-dropdown-toggle {
+    display: none;
+}
+
+#group-dropdown-toggle:checked ~ .dropdown-content {
+    max-height: 300px;
+    margin-bottom: 5px;
+}
+
+.dropdown-label {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 14px;
+    color: var(--dark);
+    font-weight: 400;
+    border-radius: 10px; /* เพิ่มเพื่อให้เวลา active แล้วขอบมนสวย */
+}
+
+.dropdown-label::after {
+    content: '▼';
+    font-size: 10px;
+    transition: 0.3s;
+}
+
+#group-dropdown-toggle:checked ~ .dropdown-label::after {
+    transform: rotate(180deg);
 }
 
 #menu-toggle:checked ~ .nav-menu {
@@ -178,7 +224,7 @@ color:#fff;
 border: 2px solid var(--main);
 }
 
-/* --- Portfolio Grid & Card Style --- */
+/* --- Portfolio Grid --- */
 .portfolio-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -234,11 +280,10 @@ border: 2px solid var(--main);
     font-weight: 600;
 }
 
-/* ปรับแต่งกรอบข้อความดูตัวอย่างกลุ่ม */
 .item-example {
-    font-size: 13px; /* ใหญ่ขึ้น */
+    font-size: 13px; 
     color: var(--white);
-    background: var(--dark); /* ใส่กรอบสีชมพูเข้ม */
+    background: var(--dark); 
     padding: 5px 10px;
     border-radius: 12px;
     margin-top: 6px;
@@ -288,7 +333,26 @@ border: 1px solid #FFB6C1;
         </label>
         
         <div class="nav-menu">
-            <a href="index.html">🏠 หน้าแรก</a>
+            <a href="index.html">🏠 หน้าแรก</a> 
+            
+            <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
+            
+            <div class="dropdown-wrapper">
+                <input type="checkbox" id="group-dropdown-toggle">
+                <label for="group-dropdown-toggle" class="dropdown-label active">
+                    🏘️ เข้ากลุ่มงาน
+                </label>
+                <div class="dropdown-content">
+                    <a href="all.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มรวมทุกอย่าง</a>
+                    <a href="cartoon.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มตูน</a>
+                    <a href="ass.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มของตกแต่ง</a>
+                    <a href="blocks.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มบล็อก</a>
+                    <a href="font.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มฟอนต์</a>
+                    <a href="bg.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มBG</a>
+                    <a href="tutorial.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มสอน</a>
+                </div>
+            </div>
+
             <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
             <a href="review.html">⭐️ รีวิวลูกค้า</a>
             <a href="https://lin.ee/30skzTf">💬 ติดต่อสอบถาม</a>
