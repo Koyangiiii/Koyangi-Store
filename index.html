@@ -59,7 +59,6 @@ overflow-x: hidden;
     transition: 0.3s;
 }
 
-/* เมนูที่ซ่อนอยู่ */
 .nav-menu {
     position: absolute;
     top: 40px;
@@ -67,7 +66,7 @@ overflow-x: hidden;
     background: var(--white);
     border: 2px solid #FFC0CB;
     border-radius: 15px;
-    width: 180px;
+    width: 190px;
     padding: 10px;
     box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
     display: none; 
@@ -82,14 +81,32 @@ overflow-x: hidden;
     border-radius: 10px;
     font-size: 14px;
     transition: 0.2s;
-    font-weight: 400; /* ตั้งเป็นตัวปกติทั้งหมดก่อน */
+    font-weight: 400;
 }
 
-/* สไตล์สำหรับเมนูหน้าปัจจุบัน */
 .nav-menu a.active {
-    font-weight: 600; /* ทำตัวหนา */
-    color: var(--main); /* เปลี่ยนเป็นสีหลักเพื่อให้เด่น */
+    font-weight: 600;
+    color: var(--main);
     background: #FFF5F7;
+}
+
+/* --- Dropdown Style --- */
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    background: #FFF9FA;
+}
+
+.dropdown-toggle-input {
+    display: none;
+}
+
+.dropdown-toggle-input:checked ~ .dropdown-content {
+    max-height: 300px; 
+    margin-bottom: 5px;
 }
 
 .dropdown-label {
@@ -100,36 +117,8 @@ overflow-x: hidden;
     padding: 10px;
     font-size: 14px;
     color: var(--dark);
-    font-weight: 400; /* เอาตัวหนาออกตามสั่ง */
-}
-
-/* เมื่อติ๊กถูกที่ Checkbox ให้แสดงเมนู */
-#menu-toggle:checked ~ .nav-menu {
-    display: flex;
-}
-
-/* หมุนไอคอนเป็นรูปกากบาทเมื่อเปิด */
-#menu-toggle:checked ~ .hamburger-icon span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-#menu-toggle:checked ~ .hamburger-icon span:nth-child(2) { opacity: 0; }
-#menu-toggle:checked ~ .hamburger-icon span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
-
-/* --- Dropdown Logic --- */
-.dropdown-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    display: flex;
-    flex-direction: column;
-    background: #FFF9FA;
-}
-
-#group-dropdown-toggle {
-    display: none;
-}
-
-#group-dropdown-toggle:checked ~ .dropdown-content {
-    max-height: 250px; 
-    margin-bottom: 5px;
+    font-weight: 400;
+    border-radius: 10px;
 }
 
 .dropdown-label::after {
@@ -138,9 +127,17 @@ overflow-x: hidden;
     transition: 0.3s;
 }
 
-#group-dropdown-toggle:checked ~ .dropdown-label::after {
+.dropdown-toggle-input:checked ~ .dropdown-label::after {
     transform: rotate(180deg);
 }
+
+#menu-toggle:checked ~ .nav-menu {
+    display: flex;
+}
+
+#menu-toggle:checked ~ .hamburger-icon span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+#menu-toggle:checked ~ .hamburger-icon span:nth-child(2) { opacity: 0; }
+#menu-toggle:checked ~ .hamburger-icon span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
 /* --- Background Emojis --- */
 .background-emojis {
@@ -159,15 +156,6 @@ overflow-x: hidden;
     opacity: 0.3;
     animation: floatEmojis 10s infinite ease-in-out;
 }
-
-.emoji:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-.emoji:nth-child(2) { top: 30%; left: 80%; animation-delay: 2s; font-size: 20px; }
-.emoji:nth-child(3) { top: 60%; left: 15%; animation-delay: 4s; }
-.emoji:nth-child(4) { top: 80%; left: 85%; animation-delay: 1s; font-size: 18px; }
-.emoji:nth-child(5) { top: 50%; left: 50%; animation-delay: 3s; opacity: 0.2; }
-.emoji:nth-child(6) { top: 20%; left: 40%; animation-delay: 5s; }
-.emoji:nth-child(7) { top: 75%; left: 60%; animation-delay: 0.5s; font-size: 22px; }
-.emoji:nth-child(8) { top: 90%; left: 30%; animation-delay: 2.5s; }
 
 @keyframes floatEmojis {
     0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -195,31 +183,6 @@ position: relative;
     overflow: hidden;
 }
 
-.content-section {
-    padding: 25px 20px;
-}
-
-/* --- Boxes --- */
-.step-box-container {
-    border: 2px dashed #FFB6C1; 
-    border-radius: 20px;
-    padding: 20px 15px;
-    background: #FFF5F7; 
-    margin-top: 10px;
-}
-
-.info-box-outer {
-    border: 2px solid #FFC0CB;
-    border-radius: 20px;
-    padding: 20px 15px;
-    background: #FFFFFF;
-    margin-top: 10px;
-}
-
-h1{color:var(--main); font-weight: 500;}
-h2,h3{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
-
-/* --- Header --- */
 .header-profile {
     position: relative;
     margin-bottom: 60px;
@@ -244,7 +207,6 @@ h2,h3{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
     box-shadow: 0 6px 15px var(--glow); 
     border: 4px solid var(--white); 
     background: var(--white);
-    z-index: 2;
 }
 
 .logo img { width: 100%; height: 100%; object-fit: cover; }
@@ -283,54 +245,29 @@ transition: 0.3s;
 box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
 }
 
-.btn-outline{
-background:var(--white);
-border:2px solid #FFB6C1; 
-color:var(--dark); 
-}
-
 .btn-main{
 background:var(--main);
 color:#fff;
 border: 2px solid var(--main);
 }
 
-/* --- Price Items --- */
-.price-item{
-display:flex;
-justify-content: space-between;
-align-items:center;
-margin-bottom:12px;
-font-size: 15px;
+.btn-outline{
+background:var(--white);
+border:2px solid #FFB6C1; 
+color:var(--dark); 
 }
 
-.price-sub-item{
-display:flex;
-justify-content: space-between;
-padding-left: 20px; 
-margin-bottom: 8px;
-font-size: 14px;
-color: var(--sub-text);
+.content-section {
+    padding: 25px 20px;
 }
 
-.price-name{
-display:flex;
-align-items:center;
-gap:8px;
+.info-box-outer {
+    border: 2px solid #FFC0CB;
+    border-radius: 20px;
+    padding: 20px 15px;
+    background: #FFFFFF;
 }
 
-.price-dot{
-background:#FFB6C1; 
-width:8px;height:8px;
-border-radius:50%;
-}
-
-.price-value{
-font-weight: 500;
-color: var(--dark);
-}
-
-/* --- Inner Info Boxes --- */
 .info-box-inner {
     margin-bottom: 15px;
     padding: 15px;
@@ -351,21 +288,47 @@ color: var(--dark);
 
 .info-box-inner ul {
     list-style: none;
-    padding-left: 0;
-}
-
-.info-box-inner ul li {
-    margin-bottom: 8px;
-    position: relative;
-    padding-left: 15px;
 }
 
 .info-box-inner ul li::before {
     content: "•";
     color: var(--main);
-    position: absolute;
-    left: 0;
+    margin-right: 8px;
 }
+
+.step-box-container {
+    border: 2px dashed #FFB6C1; 
+    border-radius: 20px;
+    padding: 20px 15px;
+    background: #FFF5F7; 
+}
+
+.price-item{
+display:flex;
+justify-content: space-between;
+align-items:center;
+margin-bottom:12px;
+font-size: 15px;
+}
+
+.price-sub-item{
+display:flex;
+justify-content: space-between;
+padding-left: 20px; 
+margin-bottom: 8px;
+font-size: 14px;
+color: var(--sub-text);
+}
+
+.price-dot{
+background:#FFB6C1; 
+width:8px;height:8px;
+border-radius:50%;
+margin-right: 8px;
+display: inline-block;
+}
+
+.price-value { color: var(--dark); font-weight: 500; }
 
 .rush-work-box {
     margin-top: 20px;
@@ -376,14 +339,6 @@ color: var(--dark);
     text-align: center;
 }
 
-.rush-work-box h3 {
-    margin-bottom: 8px;
-    font-size: 16px;
-    color: var(--main);
-    justify-content: center;
-}
-
-/* --- Portfolio Gallery --- */
 .portfolio-scroll {
     display: flex;
     overflow-x: auto;
@@ -392,9 +347,7 @@ color: var(--dark);
     scrollbar-width: none; 
 }
 
-.portfolio-scroll::-webkit-scrollbar {
-    display: none; 
-}
+.portfolio-scroll::-webkit-scrollbar { display: none; }
 
 .portfolio-item {
     min-width: 180px;
@@ -402,18 +355,12 @@ color: var(--dark);
     border-radius: 15px;
     overflow: hidden;
     border: 2px solid #FFEDF0;
-    box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3);
 }
 
-.portfolio-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.portfolio-item img { width: 100%; height: 100%; object-fit: cover; }
 
 .footer{
 text-align:center;
-margin-top: auto;
 padding: 30px 20px 25px;
 background: #FFF5F7; 
 border-top: 1px solid #FFEDF0;
@@ -458,7 +405,7 @@ border: 1px solid #FFB6C1;
             <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
             
             <div class="dropdown-wrapper">
-                <input type="checkbox" id="group-dropdown-toggle">
+                <input type="checkbox" id="group-dropdown-toggle" class="dropdown-toggle-input">
                 <label for="group-dropdown-toggle" class="dropdown-label">
                     🏘️ กลุ่มที่ทางร้านอยู่
                 </label>
@@ -474,47 +421,46 @@ border: 1px solid #FFB6C1;
             </div>
 
             <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
-            <a href="review.html">⭐️ รีวิวลูกค้า</a>
-            <a href="https://lin.ee/30skzTf">💬 ติดต่อสอบถาม</a>
+
+            <div class="dropdown-wrapper">
+                <input type="checkbox" id="contact-dropdown-toggle" class="dropdown-toggle-input">
+                <label for="contact-dropdown-toggle" class="dropdown-label">
+                    💬 ติดต่อสอบถาม
+                </label>
+                <div class="dropdown-content">
+                    <a href="https://www.facebook.com/profile.php?id=61554192600355" target="_blank" style="padding-left: 25px; font-size: 13px;">• Facebook</a>
+                    <a href="https://www.instagram.com/k0yangi_ii" target="_blank" style="padding-left: 25px; font-size: 13px;">• Instagram</a>
+                    <a href="https://lin.ee/30skzTf" target="_blank" style="padding-left: 25px; font-size: 13px;">• LINE Official</a>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="background-emojis">
-        <div class="emoji">💗</div>
-        <div class="emoji">💖</div>
-        <div class="emoji">💗</div>
-        <div class="emoji">💖</div>
-        <div class="emoji">🌸</div> 
-        <div class="emoji">💗</div>
-        <div class="emoji">💖</div>
-        <div class="emoji">✨</div> 
+        <div class="emoji" style="top:10%; left:10%;">💗</div>
+        <div class="emoji" style="top:30%; left:80%;">💖</div>
+        <div class="emoji" style="top:60%; left:15%;">🌸</div>
+        <div class="emoji" style="top:80%; left:85%;">✨</div>
+        <div class="emoji" style="top:20%; left:40%;">💗</div>
+        <div class="emoji" style="top:75%; left:60%;">💖</div>
     </div>
 
 <div class="container">
 <div class="main-card">
-
     <div class="header-profile">
-        <div class="banner">
-            <img src="IMG_4768.jpeg" alt="Banner">
-        </div>
-        <div class="logo">
-            <img src="IMG_4740.png" alt="Koyangi Logo"> 
-        </div>
+        <div class="banner"><img src="IMG_4768.jpeg" alt="Banner"></div>
+        <div class="logo"><img src="IMG_4740.png" alt="Logo"></div>
     </div>
 
     <div class="header-content">
         <h1>⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆</h1>
-        <p style="color:var(--dark);opacity:.8;margin:10px 0 20px;">
-        รับออกแบบป้าย ลายน้ำ Google Sheet เว็บไซต์⭐️
-        </p>
+        <p style="color:var(--dark);opacity:.8;margin:10px 0 20px;">รับออกแบบป้าย ลายน้ำ Google Sheet เว็บไซต์⭐️</p>
         <div class="badges">
             <div class="badge">🎨 ป้าย/ลายน้ำ/โลโก้</div>
             <div class="badge">📊 Google Sheet</div>
             <div class="badge">🌐 Website</div>
         </div>
-        <a href="https://docs.google.com/spreadsheets/d/16wCpceIXo7ZxNgGABYBRbL682miaicVntDUmrrhlns8/edit?usp=drivesdk" class="btn btn-outline">
-        ✨ Check Q
-        </a>
+        <a href="https://docs.google.com/spreadsheets/d/16wCpceIXo7ZxNgGABYBRbL682miaicVntDUmrrhlns8/edit?usp=drivesdk" target="_blank" class="btn btn-outline">✨ Check Q</a>
     </div>
 
     <div class="content-section">
@@ -523,30 +469,15 @@ border: 1px solid #FFB6C1;
                 <h3>🛍️ How To สั่งงาน</h3>
                 <ul>
                     <li>แจ้งงานที่ต้องการจะทำส่งให้กับทางร้าน</li>
-                    <li>เลือก ตัวตูน ของตกแต่ง บล็อก ที่อยากได้ส่งให้กับทางร้าน หากเลือกที่จะไม่ใส่ ให้แจ้งทางร้านด้วยนะคะ</li>
-                    <li>เลือกของตกแต่งได้แค่เป็นเซ็ท ไม่สามารถรวมเซ็ทอื่นได้</li>
-                    <li>อยากได้โทนไหนส่งเฉดสีด้วยนะคะ (หากแจ้งแค่ชื่อสี = แก้สีไม่ได้)</li>
-                    <li><b>รายละเอียด “พิมพ์” ส่งให้เท่านั้น</b></li>
+                    <li>รายละเอียด “พิมพ์” ส่งให้เท่านั้น</li>
                 </ul>
             </div>
-
-            <div class="info-box-inner">
-                <h3>🎨 การแก้งาน</h3>
-                <p>แก้งานได้จนกว่าจะพอใจในขอบเขตบรีฟครั้งแรก <b>หากส่งงานแล้วไม่สามารถแก้ภายหลังได้</b></p>
-                <ul style="margin-top: 10px;">
-                    <li>เช็คงานให้ละเอียดก่อนแจ้งรับงานจริง</li>
-                    <li><b>หากแก้หลังจากส่งงานแล้ว คิดค่าแก้จุดละ 10฿</b></li>
-                </ul>
-            </div>
-
             <div class="info-box-inner" style="margin-bottom: 0;">
                 <h3>📍 กฎและเงื่อนไข</h3>
-                <ul style="font-size: 13px;">
-                    <li>เริ่มงานหลังจากที่ได้รับบรีฟจากลูกค้าแล้วเท่านั้น</li>
-                    <li>จ่ายเต็มจำนวน มัดจำ 50% ผ่อนครบ = เริ่มงาน</li>
-                    <li><b>ส่งงาน = จ่ายเงินเต็มจำนวน เท่านั้น!!!</b></li>
-                    <li>ยกเลิกงาน = ไม่มีการโอนคืน</li>
-                    <li>ทางร้านไม่มีการโอนเงินคืน ก่อนจะโอนตัดสินใจให้ดี</li>
+                <ul>
+                    <li>เริ่มงานหลังจากได้รับบรีฟครบถ้วน</li>
+                    <li>จ่ายเต็มจำนวน หรือมัดจำ 50%</li>
+                    <li>ยกเลิกงาน = ไม่มีการโอนคืนทุกกรณี</li>
                 </ul>
             </div>
         </div>
@@ -554,63 +485,36 @@ border: 1px solid #FFB6C1;
 
     <div class="content-section" style="padding-top: 0;">
         <div class="step-box-container">
-            <h2>🎀 เรทราคางาน</h2>
-
-            <div class="price-item" style="margin-bottom: 8px;">
-                <div class="price-name"><div class="price-dot"></div>ลายน้ำ เริ่มต้นที่ 29 Baht.</div>
-            </div>
-            <div class="price-sub-item"><span>- ใช้บล็อก</span><span class="price-value">เริ่มต้น 39 Baht.</span></div>
-            <div class="price-sub-item" style="margin-bottom: 15px;"><span>- ใช้ตัวตูน</span><span class="price-value">เริ่มต้น 39 Baht.</span></div>
-
-            <div class="price-item" style="margin-bottom: 8px;">
-                <div class="price-name"><div class="price-dot"></div>ออกแบบป้าย</div>
-            </div>
-            <div class="price-sub-item"><span>- ไม่ใช้บล็อก</span><span class="price-value">เริ่มต้น 39 Baht.</span></div>
-            <div class="price-sub-item"><span>- ใช้ตัวตูน</span><span class="price-value">เริ่มต้น 39 Baht.</span></div>
-            <div class="price-sub-item" style="margin-bottom: 15px;"><span>- ใช้บล็อก</span><span class="price-value">เริ่มต้น 59 Baht.</span></div>
-
-            <div class="price-item" style="margin-bottom: 8px;">
-                <div class="price-name"><div class="price-dot"></div>Google Sheet</div>
-            </div>
-            <div class="price-sub-item"><span>- เฉพาะชีต</span><span class="price-value">เริ่มต้น 49 Baht.</span></div>
-            <div class="price-sub-item" style="margin-bottom: 15px;"><span>- พร้อมปก</span><span class="price-value">เริ่มต้น 88 Baht.</span></div>
-
-            <div class="price-item">
-                <div class="price-name"><div class="price-dot"></div>ออกแบบเว็บไซต์</div>
-            </div>
-
+            <h2 style="color:var(--dark); margin-bottom: 15px;">🎀 เรทราคางาน</h2>
+            <div class="price-item"><div class="price-name"><div class="price-dot"></div>ลายน้ำ</div><span class="price-value">เริ่มต้น 29.-</span></div>
+            <div class="price-item"><div class="price-name"><div class="price-dot"></div>ออกแบบป้าย</div><span class="price-value">เริ่มต้น 39.-</span></div>
+            <div class="price-item"><div class="price-name"><div class="price-dot"></div>Google Sheet</div><span class="price-value">เริ่มต้น 49.-</span></div>
             <div class="rush-work-box">
-                <h3>⚡️ Rush Work Price</h3>
-                <p>งานเร่ง x2 ของราคาป้ายที่ต้องการเร่ง <br><b>(เร่ง 1 ครั้ง ต่อ 1 ป้าย 1 คิว)</b></p>
+                <h3 style="color:var(--main); margin-bottom: 5px;">⚡️ Rush Work</h3>
+                <p style="font-size: 13px;">งานเร่ง x2 ของราคาปกติ</p>
             </div>
-
-            <a href="https://lin.ee/30skzTf" class="btn btn-main">สอบถามราคา/สั่งงาน</a>
+            <a href="https://lin.ee/30skzTf" target="_blank" class="btn btn-main">สั่งงานผ่าน LINE</a>
         </div>
     </div>
 
     <div class="content-section">
-        <h2>🖼️ ตัวอย่างงาน</h2>
+        <h2 style="color:var(--dark); margin-bottom: 15px;">🖼️ ตัวอย่างงาน</h2>
         <div class="portfolio-scroll">
             <div class="portfolio-item"><img src="ไม่มีชื่อ 570_20260204230037.png" alt="Work 1"></div>
             <div class="portfolio-item"><img src="ไม่มีชื่อ 570_20260205091922.png" alt="Work 2"></div>
             <div class="portfolio-item"><img src="ipv.block.review5_20260308145728.png" alt="Work 3"></div>
-            <div class="portfolio-item"><img src="ipv.block.review5_20260303220319.png" alt="Work 4"></div>
-            <div class="portfolio-item"><img src="ipv.block.review5_20260302213512.png" alt="Work 5"></div>
         </div>
-        <a href="https://drive.google.com/drive/folders/1-ZCQx_5hfZQ908UkYFCtNLYQX6HGaqlq" class="btn btn-outline" style="border-style: dashed;">
-        ✨ ดูผลงานเพิ่มเติมที่นี่
-        </a>
+        <a href="https://drive.google.com/drive/folders/1-ZCQx_5hfZQ908UkYFCtNLYQX6HGaqlq" target="_blank" class="btn btn-outline" style="border-style: dashed;">✨ ดูผลงานทั้งหมด</a>
     </div>
 
     <div class="footer">
         <div class="socials">
-            <a href="https://www.facebook.com/profile.php?id=61554192600355">Facebook</a>
-            <a href="https://www.instagram.com/k0yangi_ii">Instagram</a>
-            <a href="https://lin.ee/30skzTf">LINE</a>
+            <a href="https://www.facebook.com/profile.php?id=61554192600355" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/k0yangi_ii" target="_blank">Instagram</a>
+            <a href="https://lin.ee/30skzTf" target="_blank">LINE</a>
         </div>
         <p class="small">© 2026 ⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆</p>
     </div>
-
 </div> 
 </div>
 </body>
