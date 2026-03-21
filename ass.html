@@ -66,7 +66,7 @@ overflow-x: hidden;
     background: var(--white);
     border: 2px solid #FFC0CB;
     border-radius: 15px;
-    width: 180px;
+    width: 190px;
     padding: 10px;
     box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
     display: none; 
@@ -101,12 +101,12 @@ overflow-x: hidden;
     background: #FFF9FA;
 }
 
-#group-dropdown-toggle {
+.dropdown-toggle-input {
     display: none;
 }
 
-#group-dropdown-toggle:checked ~ .dropdown-content {
-    max-height: 400px;
+.dropdown-toggle-input:checked ~ .dropdown-content {
+    max-height: 500px;
     margin-bottom: 5px;
 }
 
@@ -128,7 +128,7 @@ overflow-x: hidden;
     transition: 0.3s;
 }
 
-#group-dropdown-toggle:checked ~ .dropdown-label::after {
+.dropdown-toggle-input:checked ~ .dropdown-label::after {
     transform: rotate(180deg);
 }
 
@@ -201,7 +201,6 @@ position: relative;
 
 h2{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
 
-/* --- Header --- */
 .header-profile {
     position: relative;
 }
@@ -233,7 +232,6 @@ color:#fff;
 border: 2px solid var(--main);
 }
 
-/* --- Portfolio Grid --- */
 .portfolio-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -347,7 +345,7 @@ border: 1px solid #FFB6C1;
             <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
             
             <div class="dropdown-wrapper">
-                <input type="checkbox" id="group-dropdown-toggle" checked>
+                <input type="checkbox" id="group-dropdown-toggle" class="dropdown-toggle-input" checked>
                 <label for="group-dropdown-toggle" class="dropdown-label active">
                     🏘️ กลุ่มที่ทางร้านอยู่
                 </label>
@@ -363,8 +361,18 @@ border: 1px solid #FFB6C1;
             </div>
 
             <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
-            <a href="review.html">⭐️ รีวิวลูกค้า</a>
-            <a href="https://lin.ee/30skzTf">💬 ติดต่อสอบถาม</a>
+
+            <div class="dropdown-wrapper">
+                <input type="checkbox" id="contact-dropdown-toggle" class="dropdown-toggle-input">
+                <label for="contact-dropdown-toggle" class="dropdown-label">
+                    💬 ติดต่อสอบถาม
+                </label>
+                <div class="dropdown-content">
+                    <a href="https://www.facebook.com/k0yang1i" target="_blank" style="padding-left: 25px; font-size: 13px;">• Facebook</a>
+                    <a href="https://www.instagram.com/k0yangi_ii" target="_blank" style="padding-left: 25px; font-size: 13px;">• Instagram</a>
+                    <a href="https://lin.ee/30skzTf" target="_blank" style="padding-left: 25px; font-size: 13px;">• LINE Official</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -391,7 +399,7 @@ border: 1px solid #FFB6C1;
         <div class="portfolio-grid">
             
             <a href="https://drive.google.com/drive/folders/1-BewLdl3MDgywu7I0J1vCmRIIiQsd9aD" target="_blank" class="grid-card" style="text-decoration: none;">
-                <div class="grid-item"><img src="ข้าวกล่อง.jpeg" alt="Group 1"></div>
+                <div class="grid-item"><img src="ข้าวกล่อง.jpeg" alt="ข้าวกล่องตัวจิ๋ว"></div>
                 <div class="grid-info">
                     <span class="item-name">ข้าวกล่องตัวจิ๋ว</span>
                     <span class="item-price">ราคา 25.-</span>
@@ -400,7 +408,7 @@ border: 1px solid #FFB6C1;
             </a>
 
             <a href="https://drive.google.com/drive/folders/1C1mEWcTMG42-brqXS8-NX5rPX5L6TSBW" target="_blank" class="grid-card" style="text-decoration: none;">
-                <div class="grid-item"><img src="ammytiny.jpeg" alt="Group 2"></div>
+                <div class="grid-item"><img src="ammytiny.jpeg" alt="Ammy Tiny"></div>
                 <div class="grid-info">
                     <span class="item-name">Ammy Tiny</span>
                     <span class="item-price">ราคา 99.-</span>
@@ -409,7 +417,7 @@ border: 1px solid #FFB6C1;
             </a>
 
             <a href="https://drive.google.com/drive/folders/1EJY_kRtb-p5-V6_0d2OrrVDsAm5oVZyG" target="_blank" class="grid-card" style="text-decoration: none;">
-                <div class="grid-item"><img src="Ammywendy.jpeg" alt="Group 3"></div>
+                <div class="grid-item"><img src="Ammywendy.jpeg" alt="Ammy Wendy"></div>
                 <div class="grid-info">
                     <span class="item-name">Ammy Wendy</span>
                     <span class="item-price">ราคา 129.-</span>
@@ -418,7 +426,7 @@ border: 1px solid #FFB6C1;
             </a>
 
             <a href="https://drive.google.com/drive/folders/14RG7Br-1PVr8K76cb2gnQZgDacK6Hp6Q" target="_blank" class="grid-card" style="text-decoration: none;">
-                <div class="grid-item"><img src="miracle.jpeg" alt="Group 4"></div>
+                <div class="grid-item"><img src="miracle.jpeg" alt="Miracle Effect"></div>
                 <div class="grid-info">
                     <span class="item-name">Miracle Effect</span>
                     <span class="item-price">ราคา 159.-</span>
@@ -427,7 +435,7 @@ border: 1px solid #FFB6C1;
             </a>
 
             <a href="https://drive.google.com/drive/folders/11SARLwzCOPjGp7qkjEpOWQvg6wWdaWjF" target="_blank" class="grid-card" style="text-decoration: none;">
-                <div class="grid-item"><img src="mutsuri.jpeg" alt="Group 5"></div>
+                <div class="grid-item"><img src="mutsuri.jpeg" alt="Mutsuri"></div>
                 <div class="grid-info">
                     <span class="item-name">Mutsuri</span>
                     <span class="item-price">ราคา 99.-</span>
@@ -436,7 +444,7 @@ border: 1px solid #FFB6C1;
             </a>
 
             <a href="https://drive.google.com/drive/folders/1ex_4OKafJ5HpXHQo3JLqFuTj3ozpmzTf" target="_blank" class="grid-card" style="text-decoration: none;">
-                <div class="grid-item"><img src="Ammyfluffy.jpeg" alt="Group 6"></div>
+                <div class="grid-item"><img src="Ammyfluffy.jpeg" alt="Ammy Fluffy"></div>
                 <div class="grid-info">
                     <span class="item-name">Ammy Fluffy</span>
                     <span class="item-price">ราคา 69.-</span>
@@ -445,7 +453,7 @@ border: 1px solid #FFB6C1;
             </a>
 
             <a href="https://shorturl.at/ehmDY" target="_blank" class="grid-card" style="text-decoration: none;">
-                <div class="grid-item"><img src="jubilytie.jpeg" alt="Group 7"></div>
+                <div class="grid-item"><img src="jubilytie.jpeg" alt="Jubilytie"></div>
                 <div class="grid-info">
                     <span class="item-name">Jubilytie</span>
                     <span class="item-price">ราคา 59.-</span>
@@ -454,7 +462,7 @@ border: 1px solid #FFB6C1;
             </a>
 
             <a href="https://drive.google.com/drive/folders/1--rlL57GZyBNRDpNr1TstWKSy46xMSvR" target="_blank" class="grid-card" style="text-decoration: none;">
-                <div class="grid-item"><img src="paddy.jpeg" alt="Group 8"></div>
+                <div class="grid-item"><img src="paddy.jpeg" alt="PaddyShine"></div>
                 <div class="grid-info">
                     <span class="item-name">PaddyShine</span>
                     <span class="item-price">ราคา 39.-</span>
@@ -463,7 +471,7 @@ border: 1px solid #FFB6C1;
             </a>
 
             <a href="https://drive.google.com/drive/folders/10Bp9xrC3RhHr3KuPPn7p4yu1ubwb2BhW" target="_blank" class="grid-card" style="text-decoration: none;">
-                <div class="grid-item"><img src="Chimchumv2.jpeg" alt="Group 9"></div>
+                <div class="grid-item"><img src="Chimchumv2.jpeg" alt="ChimChumV.2"></div>
                 <div class="grid-info">
                     <span class="item-name">ChimChumV.2</span>
                     <span class="item-price">ราคา 49.-</span>
@@ -472,7 +480,7 @@ border: 1px solid #FFB6C1;
             </a>
 
             <a href="https://drive.google.com/drive/folders/1sbMzWceISCgbO2vis0ZNjE1t19NS0cMN" target="_blank" class="grid-card" style="text-decoration: none;">
-                <div class="grid-item"><img src="Shupufty.jpeg" alt="Group 10"></div>
+                <div class="grid-item"><img src="Shupufty.jpeg" alt="ShupuftyJolie"></div>
                 <div class="grid-info">
                     <span class="item-name">ShupuftyJolie</span>
                     <span class="item-price">ราคา 49.-</span>
@@ -481,7 +489,7 @@ border: 1px solid #FFB6C1;
             </a>
 
             <a href="https://drive.google.com/drive/folders/1rZQXFSRQ46toz8QrCAd7LAfOZB5alnWv" target="_blank" class="grid-card" style="text-decoration: none;">
-                <div class="grid-item"><img src="Pompoko.jpeg" alt="Group 11"></div>
+                <div class="grid-item"><img src="Pompoko.jpeg" alt="Pompoko"></div>
                 <div class="grid-info">
                     <span class="item-name">Pompoko</span>
                     <span class="item-price">ราคา 49.-</span>
@@ -490,7 +498,7 @@ border: 1px solid #FFB6C1;
             </a>
 
             <a href="https://drive.google.com/drive/folders/11U5X0vwcR1GlZjuMUYeebrhE7NtCwxX_" target="_blank" class="grid-card" style="text-decoration: none;">
-                <div class="grid-item"><img src="Ammylily.jpeg" alt="Group 12"></div>
+                <div class="grid-item"><img src="Ammylily.jpeg" alt="Ammy Lily"></div>
                 <div class="grid-info">
                     <span class="item-name">Ammy Lily</span>
                     <span class="item-price">ราคา 129.-</span>
@@ -499,7 +507,7 @@ border: 1px solid #FFB6C1;
             </a>
 
             <a href="https://drive.google.com/drive/folders/1WahBdV83mIMsrUkG2tv4BlV7RUuy0L4T" target="_blank" class="grid-card" style="text-decoration: none;">
-                <div class="grid-item"><img src="ก๋ายกายเด็กจ๋อง.jpeg" alt="Group 13"></div>
+                <div class="grid-item"><img src="ก๋ายกายเด็กจ๋อง.jpeg" alt="ก๊ายกาย เด็กจ๋อง"></div>
                 <div class="grid-info">
                     <span class="item-name">ก๊ายกาย เด็กจ๋อง</span>
                     <span class="item-price">ราคา 79.-</span>
@@ -508,7 +516,7 @@ border: 1px solid #FFB6C1;
             </a>
 
             <a href="https://drive.google.com/drive/folders/1mX3kqpQHrgom9ojrGxF8QPaXWQPW_bSq" target="_blank" class="grid-card" style="text-decoration: none;">
-                <div class="grid-item"><img src="แสงสว่าง.jpeg" alt="Group 14"></div>
+                <div class="grid-item"><img src="แสงสว่าง.jpeg" alt="TheLightOfSummer"></div>
                 <div class="grid-info">
                     <span class="item-name">TheLightOfSummer</span>
                     <span class="item-price">ราคา 59.-</span>
@@ -517,7 +525,7 @@ border: 1px solid #FFB6C1;
             </a>
 
             <a href="https://drive.google.com/drive/folders/1VgX0gvfcbfPFmSdyA8jvqpTpVtPKiu3F" target="_blank" class="grid-card" style="text-decoration: none;">
-                <div class="grid-item"><img src="Dokmhaitoon.jpeg" alt="Group 15"></div>
+                <div class="grid-item"><img src="Dokmhaitoon.jpeg" alt="Dokmhia ToonToon"></div>
                 <div class="grid-info">
                     <span class="item-name">Dokmhia ToonToon</span>
                     <span class="item-price">ราคา 59.-</span>
@@ -529,12 +537,12 @@ border: 1px solid #FFB6C1;
     </div>
 
     <div class="content-section" style="padding-top: 0;">
-        <a href="https://www.facebook.com/profile.php?id=61554192600355" target="_blank" class="btn btn-main">สอบถามเพิ่มเติม</a>
+        <a href="https://www.facebook.com/k0yang1i" target="_blank" class="btn btn-main">สอบถามเพิ่มเติม</a>
     </div>
 
     <div class="footer">
         <div class="socials">
-            <a href="https://www.facebook.com/profile.php?id=61554192600355" target="_blank">Facebook</a>
+            <a href="https://www.facebook.com/k0yang1i" target="_blank">Facebook</a>
             <a href="https://www.instagram.com/k0yangi_ii" target="_blank">Instagram</a>
             <a href="https://lin.ee/30skzTf" target="_blank">LINE</a>
         </div>
