@@ -66,7 +66,7 @@ overflow-x: hidden;
     background: var(--white);
     border: 2px solid #FFC0CB;
     border-radius: 15px;
-    width: 180px;
+    width: 190px;
     padding: 10px;
     box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
     display: none; 
@@ -101,12 +101,12 @@ overflow-x: hidden;
     background: #FFF9FA;
 }
 
-#group-dropdown-toggle {
+.dropdown-toggle-input {
     display: none;
 }
 
-#group-dropdown-toggle:checked ~ .dropdown-content {
-    max-height: 400px;
+.dropdown-toggle-input:checked ~ .dropdown-content {
+    max-height: 500px;
     margin-bottom: 5px;
 }
 
@@ -128,7 +128,7 @@ overflow-x: hidden;
     transition: 0.3s;
 }
 
-#group-dropdown-toggle:checked ~ .dropdown-label::after {
+.dropdown-toggle-input:checked ~ .dropdown-label::after {
     transform: rotate(180deg);
 }
 
@@ -201,7 +201,6 @@ position: relative;
 
 h2{color:var(--dark); margin-bottom: 15px; font-weight: 500;}
 
-/* --- Header --- */
 .header-profile {
     position: relative;
 }
@@ -233,7 +232,6 @@ color:#fff;
 border: 2px solid var(--main);
 }
 
-/* --- Portfolio Grid --- */
 .portfolio-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -347,7 +345,7 @@ border: 1px solid #FFB6C1;
             <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
             
             <div class="dropdown-wrapper">
-                <input type="checkbox" id="group-dropdown-toggle" checked>
+                <input type="checkbox" id="group-dropdown-toggle" class="dropdown-toggle-input" checked>
                 <label for="group-dropdown-toggle" class="dropdown-label active">
                     🏘️ กลุ่มที่ทางร้านอยู่
                 </label>
@@ -363,8 +361,18 @@ border: 1px solid #FFB6C1;
             </div>
 
             <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
-            <a href="review.html">⭐️ รีวิวลูกค้า</a>
-            <a href="https://lin.ee/30skzTf">💬 ติดต่อสอบถาม</a>
+
+            <div class="dropdown-wrapper">
+                <input type="checkbox" id="contact-dropdown-toggle" class="dropdown-toggle-input">
+                <label for="contact-dropdown-toggle" class="dropdown-label">
+                    💬 ติดต่อสอบถาม
+                </label>
+                <div class="dropdown-content">
+                    <a href="https://www.facebook.com/k0yang1i" target="_blank" style="padding-left: 25px; font-size: 13px;">• Facebook</a>
+                    <a href="https://www.instagram.com/k0yangi_ii" target="_blank" style="padding-left: 25px; font-size: 13px;">• Instagram</a>
+                    <a href="https://lin.ee/30skzTf" target="_blank" style="padding-left: 25px; font-size: 13px;">• LINE Official</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -484,12 +492,12 @@ border: 1px solid #FFB6C1;
     </div>
 
     <div class="content-section" style="padding-top: 0;">
-        <a href="https://www.facebook.com/profile.php?id=61554192600355" target="_blank" class="btn btn-main">สอบถามเพิ่มเติม</a>
+        <a href="https://www.facebook.com/k0yang1i" target="_blank" class="btn btn-main">สอบถามเพิ่มเติม</a>
     </div>
 
     <div class="footer">
         <div class="socials">
-            <a href="https://www.facebook.com/profile.php?id=61554192600355" target="_blank">Facebook</a>
+            <a href="https://www.facebook.com/k0yang1i" target="_blank">Facebook</a>
             <a href="https://www.instagram.com/k0yangi_ii" target="_blank">Instagram</a>
             <a href="https://lin.ee/30skzTf" target="_blank">LINE</a>
         </div>
