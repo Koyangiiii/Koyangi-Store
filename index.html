@@ -311,32 +311,44 @@ color:var(--dark);
 
 .price-category:last-of-type { border-bottom: none; }
 
+.price-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
 .price-title {
     font-weight: 600;
     color: var(--main);
     font-size: 15px;
-    margin-bottom: 8px;
-    display: block;
+}
+
+.price-main-value {
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 14px;
 }
 
 .price-item{
 display:flex;
 justify-content: space-between;
 align-items:center;
-margin-bottom:8px;
-font-size: 13px;
+margin-bottom:6px;
+font-size: 12.5px;
 padding-left: 10px;
+opacity: 0.9;
 }
 
 .price-dot{
 background:#FFB6C1; 
-width:6px;height:6px;
+width:5px;height:5px;
 border-radius:50%;
 margin-right: 8px;
 display: inline-block;
 }
 
-.price-value { color: var(--dark); font-weight: 500; }
+.price-value { color: var(--text); font-weight: 400; }
 
 .rush-work-box {
     margin-top: 15px;
@@ -474,29 +486,37 @@ border: 1px solid #FFB6C1;
             <h2 style="color:var(--dark); margin-bottom: 15px; text-align: center;">🎀 เรทราคางาน</h2>
             
             <div class="price-category">
-                <span class="price-title">🎨 ลายน้ำ</span>
-                <div class="price-item"><span><div class="price-dot"></div>เริ่มต้น</span><span class="price-value">29.-</span></div>
+                <div class="price-header">
+                    <span class="price-title">🎨 ลายน้ำ</span>
+                    <span class="price-main-value">เริ่มต้น 29.-</span>
+                </div>
                 <div class="price-item"><span><div class="price-dot"></div>ใช้บล็อก</span><span class="price-value">เริ่มต้น 39.-</span></div>
                 <div class="price-item"><span><div class="price-dot"></div>ใช้ตัวตูน</span><span class="price-value">เริ่มต้น 59.-</span></div>
             </div>
 
             <div class="price-category">
-                <span class="price-title">🖼️ ออกแบบป้าย</span>
-                <div class="price-item"><span><div class="price-dot"></div>ไม่ใช้บล็อก</span><span class="price-value">เริ่มต้น 39.-</span></div>
-                <div class="price-item"><span><div class="price-dot"></div>ใช้ตัวตูน</span><span class="price-value">เริ่มต้น 39.-</span></div>
-                <div class="price-item"><span><div class="price-dot"></div>ใช้บล็อก</span><span class="price-value">เริ่มต้น 39.-</span></div>
-                <div class="price-item"><span><div class="price-dot"></div>ใช้บล็อก + ตัวตูน</span><span class="price-value">เริ่มต้น 59.-</span></div>
+                <div class="price-header">
+                    <span class="price-title">🖼️ ออกแบบป้าย</span>
+                    <span class="price-main-value">เริ่มต้น 39.-</span>
+                </div>
+                <div class="price-item"><span><div class="price-dot"></div>ไม่ใช้บล็อก</span><span class="price-value">39.-</span></div>
+                <div class="price-item"><span><div class="price-dot"></div>ใช้ตัวตูน</span><span class="price-value">39.-</span></div>
+                <div class="price-item"><span><div class="price-dot"></div>ใช้บล็อก</span><span class="price-value">39.-</span></div>
+                <div class="price-item"><span><div class="price-dot"></div>ใช้บล็อก + ตัวตูน</span><span class="price-value">59.-</span></div>
             </div>
 
             <div class="price-category">
-                <span class="price-title">📊 Google Sheet</span>
-                <div class="price-item"><span><div class="price-dot"></div>เฉพาะชีต</span><span class="price-value">เริ่มต้น 49.-</span></div>
-                <div class="price-item"><span><div class="price-dot"></div>พร้อมปก</span><span class="price-value">เริ่มต้น 88.-</span></div>
+                <div class="price-header">
+                    <span class="price-title">📊 Google Sheet</span>
+                    <span class="price-main-value">เริ่มต้น 49.-</span>
+                </div>
+                <div class="price-item"><span><div class="price-dot"></div>เฉพาะชีต</span><span class="price-value">49.-</span></div>
+                <div class="price-item"><span><div class="price-dot"></div>พร้อมปก</span><span class="price-value">88.-</span></div>
             </div>
 
             <div class="price-category">
                 <span class="price-title">🌐 รับทำเว็บไซต์</span>
-                <a href="https://pinkjujapipi.github.io/Koyangi/" target="_blank" class="btn btn-outline" style="font-size: 13px; margin-top: 5px; padding: 10px;">ดูรายละเอียดและสั่งทำเว็บ คลิกที่นี่</a>
+                <a href="https://pinkjujapipi.github.io/Koyangi/" target="_blank" class="btn btn-outline" style="font-size: 13px; margin-top: 8px; padding: 10px;">ดูรายละเอียดและสั่งทำเว็บ คลิกที่นี่</a>
             </div>
 
             <div class="rush-work-box">
