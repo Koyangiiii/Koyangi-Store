@@ -105,7 +105,7 @@ overflow-x: hidden;
 }
 
 .dropdown-toggle-input:checked ~ .dropdown-content {
-    max-height: 300px; 
+    max-height: 400px; 
     margin-bottom: 5px;
 }
 
@@ -303,17 +303,34 @@ color:var(--dark);
     background: #FFF5F7; 
 }
 
+.price-category {
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #FFD1DC;
+    padding-bottom: 10px;
+}
+
+.price-category:last-of-type { border-bottom: none; }
+
+.price-title {
+    font-weight: 600;
+    color: var(--main);
+    font-size: 15px;
+    margin-bottom: 8px;
+    display: block;
+}
+
 .price-item{
 display:flex;
 justify-content: space-between;
 align-items:center;
-margin-bottom:12px;
-font-size: 15px;
+margin-bottom:8px;
+font-size: 13px;
+padding-left: 10px;
 }
 
 .price-dot{
 background:#FFB6C1; 
-width:8px;height:8px;
+width:6px;height:6px;
 border-radius:50%;
 margin-right: 8px;
 display: inline-block;
@@ -322,8 +339,8 @@ display: inline-block;
 .price-value { color: var(--dark); font-weight: 500; }
 
 .rush-work-box {
-    margin-top: 20px;
-    padding: 15px;
+    margin-top: 15px;
+    padding: 12px;
     background: #FFF0F5;
     border: 1.5px solid var(--main);
     border-radius: 15px;
@@ -432,8 +449,6 @@ border: 1px solid #FFB6C1;
         <div class="emoji" style="top:30%; left:80%;">💖</div>
         <div class="emoji" style="top:60%; left:15%;">🌸</div>
         <div class="emoji" style="top:80%; left:85%;">✨</div>
-        <div class="emoji" style="top:20%; left:40%;">💗</div>
-        <div class="emoji" style="top:75%; left:60%;">💖</div>
     </div>
 
 <div class="container">
@@ -454,6 +469,44 @@ border: 1px solid #FFB6C1;
         <a href="https://docs.google.com/spreadsheets/d/16wCpceIXo7ZxNgGABYBRbL682miaicVntDUmrrhlns8/edit?usp=drivesdk" target="_blank" class="btn btn-outline">✨ Check Q</a>
     </div>
 
+    <div class="content-section" style="padding-top: 0;">
+        <div class="step-box-container">
+            <h2 style="color:var(--dark); margin-bottom: 15px; text-align: center;">🎀 เรทราคางาน</h2>
+            
+            <div class="price-category">
+                <span class="price-title">🎨 ลายน้ำ</span>
+                <div class="price-item"><span><div class="price-dot"></div>เริ่มต้น</span><span class="price-value">29.-</span></div>
+                <div class="price-item"><span><div class="price-dot"></div>ใช้บล็อก</span><span class="price-value">เริ่มต้น 39.-</span></div>
+                <div class="price-item"><span><div class="price-dot"></div>ใช้ตัวตูน</span><span class="price-value">เริ่มต้น 59.-</span></div>
+            </div>
+
+            <div class="price-category">
+                <span class="price-title">🖼️ ออกแบบป้าย</span>
+                <div class="price-item"><span><div class="price-dot"></div>ไม่ใช้บล็อก</span><span class="price-value">เริ่มต้น 39.-</span></div>
+                <div class="price-item"><span><div class="price-dot"></div>ใช้ตัวตูน</span><span class="price-value">เริ่มต้น 39.-</span></div>
+                <div class="price-item"><span><div class="price-dot"></div>ใช้บล็อก</span><span class="price-value">เริ่มต้น 39.-</span></div>
+                <div class="price-item"><span><div class="price-dot"></div>ใช้บล็อก + ตัวตูน</span><span class="price-value">เริ่มต้น 59.-</span></div>
+            </div>
+
+            <div class="price-category">
+                <span class="price-title">📊 Google Sheet</span>
+                <div class="price-item"><span><div class="price-dot"></div>เฉพาะชีต</span><span class="price-value">เริ่มต้น 49.-</span></div>
+                <div class="price-item"><span><div class="price-dot"></div>พร้อมปก</span><span class="price-value">เริ่มต้น 88.-</span></div>
+            </div>
+
+            <div class="price-category">
+                <span class="price-title">🌐 รับทำเว็บไซต์</span>
+                <a href="https://pinkjujapipi.github.io/Koyangi/" target="_blank" class="btn btn-outline" style="font-size: 13px; margin-top: 5px; padding: 10px;">ดูรายละเอียดและสั่งทำเว็บ คลิกที่นี่</a>
+            </div>
+
+            <div class="rush-work-box">
+                <h3 style="color:var(--main); margin-bottom: 5px;">⚡️ Rush Work</h3>
+                <p style="font-size: 12px;">งานเร่ง x2 ของราคาปกติ</p>
+            </div>
+            <a href="https://lin.ee/30skzTf" target="_blank" class="btn btn-main">สั่งงานผ่าน LINE</a>
+        </div>
+    </div>
+
     <div class="content-section">
         <div class="info-box-outer">
             <div class="info-box-inner">
@@ -471,20 +524,6 @@ border: 1px solid #FFB6C1;
                     <li>ยกเลิกงาน = ไม่มีการโอนคืนทุกกรณี</li>
                 </ul>
             </div>
-        </div>
-    </div>
-
-    <div class="content-section" style="padding-top: 0;">
-        <div class="step-box-container">
-            <h2 style="color:var(--dark); margin-bottom: 15px;">🎀 เรทราคางาน</h2>
-            <div class="price-item"><div class="price-name"><div class="price-dot"></div>ลายน้ำ</div><span class="price-value">เริ่มต้น 29.-</span></div>
-            <div class="price-item"><div class="price-name"><div class="price-dot"></div>ออกแบบป้าย</div><span class="price-value">เริ่มต้น 39.-</span></div>
-            <div class="price-item"><div class="price-name"><div class="price-dot"></div>Google Sheet</div><span class="price-value">เริ่มต้น 49.-</span></div>
-            <div class="rush-work-box">
-                <h3 style="color:var(--main); margin-bottom: 5px;">⚡️ Rush Work</h3>
-                <p style="font-size: 13px;">งานเร่ง x2 ของราคาปกติ</p>
-            </div>
-            <a href="https://lin.ee/30skzTf" target="_blank" class="btn btn-main">สั่งงานผ่าน LINE</a>
         </div>
     </div>
 
