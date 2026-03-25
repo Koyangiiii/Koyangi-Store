@@ -105,6 +105,7 @@ overflow-x: hidden;
     display: none;
 }
 
+/* เมื่อติ๊ก Dropdown */
 .dropdown-toggle-input:checked ~ .dropdown-content {
     max-height: 400px;
     margin-bottom: 5px;
@@ -298,82 +299,6 @@ border: 2px solid var(--main);
     display: inline-block;
 }
 
-/* --- Price Section Styles --- */
-.step-box-container {
-    border: 2px dashed #FFB6C1; 
-    border-radius: 20px;
-    padding: 20px 15px;
-    background: #FFF5F7; 
-}
-
-.price-category {
-    margin-bottom: 15px;
-    border-bottom: 1px dashed #FFD1DC;
-    padding-bottom: 10px;
-}
-
-.price-category:last-of-type { border-bottom: none; }
-
-.price-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-}
-
-.price-title {
-    font-weight: 600;
-    color: var(--main);
-    font-size: 15px;
-}
-
-.price-main-value {
-    color: var(--dark);
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.price-item{
-display:flex;
-justify-content: space-between;
-align-items:center;
-margin-bottom:6px;
-font-size: 12.5px;
-padding-left: 10px;
-opacity: 0.9;
-}
-
-.price-dot{
-background:#FFB6C1; 
-width:5px;height:5px;
-border-radius:50%;
-margin-right: 8px;
-display: inline-block;
-}
-
-.price-value { color: var(--text); font-weight: 400; }
-
-.rush-work-box {
-    margin-top: 15px;
-    padding: 15px;
-    background: #FFF0F5;
-    border: 1.5px solid var(--main);
-    border-radius: 15px;
-    text-align: center;
-}
-
-.rush-work-box h3 {
-    color: var(--main);
-    margin-bottom: 8px;
-    font-size: 15px;
-}
-
-.rush-work-box p {
-    font-size: 12px;
-    line-height: 1.6;
-    color: var(--text);
-}
-
 .footer{
 text-align:center;
 padding: 30px 20px 25px;
@@ -416,10 +341,14 @@ border: 1px solid #FFB6C1;
         
         <div class="nav-menu">
             <a href="index.html">🏠 หน้าแรก</a> 
+            
             <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
+            
             <div class="dropdown-wrapper">
                 <input type="checkbox" id="group-dropdown-toggle" class="dropdown-toggle-input" checked>
-                <label for="group-dropdown-toggle" class="dropdown-label active">🏘️ กลุ่มที่ทางร้านอยู่</label>
+                <label for="group-dropdown-toggle" class="dropdown-label active">
+                    🏘️ กลุ่มที่ทางร้านอยู่
+                </label>
                 <div class="dropdown-content">
                     <a href="all.html" class="active" style="padding-left: 25px; font-size: 13px;">• กลุ่มที่มีทุกอย่าง</a>
                     <a href="cartoon.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มตูน</a>
@@ -430,10 +359,14 @@ border: 1px solid #FFB6C1;
                     <a href="tutorial.html" style="padding-left: 25px; font-size: 13px;">• กลุ่มสอน</a>
                 </div>
             </div>
+
             <hr style="border: 0; border-top: 1px solid #FFEDF0; margin: 2px 0;">
+
             <div class="dropdown-wrapper">
                 <input type="checkbox" id="contact-dropdown-toggle" class="dropdown-toggle-input">
-                <label for="contact-dropdown-toggle" class="dropdown-label">💬 ติดต่อสอบถาม</label>
+                <label for="contact-dropdown-toggle" class="dropdown-label">
+                    💬 ติดต่อสอบถาม
+                </label>
                 <div class="dropdown-content">
                     <a href="https://www.facebook.com/k0yang1i" target="_blank" style="padding-left: 25px; font-size: 13px;">• Facebook</a>
                     <a href="https://www.instagram.com/k0yangi_ii" target="_blank" style="padding-left: 25px; font-size: 13px;">• Instagram</a>
@@ -462,52 +395,9 @@ border: 1px solid #FFB6C1;
     <div class="content-section">
         <div class="shop-brand">⋆. 𐙚˚࿔ 𝐊𝐨ย𝐚𝐧𝐠ิ 𝜗𝜚˚⋆</div>
         
-        <div class="step-box-container">
-            <h2 style="color:var(--dark); margin-bottom: 15px; text-align: center;">🎀 เรทราคางาน</h2>
-            
-            <div class="price-category">
-                <div class="price-header">
-                    <span class="price-title">🎨 ลายน้ำ</span>
-                    <span class="price-main-value">เริ่มต้น 29.-</span>
-                </div>
-                <div class="price-item"><span><div class="price-dot"></div>ใช้บล็อก</span><span class="price-value">เริ่มต้น 39.-</span></div>
-                <div class="price-item"><span><div class="price-dot"></div>ใช้ตัวตูน</span><span class="price-value">เริ่มต้น 59.-</span></div>
-            </div>
-
-            <div class="price-category">
-                <div class="price-header">
-                    <span class="price-title">🖼️ ออกแบบป้าย</span>
-                    <span class="price-main-value">เริ่มต้น 39.-</span>
-                </div>
-                <div class="price-item"><span><div class="price-dot"></div>ไม่ใช้บล็อก</span><span class="price-value">39.-</span></div>
-                <div class="price-item"><span><div class="price-dot"></div>ใช้ตัวตูน</span><span class="price-value">39.-</span></div>
-                <div class="price-item"><span><div class="price-dot"></div>ใช้บล็อก</span><span class="price-value">39.-</span></div>
-                <div class="price-item"><span><div class="price-dot"></div>ใช้บล็อก + ตัวตูน</span><span class="price-value">59.-</span></div>
-            </div>
-
-            <div class="price-category">
-                <div class="price-header">
-                    <span class="price-title">📊 Google Sheet</span>
-                    <span class="price-main-value">เริ่มต้น 49.-</span>
-                </div>
-                <div class="price-item"><span><div class="price-dot"></div>เฉพาะชีต</span><span class="price-value">49.-</span></div>
-                <div class="price-item"><span><div class="price-dot"></div>พร้อมปก</span><span class="price-value">88.-</span></div>
-            </div>
-
-            <div class="rush-work-box">
-                <h3>⚡️ Rush Work Price</h3>
-                <p>งานเร่ง <b>x2 ของราคางานป้ายที่ต้องการเร่ง</b></p>
-                <p>เร่ง 1 ครั้ง ต่อ 1 คิว ต่อ 1 งาน</p>
-                <p style="color: #ff0000; font-weight: 500; margin-top: 5px;">⚠️ หากไม่ได้จ่ายค่าเร่ง งดเร่ง งดวีนทุกกรณี</p>
-            </div>
-            
-            <a href="https://lin.ee/30skzTf" target="_blank" class="btn btn-main">สั่งงานผ่าน LINE</a>
-        </div>
-    </div>
-
-    <div class="content-section" style="padding-top: 0;">
         <h2 style="display: flex; align-items: center; gap: 8px;">🎀 กลุ่มที่มีทุกอย่าง</h2>
         <div class="portfolio-grid">
+            
             <a href="https://drive.google.com/drive/folders/168ZU4mbiXebWG8XuaeCBbmcjX46Pa8Eq" target="_blank" style="text-decoration: none;" class="grid-card">
                 <div class="grid-item">
                     <img src="Rosella.jpeg" alt="Rosella Group">
@@ -518,6 +408,7 @@ border: 1px solid #FFB6C1;
                     <div><span class="item-example">ดูตัวอย่างกลุ่ม</span></div>
                 </div>
             </a>
+
             <a href="https://drive.google.com/drive/folders/19wfkeYj5tSP2H-dg_t1ioUgVTHf78W0x" target="_blank" style="text-decoration: none;" class="grid-card">
                 <div class="grid-item">
                     <img src="mngroup.jpeg" alt="By.MN Group">
@@ -528,7 +419,12 @@ border: 1px solid #FFB6C1;
                     <div><span class="item-example">ดูตัวอย่างกลุ่ม</span></div>
                 </div>
             </a>
+
         </div>
+    </div>
+
+    <div class="content-section" style="padding-top: 0;">
+        <a href="https://www.facebook.com/k0yang1i" target="_blank" class="btn btn-main">สอบถามเพิ่มเติม</a>
     </div>
 
     <div class="footer">
